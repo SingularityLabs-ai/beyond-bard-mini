@@ -23,8 +23,19 @@ interface Props {
   currentTime?: number
 }
 
+interface Requestion {
+  requestion: string
+  index: number
+  answer: Answer | null
+}
+
+interface ReQuestionAnswerProps {
+  latestAnswerText: string | undefined
+}
+
 function ChatGPTQuery(props: Props) {
   const { onStatusChange, currentTime, question } = props
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const [answer, setAnswer] = useState<Answer | null>(null)
   const [error, setError] = useState('')
@@ -33,10 +44,17 @@ function ChatGPTQuery(props: Props) {
   const [showTip, setShowTip] = useState(false)
   const [continueConversation, setContinueConversation] = useState(false)
   const [status, setStatus] = useState<QueryStatus>()
+
+  const [reError, setReError] = useState('')
+  const [reQuestionDone, setReQuestionDone] = useState(false)
+  const [requestionList, setRequestionList] = useState<Requestion[]>([])
+  const [questionIndex, setQuestionIndex] = useState(0)
+  const [reQuestionLatestAnswerText, setReQuestionLatestAnswerText] = useState<string | undefined>()
+
   const wrapRef = useRef<HTMLDivElement | null>(null)
 
   const requestGpt = useMemo(() => {
-    console.log('question', question)
+    console.debug('question', question)
 
     return debounce(() => {
       setStatus(undefined)
@@ -46,6 +64,7 @@ function ChatGPTQuery(props: Props) {
 
       const port = Browser.runtime.connect()
       const listener = (msg: any) => {
+        console.debug("ChatGPTQuery msg=", msg);
         if (msg.text) {
           let text = msg.text || ''
           text = text.replace(/^(\s|:\n\n)+|(:)+|(:\s)$/g, '')
@@ -57,6 +76,7 @@ function ChatGPTQuery(props: Props) {
           setStatus('error')
         } else if (msg.event === 'DONE') {
           setDone(true)
+          setReQuestionDone(true)
           setStatus('done')
         }
       }
@@ -117,7 +137,7 @@ function ChatGPTQuery(props: Props) {
     if (!wrap) {
       return
     }
-
+    console.debug("ChatGPTQuery answer=",answer);
     if (answer) {
       wrap.scrollTo({
         top: 10000,
@@ -126,7 +146,87 @@ function ChatGPTQuery(props: Props) {
     }
   }, [answer])
 
+
+  // requestion
+  useEffect(() => {
+    if (!requestionList[questionIndex]) return
+    const port = Browser.runtime.connect()
+    const listener = (msg: any) => {
+      try {
+        if (msg.text) {
+          const requestionListValue = requestionList
+          requestionListValue[questionIndex].answer = msg
+          setRequestionList(requestionListValue)
+          const latestAnswerText = requestionList[questionIndex]?.answer?.text
+          setReQuestionLatestAnswerText(latestAnswerText)
+        } else if (msg.event === 'DONE') {
+          setReQuestionDone(true)
+          setQuestionIndex(questionIndex + 1)
+        }
+      } catch {
+        setReError(msg.error)
+      }
+    }
+    port.onMessage.addListener(listener)
+    port.postMessage({
+      question: requestionList[questionIndex].requestion,
+      conversationId: answer?.conversationId,
+      parentMessageId:
+        questionIndex == 0
+          ? answer?.messageId
+          : requestionList[questionIndex - 1].answer?.messageId,
+      conversationContext:
+        questionIndex == 0
+          ? answer?.conversationContext
+          : requestionList[questionIndex - 1].answer?.conversationContext,
+    })
+    return () => {
+      port.onMessage.removeListener(listener)
+      port.disconnect()
+    }
+  }, [
+    requestionList,
+    questionIndex,
+    answer?.conversationId,
+    answer?.messageId,
+    answer?.conversationContext,
+  ])
+
+  // * Requery Handler Function
+  const requeryHandler = useCallback(() => {
+    if (inputRef.current) {
+      setReQuestionDone(false)
+      const requestion = inputRef.current.value
+      setRequestionList([...requestionList, { requestion, index: questionIndex, answer: null }])
+      inputRef.current.value = ''
+    }
+  }, [requestionList, questionIndex])
+
+  const ReQuestionAnswerFixed = ({ text }: { text: string | undefined }) => {
+    if (!text) return <p className="text-[#b6b8ba] animate-pulse">Answering...</p>
+    return (
+      <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>{text}</ReactMarkdown>
+    )
+  }
+
+  const ReQuestionAnswer = ({ latestAnswerText }: ReQuestionAnswerProps) => {
+    if (!latestAnswerText || requestionList[requestionList.length - 1]?.answer?.text == undefined) {
+      return <p className="text-[#b6b8ba] animate-pulse">Answering...</p>
+    }
+    return (
+      <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>
+        {latestAnswerText}
+      </ReactMarkdown>
+    )
+  }
+
+
   if (answer) {
+    console.debug("ChatGPTQuery answer2=", answer);
+    console.debug("ChatGPTQuery continueConversation=", continueConversation);
+    console.debug("ChatGPTQuery answer.conversationContext.contextIds=", answer.conversationContext.contextIds);
+    console.debug("ChatGPTQuery done=", done);
+    // console.debug("ChatGPTQuery latestAnswerText=", latestAnswerText);
     return (
       <div className="markdown-body gpt-markdown" id="gpt-answer" dir="auto">
         <div className="glarity--chatgpt--header">
@@ -140,12 +240,51 @@ function ChatGPTQuery(props: Props) {
           <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>
             {answer.text}
           </ReactMarkdown>
+          <div className="question-container">
+            {requestionList.map((requestion) => (
+              <div key={requestion.index}>
+                <div className="font-bold">{`Q${requestion.index + 1} : ${
+                  requestion.requestion
+                }`}</div>
+                {reError ? (
+                  <p>
+                    Failed to load response from BARD:
+                    <span className="break-all block">{reError}</span>
+                  </p>
+                ) : requestion.index < requestionList.length - 1 ? (
+                  <ReQuestionAnswerFixed text={requestion.answer?.text} />
+                ) : (
+                  <ReQuestionAnswer latestAnswerText={reQuestionLatestAnswerText} />
+                )}
+              </div>
+            ))}
+          </div>
+
         </div>
-        {(continueConversation && answer.conversationId && done) && (
+        {(continueConversation && answer.conversationContext.contextIds && done) && (
           <div>
-            <a href={`https://chat.openai.com/c/${answer.conversationId}`} target="_blank">
-              Continue conversation
-            </a>
+            {/* <a href={`https://chat.openai.com/c/${answer.conversationId}`} target="_blank">
+            //   Continue conversation
+             </a>*/}
+            <form
+              id="requestion"
+              style={{ display: 'flex' }}
+              onSubmit={(e) => {
+                // submit when press enter key
+                e.preventDefault()
+              }}
+            >
+              <input
+                disabled={!reQuestionDone}
+                type="text"
+                ref={inputRef}
+                placeholder="Tell Me More"
+                id="question"
+              />
+              <button id="submit" onClick={requeryHandler}>
+                ASK
+              </button>
+            </form>
           </div>
         )}
 

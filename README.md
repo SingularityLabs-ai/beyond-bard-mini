@@ -1,4 +1,4 @@
-# Glarity - Summary for Google/YouTube with ChatGPT
+# BardEverywhere - Summary for Google/YouTube with ChatGPT
 
 Chrome extension to view ChatGPT summaries alongside Google search results and YouTube videos, also supports Yahoo! ニュース、PubMed、PMC、NewsPicks、Github、Nikkei、 Bing、Google Patents,and any page summary.
 
@@ -121,8 +121,8 @@ Disable "Prevent sites from fingerprinting me based on my language preferences" 
 
 ### Packages
 
-- [Chromium](packages/Glarity-chromium.zip)
-- [Firefox](packages/Glarity-firefox.zip)
+- [Chromium](packages/BardEverywhere-chromium.zip)
+- [Firefox](packages/BardEverywhere-firefox.zip)
 
 ### Chrome
 

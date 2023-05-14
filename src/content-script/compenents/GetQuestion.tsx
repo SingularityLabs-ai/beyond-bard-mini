@@ -370,6 +370,7 @@ export default async function getQuestion() {
   }
 
   // Google
+  console.debug("GetQuestion siteName(possibly Google):", siteName)
   await waitForElm(siteConfig.inputQuery[0])
   const searchInput = getPossibleElementByQuerySelector<HTMLInputElement>(siteConfig.inputQuery)
 
@@ -437,6 +438,7 @@ export default async function getQuestion() {
       prompt: Instructions,
     })
 
+    console.debug("GetQuestion question:", searchList ? queryText : searchValueWithLanguageOption)
     return {
       question: searchList ? queryText : searchValueWithLanguageOption,
     }

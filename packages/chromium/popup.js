@@ -34,7 +34,7 @@
   ));
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // node_modules/.pnpm/preact@10.13.1/node_modules/preact/dist/preact.module.js
+  // node_modules/preact/dist/preact.module.js
   function h(n2, l3) {
     for (var u3 in l3)
       n2[u3] = l3[u3];
@@ -188,7 +188,7 @@
             break n;
           } catch (n3) {
           }
-        "function" == typeof u3 || (null == u3 || false === u3 && -1 == l3.indexOf("-") ? n2.removeAttribute(l3) : n2.setAttribute(l3, u3));
+        "function" == typeof u3 || (null == u3 || false === u3 && "-" !== l3[4] ? n2.removeAttribute(l3) : n2.setAttribute(l3, u3));
       }
   }
   function j(n2) {
@@ -341,7 +341,7 @@
   }
   var n, l, u, i, t, r, o, f, e, c, s, a;
   var init_preact_module = __esm({
-    "node_modules/.pnpm/preact@10.13.1/node_modules/preact/dist/preact.module.js"() {
+    "node_modules/preact/dist/preact.module.js"() {
       c = {};
       s = [];
       a = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
@@ -368,9 +368,9 @@
     }
   });
 
-  // node_modules/.pnpm/webextension-polyfill@0.10.0/node_modules/webextension-polyfill/dist/browser-polyfill.js
+  // node_modules/webextension-polyfill/dist/browser-polyfill.js
   var require_browser_polyfill = __commonJS({
-    "node_modules/.pnpm/webextension-polyfill@0.10.0/node_modules/webextension-polyfill/dist/browser-polyfill.js"(exports, module) {
+    "node_modules/webextension-polyfill/dist/browser-polyfill.js"(exports, module) {
       (function(global, factory) {
         if (typeof define === "function" && define.amd) {
           define("webextension-polyfill", ["module"], factory);
@@ -1362,7 +1362,7 @@
     }
   });
 
-  // node_modules/.pnpm/preact@10.13.1/node_modules/preact/hooks/dist/hooks.module.js
+  // node_modules/preact/hooks/dist/hooks.module.js
   function d2(t3, u3) {
     l.__h && l.__h(r2, t3, o2 || u3), o2 = 0;
     var i3 = r2.__H || (r2.__H = { __: [], __h: [] });
@@ -1496,7 +1496,7 @@
   }
   var t2, r2, u2, i2, o2, f2, c2, e2, a2, v2, l2, m2, g2;
   var init_hooks_module = __esm({
-    "node_modules/.pnpm/preact@10.13.1/node_modules/preact/hooks/dist/hooks.module.js"() {
+    "node_modules/preact/hooks/dist/hooks.module.js"() {
       init_preact_module();
       o2 = 0;
       f2 = [];
@@ -1547,7 +1547,7 @@
     }
   });
 
-  // node_modules/.pnpm/preact@10.13.1/node_modules/preact/compat/dist/compat.module.js
+  // node_modules/preact/compat/dist/compat.module.js
   function g3(n2, t3) {
     for (var e3 in t3)
       n2[e3] = t3[e3];
@@ -1693,7 +1693,7 @@
   }
   var R, N2, A3, O2, T3, I2, W, B3, H2, Z, Y, $2, q3, K, tn, en, rn, un, on, ln, cn, dn, pn, mn, Sn, Cn;
   var init_compat_module = __esm({
-    "node_modules/.pnpm/preact@10.13.1/node_modules/preact/compat/dist/compat.module.js"() {
+    "node_modules/preact/compat/dist/compat.module.js"() {
       init_preact_module();
       init_preact_module();
       init_hooks_module();
@@ -1812,27 +1812,26 @@
       l.event = function(n2) {
         return K && (n2 = K(n2)), n2.persist = Q, n2.isPropagationStopped = X, n2.isDefaultPrevented = nn, n2.nativeEvent = n2;
       };
-      en = { configurable: true, get: function() {
+      en = { enumerable: false, configurable: true, get: function() {
         return this.class;
       } };
       rn = l.vnode;
       l.vnode = function(n2) {
-        var t3 = n2.type, e3 = n2.props, u3 = e3;
-        if ("string" == typeof t3) {
-          for (var o4 in u3 = {}, e3) {
-            var i3 = e3[o4];
-            if (!("value" === o4 && "defaultValue" in e3 && null == i3 || $2 && "children" === o4 && "noscript" === t3)) {
+        "string" == typeof n2.type && function(n3) {
+          var t3 = n3.props, e3 = n3.type, u3 = {};
+          for (var o4 in t3) {
+            var i3 = t3[o4];
+            if (!("value" === o4 && "defaultValue" in t3 && null == i3 || $2 && "children" === o4 && "noscript" === e3 || "class" === o4 || "className" === o4)) {
               var l3 = o4.toLowerCase();
-              "defaultValue" === o4 && "value" in e3 && null == e3.value ? o4 = "value" : "download" === o4 && true === i3 ? i3 = "" : "ondoubleclick" === l3 ? o4 = "ondblclick" : "onchange" !== l3 || "input" !== t3 && "textarea" !== t3 || q3(e3.type) ? "onfocus" === l3 ? o4 = "onfocusin" : "onblur" === l3 ? o4 = "onfocusout" : Z.test(o4) ? o4 = l3 : -1 === t3.indexOf("-") && H2.test(o4) ? o4 = o4.replace(Y, "-$&").toLowerCase() : null === i3 && (i3 = void 0) : l3 = o4 = "oninput", "oninput" === l3 && u3[o4 = l3] && (o4 = "oninputCapture"), u3[o4] = i3;
+              "defaultValue" === o4 && "value" in t3 && null == t3.value ? o4 = "value" : "download" === o4 && true === i3 ? i3 = "" : "ondoubleclick" === l3 ? o4 = "ondblclick" : "onchange" !== l3 || "input" !== e3 && "textarea" !== e3 || q3(t3.type) ? "onfocus" === l3 ? o4 = "onfocusin" : "onblur" === l3 ? o4 = "onfocusout" : Z.test(o4) ? o4 = l3 : -1 === e3.indexOf("-") && H2.test(o4) ? o4 = o4.replace(Y, "-$&").toLowerCase() : null === i3 && (i3 = void 0) : l3 = o4 = "oninput", "oninput" === l3 && u3[o4 = l3] && (o4 = "oninputCapture"), u3[o4] = i3;
             }
           }
-          "select" == t3 && u3.multiple && Array.isArray(u3.value) && (u3.value = P(e3.children).forEach(function(n3) {
-            n3.props.selected = -1 != u3.value.indexOf(n3.props.value);
-          })), "select" == t3 && null != u3.defaultValue && (u3.value = P(e3.children).forEach(function(n3) {
-            n3.props.selected = u3.multiple ? -1 != u3.defaultValue.indexOf(n3.props.value) : u3.defaultValue == n3.props.value;
-          })), n2.props = u3, e3.class != e3.className && (en.enumerable = "className" in e3, null != e3.className && (u3.class = e3.className), Object.defineProperty(u3, "className", en));
-        }
-        n2.$$typeof = B3, rn && rn(n2);
+          "select" == e3 && u3.multiple && Array.isArray(u3.value) && (u3.value = P(t3.children).forEach(function(n4) {
+            n4.props.selected = -1 != u3.value.indexOf(n4.props.value);
+          })), "select" == e3 && null != u3.defaultValue && (u3.value = P(t3.children).forEach(function(n4) {
+            n4.props.selected = u3.multiple ? -1 != u3.defaultValue.indexOf(n4.props.value) : u3.defaultValue == n4.props.value;
+          })), t3.class && !t3.className ? (u3.class = t3.class, Object.defineProperty(u3, "className", en)) : (t3.className && !t3.class || t3.class && t3.className) && (u3.class = u3.className = t3.className), n3.props = u3;
+        }(n2), n2.$$typeof = B3, rn && rn(n2);
       };
       un = l.__r;
       l.__r = function(n2) {
@@ -1860,9 +1859,9 @@
     }
   });
 
-  // node_modules/.pnpm/@preact+compat@17.1.2_preact@10.13.1/node_modules/@preact/compat/index.mjs
-  var compat_exports = {};
-  __export(compat_exports, {
+  // node_modules/react/index.mjs
+  var react_exports = {};
+  __export(react_exports, {
     Children: () => O2,
     Component: () => k,
     Fragment: () => _,
@@ -1907,18 +1906,18 @@
     useTransition: () => bn,
     version: () => cn
   });
-  var init_compat = __esm({
-    "node_modules/.pnpm/@preact+compat@17.1.2_preact@10.13.1/node_modules/@preact/compat/index.mjs"() {
+  var init_react = __esm({
+    "node_modules/react/index.mjs"() {
       init_compat_module();
       init_compat_module();
     }
   });
 
-  // node_modules/.pnpm/use-sync-external-store@1.2.0_@preact+compat@17.1.2/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.production.min.js
+  // node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.production.min.js
   var require_use_sync_external_store_shim_production_min = __commonJS({
-    "node_modules/.pnpm/use-sync-external-store@1.2.0_@preact+compat@17.1.2/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.production.min.js"(exports) {
+    "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.production.min.js"(exports) {
       "use strict";
-      var e3 = (init_compat(), __toCommonJS(compat_exports));
+      var e3 = (init_react(), __toCommonJS(react_exports));
       function h3(a3, b3) {
         return a3 === b3 && (0 !== a3 || 1 / a3 === 1 / b3) || a3 !== a3 && b3 !== b3;
       }
@@ -1961,9 +1960,9 @@
     }
   });
 
-  // node_modules/.pnpm/use-sync-external-store@1.2.0_@preact+compat@17.1.2/node_modules/use-sync-external-store/shim/index.js
+  // node_modules/use-sync-external-store/shim/index.js
   var require_shim = __commonJS({
-    "node_modules/.pnpm/use-sync-external-store@1.2.0_@preact+compat@17.1.2/node_modules/use-sync-external-store/shim/index.js"(exports, module) {
+    "node_modules/use-sync-external-store/shim/index.js"(exports, module) {
       "use strict";
       if (true) {
         module.exports = require_use_sync_external_store_shim_production_min();
@@ -1981,20 +1980,19 @@
 
   // src/config/index.ts
   var import_webextension_polyfill = __toESM(require_browser_polyfill());
-  var APP_TITLE = `Glarity Summary`;
+  var APP_TITLE = `BardEverywhere Summary`;
 
   // src/popup/App.tsx
-  init_compat();
+  init_react();
 
-  // node_modules/.pnpm/swr@2.0.3_@preact+compat@17.1.2/node_modules/swr/core/dist/index.mjs
-  init_compat();
+  // node_modules/swr/core/dist/index.mjs
+  init_react();
   var import_shim = __toESM(require_shim(), 1);
 
-  // node_modules/.pnpm/swr@2.0.3_@preact+compat@17.1.2/node_modules/swr/_internal/dist/index.mjs
-  init_compat();
+  // node_modules/swr/_internal/dist/index.mjs
+  init_react();
   var SWRGlobalState = /* @__PURE__ */ new WeakMap();
   var EMPTY_CACHE = {};
-  var INITIAL_CACHE = {};
   var noop = () => {
   };
   var UNDEFINED = (
@@ -2019,24 +2017,11 @@
       () => cache2.get(key) || EMPTY_CACHE,
       // Setter
       (info) => {
-        if (!isUndefined(key)) {
-          const prev = cache2.get(key);
-          if (!(key in INITIAL_CACHE)) {
-            INITIAL_CACHE[key] = prev;
-          }
-          state[5](key, mergeObjects(prev, info), prev || EMPTY_CACHE);
-        }
+        const prev = cache2.get(key);
+        state[5](key, mergeObjects(prev, info), prev || EMPTY_CACHE);
       },
       // Subscriber
-      state[6],
-      // Get server cache snapshot
-      () => {
-        if (!isUndefined(key)) {
-          if (key in INITIAL_CACHE)
-            return INITIAL_CACHE[key];
-        }
-        return cache2.get(key) || EMPTY_CACHE;
-      }
+      state[6]
     ];
   };
   var table = /* @__PURE__ */ new WeakMap();
@@ -2300,7 +2285,7 @@
         const subs = subscriptions[key];
         if (subs) {
           for (let i3 = subs.length; i3--; ) {
-            subs[i3](value, prev);
+            subs[i3](prev, value);
           }
         }
       };
@@ -2485,12 +2470,12 @@
   };
   setupDevTools();
 
-  // node_modules/.pnpm/swr@2.0.3_@preact+compat@17.1.2/node_modules/swr/core/dist/index.mjs
+  // node_modules/swr/core/dist/index.mjs
   var WITH_DEDUPE = {
     dedupe: true
   };
   var useSWRHandler = (_key, fetcher, config) => {
-    const { cache: cache2, compare: compare2, suspense, fallbackData, revalidateOnMount, revalidateIfStale, refreshInterval, refreshWhenHidden, refreshWhenOffline, keepPreviousData } = config;
+    const { cache: cache2, compare: compare2, suspense, fallbackData, revalidateOnMount, refreshInterval, refreshWhenHidden, refreshWhenOffline, keepPreviousData } = config;
     const [EVENT_REVALIDATORS, MUTATION, FETCH] = SWRGlobalState.get(cache2);
     const [key, fnArg] = serialize(_key);
     const initialMountedRef = _2(false);
@@ -2500,25 +2485,19 @@
     const configRef = _2(config);
     const getConfig = () => configRef.current;
     const isActive = () => getConfig().isVisible() && getConfig().isOnline();
-    const [getCache, setCache, subscribeCache, getInitialCache] = createCacheHelper(cache2, key);
+    const [getCache, setCache, subscribeCache] = createCacheHelper(cache2, key);
     const stateDependencies = _2({}).current;
     const fallback = isUndefined(fallbackData) ? config.fallback[key] : fallbackData;
     const isEqual = (prev, current) => {
       let equal = true;
       for (const _4 in stateDependencies) {
         const t3 = _4;
-        if (t3 === "data") {
-          if (!compare2(current[t3], prev[t3])) {
-            if (isUndefined(prev[t3])) {
-              if (!compare2(current[t3], returnedData)) {
-                equal = false;
-              }
-            } else {
+        if (!compare2(current[t3], prev[t3])) {
+          if (t3 === "data" && isUndefined(prev[t3])) {
+            if (!compare2(current[t3], returnedData)) {
               equal = false;
             }
-          }
-        } else {
-          if (current[t3] !== prev[t3]) {
+          } else {
             equal = false;
           }
         }
@@ -2537,11 +2516,10 @@
           return false;
         if (suspense)
           return false;
-        if (!isUndefined(revalidateIfStale))
-          return revalidateIfStale;
         return true;
       })();
-      const getSelectedCache = (state) => {
+      const getSelectedCache = () => {
+        const state = getCache();
         const snapshot = mergeObjects(state);
         delete snapshot._k;
         if (!shouldStartRequest) {
@@ -2553,21 +2531,17 @@
           ...snapshot
         };
       };
-      let memorizedSnapshot = getSelectedCache(getCache());
-      const memorizedInitialSnapshot = getSelectedCache(getInitialCache());
-      return [
-        () => {
-          const newSnapshot = getSelectedCache(getCache());
-          return isEqual(newSnapshot, memorizedSnapshot) ? memorizedSnapshot : memorizedSnapshot = newSnapshot;
-        },
-        () => memorizedInitialSnapshot
-      ];
+      let memorizedSnapshot = getSelectedCache();
+      return () => {
+        const snapshot = getSelectedCache();
+        return isEqual(snapshot, memorizedSnapshot) ? memorizedSnapshot : memorizedSnapshot = snapshot;
+      };
     }, [
       cache2,
       key
     ]);
     const cached = (0, import_shim.useSyncExternalStore)(T2(
-      (callback) => subscribeCache(key, (current, prev) => {
+      (callback) => subscribeCache(key, (prev, current) => {
         if (!isEqual(prev, current))
           callback();
       }),
@@ -2576,24 +2550,21 @@
         cache2,
         key
       ]
-    ), getSnapshot[0], getSnapshot[1]);
+    ), getSnapshot, getSnapshot);
     const isInitialMount = !initialMountedRef.current;
-    const hasRevalidator = EVENT_REVALIDATORS[key] && EVENT_REVALIDATORS[key].length > 0;
     const cachedData = cached.data;
     const data = isUndefined(cachedData) ? fallback : cachedData;
     const error = cached.error;
     const laggyDataRef = _2(data);
     const returnedData = keepPreviousData ? isUndefined(cachedData) ? laggyDataRef.current : cachedData : data;
     const shouldDoInitialRevalidation = (() => {
-      if (hasRevalidator && !isUndefined(error))
-        return false;
       if (isInitialMount && !isUndefined(revalidateOnMount))
         return revalidateOnMount;
       if (getConfig().isPaused())
         return false;
       if (suspense)
-        return isUndefined(data) ? false : revalidateIfStale;
-      return isUndefined(data) || revalidateIfStale;
+        return isUndefined(data) ? false : config.revalidateIfStale;
+      return isUndefined(data) || config.revalidateIfStale;
     })();
     const defaultValidatingState = !!(key && fetcher && isInitialMount && shouldDoInitialRevalidation);
     const isValidating = isUndefined(cached.isValidating) ? defaultValidatingState : cached.isValidating;
@@ -2845,7 +2816,7 @@
   // src/popup/App.tsx
   var import_webextension_polyfill2 = __toESM(require_browser_polyfill());
 
-  // node_modules/.pnpm/preact@10.13.1/node_modules/preact/jsx-runtime/dist/jsxRuntime.module.js
+  // node_modules/preact/jsx-runtime/dist/jsxRuntime.module.js
   init_preact_module();
   init_preact_module();
   var _3 = 0;

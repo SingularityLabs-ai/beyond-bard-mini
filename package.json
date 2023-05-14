@@ -23,6 +23,7 @@
     "inter-ui": "^3.19.3",
     "jquery": "^3.6.3",
     "lodash-es": "^4.17.21",
+    "ofetch": "^1.0.1",
     "preact": "^10.13.1",
     "prop-types": "^15.8.1",
     "punycode": "^2.1.1",

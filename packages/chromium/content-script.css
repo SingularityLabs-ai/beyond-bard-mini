@@ -407,7 +407,7 @@
   }
 }
 
-/* temp_stylePlugin:ni:sha-256;jN16BIomiWIlz3lAdrbJyv2OdIJxPdkX6MbWvVVC8Ww */
+/* temp_stylePlugin:ni:sha-256;UESSfBfG5NvARB5D1ZS0nMfcK6mc5AZQ3vdzUa-fguk */
 .glarity--container.gpt--light {
 }
 .glarity--container.gpt--light .glarity--chatgpt {
@@ -2585,4 +2585,29 @@ span.glarity--header__logo {
   .glarity--summary .glarity--card {
     width: calc(100vw - 30px);
   }
+}
+form#requestion input#question {
+  border-radius: 10px;
+  border: 2px solid #8e8ea0;
+  margin: 0px 2px 0px 2px;
+  padding: 1rem;
+  width: 100%;
+  outline: 2px #1b8f76;
+}
+form#requestion input#question:focus {
+  border: 2px solid #1b8f76;
+  outline: none;
+}
+form#requestion button#submit {
+  background-color: #1b8f76;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 2px 0px 2px;
+  cursor: pointer;
+  border-radius: 10px;
 }

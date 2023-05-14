@@ -1,4 +1,4 @@
-# # Glarity - Summary for Google/YouTube with ChatGPT
+# # BardEverywhere - Summary for Google/YouTube with ChatGPT
 
 Chrome 浏览器扩展实现在 Google 搜索结果和 YouTube 视频旁边展示 ChatGPT 摘要，同时支持 Yahoo! JAPAN ニュース、PubMed、PMC、NewsPicks、Github、Nikkei、Bing、Google Patents, 以及任意网页的总结。
 
@@ -121,8 +121,8 @@ Disable "Prevent sites from fingerprinting me based on my language preferences" 
 
 ### 扩展包
 
-- [Chromium](packages/Glarity-chromium.zip)
-- [Firefox](packages/Glarity-firefox.zip)
+- [Chromium](packages/BardEverywhere-chromium.zip)
+- [Firefox](packages/BardEverywhere-firefox.zip)
 
 ### Chrome
 

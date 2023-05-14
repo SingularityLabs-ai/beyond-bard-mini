@@ -13,6 +13,7 @@ import '@/content-script/styles.scss'
 const siteConfig = sietConfigFn()
 
 async function Run() {
+  console.debug("index Run")
   const userConfig = await getUserConfig()
   const siteRegex = new RegExp(
     Object.values(config)
@@ -40,6 +41,7 @@ async function Run() {
   }
 
   Browser.runtime.onMessage.addListener((message, _, sendResponse) => {
+    console.debug("index onMessage", message)
     const { type, data } = message
     switch (type) {
       case 'CHATGPT_TAB_CURRENT': {

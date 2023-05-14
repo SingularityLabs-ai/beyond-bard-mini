@@ -11,7 +11,7 @@ dotenv.config()
 
 const outdir = 'build'
 const packagesDir = 'packages'
-const appName = 'Glarity-'
+const appName = 'BardEverywhere-'
 
 const isDev = process.env.NODE_ENV === 'dev'
 
@@ -25,8 +25,8 @@ let buildConfig = {
   bundle: true,
   outdir: outdir,
   treeShaking: true,
-  minify: true,
-  drop: ['console', 'debugger'],
+  minify: false,
+  drop: [],//'console', 'debugger'],
   legalComments: 'none',
   define: {
     'process.env.NODE_ENV': '"production"',

@@ -13,8 +13,8 @@
 		55905B5629C458A7007DF3AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55905B5429C458A7007DF3AF /* Main.storyboard */; };
 		55905B5F29C458A7007DF3AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55905B5E29C458A7007DF3AF /* AppDelegate.swift */; };
 		55905B6229C458A7007DF3AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55905B6029C458A7007DF3AF /* Main.storyboard */; };
-		55905B6A29C458A7007DF3AF /* Glarity Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 55905B6929C458A7007DF3AF /* Glarity Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		55905B7429C458A7007DF3AF /* Glarity Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 55905B7329C458A7007DF3AF /* Glarity Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		55905B6A29C458A7007DF3AF /* BardEverywhere Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 55905B6929C458A7007DF3AF /* BardEverywhere Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		55905B7429C458A7007DF3AF /* BardEverywhere Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 55905B7329C458A7007DF3AF /* BardEverywhere Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		55905B7A29C458A7007DF3AF /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 55905B3D29C458A5007DF3AF /* Main.html */; };
 		55905B7B29C458A7007DF3AF /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 55905B3D29C458A5007DF3AF /* Main.html */; };
 		55905B7C29C458A7007DF3AF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 55905B3F29C458A5007DF3AF /* Icon.png */; };
@@ -69,14 +69,14 @@
 			containerPortal = 55905B3729C458A5007DF3AF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 55905B6829C458A7007DF3AF;
-			remoteInfo = "Glarity Extension (iOS)";
+			remoteInfo = "BardEverywhere Extension (iOS)";
 		};
 		55905B7529C458A7007DF3AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 55905B3729C458A5007DF3AF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 55905B7229C458A7007DF3AF;
-			remoteInfo = "Glarity Extension (macOS)";
+			remoteInfo = "BardEverywhere Extension (macOS)";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -87,7 +87,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				55905B6A29C458A7007DF3AF /* Glarity Extension.appex in Embed Foundation Extensions */,
+				55905B6A29C458A7007DF3AF /* BardEverywhere Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,7 +98,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				55905B7429C458A7007DF3AF /* Glarity Extension.appex in Embed Foundation Extensions */,
+				55905B7429C458A7007DF3AF /* BardEverywhere Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,22 +113,22 @@
 		55905B4229C458A5007DF3AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		55905B4329C458A7007DF3AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55905B4529C458A7007DF3AF /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
-		55905B4A29C458A7007DF3AF /* Glarity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glarity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55905B4A29C458A7007DF3AF /* BardEverywhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BardEverywhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55905B4D29C458A7007DF3AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55905B4F29C458A7007DF3AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		55905B5229C458A7007DF3AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55905B5529C458A7007DF3AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55905B5729C458A7007DF3AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55905B5C29C458A7007DF3AF /* Glarity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glarity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55905B5C29C458A7007DF3AF /* BardEverywhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BardEverywhere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55905B5E29C458A7007DF3AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55905B6129C458A7007DF3AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55905B6329C458A7007DF3AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55905B6429C458A7007DF3AF /* Glarity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Glarity.entitlements; sourceTree = "<group>"; };
-		55905B6929C458A7007DF3AF /* Glarity Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Glarity Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55905B6429C458A7007DF3AF /* BardEverywhere.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BardEverywhere.entitlements; sourceTree = "<group>"; };
+		55905B6929C458A7007DF3AF /* BardEverywhere Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BardEverywhere Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55905B6E29C458A7007DF3AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55905B7329C458A7007DF3AF /* Glarity Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Glarity Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55905B7329C458A7007DF3AF /* BardEverywhere Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BardEverywhere Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55905B7829C458A7007DF3AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55905B7929C458A7007DF3AF /* Glarity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Glarity.entitlements; sourceTree = "<group>"; };
+		55905B7929C458A7007DF3AF /* BardEverywhere.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BardEverywhere.entitlements; sourceTree = "<group>"; };
 		55905B9929C458A8007DF3AF /* content-script.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = "content-script.css"; path = "../../../packages/chromium/content-script.css"; sourceTree = "<group>"; };
 		55905B9A29C458A8007DF3AF /* logo-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-128.png"; path = "../../../packages/chromium/logo-128.png"; sourceTree = "<group>"; };
 		55905B9B29C458A8007DF3AF /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.js; path = ../../../packages/chromium/popup.js; sourceTree = "<group>"; };
@@ -226,10 +226,10 @@
 		55905B4B29C458A7007DF3AF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				55905B4A29C458A7007DF3AF /* Glarity.app */,
-				55905B5C29C458A7007DF3AF /* Glarity.app */,
-				55905B6929C458A7007DF3AF /* Glarity Extension.appex */,
-				55905B7329C458A7007DF3AF /* Glarity Extension.appex */,
+				55905B4A29C458A7007DF3AF /* BardEverywhere.app */,
+				55905B5C29C458A7007DF3AF /* BardEverywhere.app */,
+				55905B6929C458A7007DF3AF /* BardEverywhere Extension.appex */,
+				55905B7329C458A7007DF3AF /* BardEverywhere Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 				55905B5E29C458A7007DF3AF /* AppDelegate.swift */,
 				55905B6029C458A7007DF3AF /* Main.storyboard */,
 				55905B6329C458A7007DF3AF /* Info.plist */,
-				55905B6429C458A7007DF3AF /* Glarity.entitlements */,
+				55905B6429C458A7007DF3AF /* BardEverywhere.entitlements */,
 			);
 			path = "macOS (App)";
 			sourceTree = "<group>";
@@ -269,7 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				55905B7829C458A7007DF3AF /* Info.plist */,
-				55905B7929C458A7007DF3AF /* Glarity.entitlements */,
+				55905B7929C458A7007DF3AF /* BardEverywhere.entitlements */,
 			);
 			path = "macOS (Extension)";
 			sourceTree = "<group>";
@@ -302,9 +302,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		55905B4929C458A7007DF3AF /* Glarity (iOS) */ = {
+		55905B4929C458A7007DF3AF /* BardEverywhere (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 55905B8E29C458A7007DF3AF /* Build configuration list for PBXNativeTarget "Glarity (iOS)" */;
+			buildConfigurationList = 55905B8E29C458A7007DF3AF /* Build configuration list for PBXNativeTarget "BardEverywhere (iOS)" */;
 			buildPhases = (
 				55905B4629C458A7007DF3AF /* Sources */,
 				55905B4729C458A7007DF3AF /* Frameworks */,
@@ -316,14 +316,14 @@
 			dependencies = (
 				55905B6C29C458A7007DF3AF /* PBXTargetDependency */,
 			);
-			name = "Glarity (iOS)";
-			productName = "Glarity (iOS)";
-			productReference = 55905B4A29C458A7007DF3AF /* Glarity.app */;
+			name = "BardEverywhere (iOS)";
+			productName = "BardEverywhere (iOS)";
+			productReference = 55905B4A29C458A7007DF3AF /* BardEverywhere.app */;
 			productType = "com.apple.product-type.application";
 		};
-		55905B5B29C458A7007DF3AF /* Glarity (macOS) */ = {
+		55905B5B29C458A7007DF3AF /* BardEverywhere (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 55905B9529C458A7007DF3AF /* Build configuration list for PBXNativeTarget "Glarity (macOS)" */;
+			buildConfigurationList = 55905B9529C458A7007DF3AF /* Build configuration list for PBXNativeTarget "BardEverywhere (macOS)" */;
 			buildPhases = (
 				55905B5829C458A7007DF3AF /* Sources */,
 				55905B5929C458A7007DF3AF /* Frameworks */,
@@ -335,14 +335,14 @@
 			dependencies = (
 				55905B7629C458A7007DF3AF /* PBXTargetDependency */,
 			);
-			name = "Glarity (macOS)";
-			productName = "Glarity (macOS)";
-			productReference = 55905B5C29C458A7007DF3AF /* Glarity.app */;
+			name = "BardEverywhere (macOS)";
+			productName = "BardEverywhere (macOS)";
+			productReference = 55905B5C29C458A7007DF3AF /* BardEverywhere.app */;
 			productType = "com.apple.product-type.application";
 		};
-		55905B6829C458A7007DF3AF /* Glarity Extension (iOS) */ = {
+		55905B6829C458A7007DF3AF /* BardEverywhere Extension (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 55905B8A29C458A7007DF3AF /* Build configuration list for PBXNativeTarget "Glarity Extension (iOS)" */;
+			buildConfigurationList = 55905B8A29C458A7007DF3AF /* Build configuration list for PBXNativeTarget "BardEverywhere Extension (iOS)" */;
 			buildPhases = (
 				55905B6529C458A7007DF3AF /* Sources */,
 				55905B6629C458A7007DF3AF /* Frameworks */,
@@ -352,14 +352,14 @@
 			);
 			dependencies = (
 			);
-			name = "Glarity Extension (iOS)";
-			productName = "Glarity Extension (iOS)";
-			productReference = 55905B6929C458A7007DF3AF /* Glarity Extension.appex */;
+			name = "BardEverywhere Extension (iOS)";
+			productName = "BardEverywhere Extension (iOS)";
+			productReference = 55905B6929C458A7007DF3AF /* BardEverywhere Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		55905B7229C458A7007DF3AF /* Glarity Extension (macOS) */ = {
+		55905B7229C458A7007DF3AF /* BardEverywhere Extension (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 55905B9129C458A7007DF3AF /* Build configuration list for PBXNativeTarget "Glarity Extension (macOS)" */;
+			buildConfigurationList = 55905B9129C458A7007DF3AF /* Build configuration list for PBXNativeTarget "BardEverywhere Extension (macOS)" */;
 			buildPhases = (
 				55905B6F29C458A7007DF3AF /* Sources */,
 				55905B7029C458A7007DF3AF /* Frameworks */,
@@ -369,9 +369,9 @@
 			);
 			dependencies = (
 			);
-			name = "Glarity Extension (macOS)";
-			productName = "Glarity Extension (macOS)";
-			productReference = 55905B7329C458A7007DF3AF /* Glarity Extension.appex */;
+			name = "BardEverywhere Extension (macOS)";
+			productName = "BardEverywhere Extension (macOS)";
+			productReference = 55905B7329C458A7007DF3AF /* BardEverywhere Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -398,7 +398,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 55905B3A29C458A5007DF3AF /* Build configuration list for PBXProject "Glarity" */;
+			buildConfigurationList = 55905B3A29C458A5007DF3AF /* Build configuration list for PBXProject "BardEverywhere" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -411,10 +411,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				55905B4929C458A7007DF3AF /* Glarity (iOS) */,
-				55905B5B29C458A7007DF3AF /* Glarity (macOS) */,
-				55905B6829C458A7007DF3AF /* Glarity Extension (iOS) */,
-				55905B7229C458A7007DF3AF /* Glarity Extension (macOS) */,
+				55905B4929C458A7007DF3AF /* BardEverywhere (iOS) */,
+				55905B5B29C458A7007DF3AF /* BardEverywhere (macOS) */,
+				55905B6829C458A7007DF3AF /* BardEverywhere Extension (iOS) */,
+				55905B7229C458A7007DF3AF /* BardEverywhere Extension (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -536,12 +536,12 @@
 /* Begin PBXTargetDependency section */
 		55905B6C29C458A7007DF3AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 55905B6829C458A7007DF3AF /* Glarity Extension (iOS) */;
+			target = 55905B6829C458A7007DF3AF /* BardEverywhere Extension (iOS) */;
 			targetProxy = 55905B6B29C458A7007DF3AF /* PBXContainerItemProxy */;
 		};
 		55905B7629C458A7007DF3AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 55905B7229C458A7007DF3AF /* Glarity Extension (macOS) */;
+			target = 55905B7229C458A7007DF3AF /* BardEverywhere Extension (macOS) */;
 			targetProxy = 55905B7529C458A7007DF3AF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -698,7 +698,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Glarity Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "BardEverywhere Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -711,8 +711,8 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.Glarity.Extension;
-				PRODUCT_NAME = "Glarity Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.BardEverywhere.Extension;
+				PRODUCT_NAME = "BardEverywhere Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -728,7 +728,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Glarity Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "BardEverywhere Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -741,8 +741,8 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.Glarity.Extension;
-				PRODUCT_NAME = "Glarity Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.BardEverywhere.Extension;
+				PRODUCT_NAME = "BardEverywhere Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -762,7 +762,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Glarity;
+				INFOPLIST_KEY_CFBundleDisplayName = BardEverywhere;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -780,8 +780,8 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.Glarity;
-				PRODUCT_NAME = Glarity;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.BardEverywhere;
+				PRODUCT_NAME = BardEverywhere;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -799,7 +799,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Glarity;
+				INFOPLIST_KEY_CFBundleDisplayName = BardEverywhere;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -817,8 +817,8 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.Glarity;
-				PRODUCT_NAME = Glarity;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.BardEverywhere;
+				PRODUCT_NAME = BardEverywhere;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -830,13 +830,13 @@
 		55905B9229C458A7007DF3AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Glarity.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/BardEverywhere.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Glarity Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "BardEverywhere Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -849,8 +849,8 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.Glarity.Extension;
-				PRODUCT_NAME = "Glarity Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.BardEverywhere.Extension;
+				PRODUCT_NAME = "BardEverywhere Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -861,13 +861,13 @@
 		55905B9329C458A7007DF3AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Glarity.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/BardEverywhere.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Glarity Extension";
+				INFOPLIST_KEY_CFBundleDisplayName = "BardEverywhere Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -880,8 +880,8 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.Glarity.Extension;
-				PRODUCT_NAME = "Glarity Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.BardEverywhere.Extension;
+				PRODUCT_NAME = "BardEverywhere Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -895,13 +895,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Glarity.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/BardEverywhere.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Glarity;
+				INFOPLIST_KEY_CFBundleDisplayName = BardEverywhere;
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -916,8 +916,8 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.Glarity;
-				PRODUCT_NAME = Glarity;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.BardEverywhere;
+				PRODUCT_NAME = BardEverywhere;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -930,13 +930,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Glarity.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/BardEverywhere.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "macOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Glarity;
+				INFOPLIST_KEY_CFBundleDisplayName = BardEverywhere;
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -951,8 +951,8 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.Glarity;
-				PRODUCT_NAME = Glarity;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourCompany.BardEverywhere;
+				PRODUCT_NAME = BardEverywhere;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -962,7 +962,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		55905B3A29C458A5007DF3AF /* Build configuration list for PBXProject "Glarity" */ = {
+		55905B3A29C458A5007DF3AF /* Build configuration list for PBXProject "BardEverywhere" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55905B8829C458A7007DF3AF /* Debug */,
@@ -971,7 +971,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		55905B8A29C458A7007DF3AF /* Build configuration list for PBXNativeTarget "Glarity Extension (iOS)" */ = {
+		55905B8A29C458A7007DF3AF /* Build configuration list for PBXNativeTarget "BardEverywhere Extension (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55905B8B29C458A7007DF3AF /* Debug */,
@@ -980,7 +980,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		55905B8E29C458A7007DF3AF /* Build configuration list for PBXNativeTarget "Glarity (iOS)" */ = {
+		55905B8E29C458A7007DF3AF /* Build configuration list for PBXNativeTarget "BardEverywhere (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55905B8F29C458A7007DF3AF /* Debug */,
@@ -989,7 +989,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		55905B9129C458A7007DF3AF /* Build configuration list for PBXNativeTarget "Glarity Extension (macOS)" */ = {
+		55905B9129C458A7007DF3AF /* Build configuration list for PBXNativeTarget "BardEverywhere Extension (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55905B9229C458A7007DF3AF /* Debug */,
@@ -998,7 +998,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		55905B9529C458A7007DF3AF /* Build configuration list for PBXNativeTarget "Glarity (macOS)" */ = {
+		55905B9529C458A7007DF3AF /* Build configuration list for PBXNativeTarget "BardEverywhere (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55905B9629C458A7007DF3AF /* Debug */,

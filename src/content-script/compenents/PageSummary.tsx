@@ -96,6 +96,7 @@ function PageSummary(props: Props) {
 
   useEffect(() => {
     Browser.runtime.onMessage.addListener((message) => {
+      console.debug("PageSummary onMessage", message)
       const { type } = message
       if (type === 'OPEN_WEB_SUMMARY') {
         if (showCard) {

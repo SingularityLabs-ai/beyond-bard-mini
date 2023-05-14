@@ -12,7 +12,7 @@ interface Props {
   supportSites: Record<string, SearchEngine>
 }
 
-function EnableGlarity(props: Props) {
+function EnableBardEverywhere(props: Props) {
   const { enableSites, setEnableSites, allSites, supportSites } = props
   const { setToast } = useToasts()
   const [allSelect, setAllSelect] = useState(true)
@@ -47,9 +47,9 @@ function EnableGlarity(props: Props) {
       {!isIOS && (
         <>
           <Text h3 className="glarity--mt-5">
-            Enable/Disable Glarity
+            Enable/Disable BardEverywhere
             <Text font="12px" my={0}>
-              You can enable/disable the Glarity Summary on the following website.
+              You can enable/disable the BardEverywhere Summary on the following website.
             </Text>
           </Text>
 
@@ -85,4 +85,4 @@ function EnableGlarity(props: Props) {
   )
 }
 
-export default EnableGlarity
+export default EnableBardEverywhere
