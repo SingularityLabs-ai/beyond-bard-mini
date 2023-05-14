@@ -6,7 +6,7 @@ Chrome 浏览器扩展实现在 Google 搜索结果和 YouTube 视频旁边展�
 
 如果遇到不能选择 OpenAI API 模型, 麻烦删除并重新安装。
 
-或者尝试下载最新体验包 ([https://github.com/sparticleinc/chatgpt-google-summary-extension/tree/main/packages](https://github.com/sparticleinc/chatgpt-google-summary-extension/tree/main/packages)) 然后手动安装 ([https://github.com/sparticleinc/chatgpt-google-summary-extension#chrome](https://github.com/sparticleinc/chatgpt-google-summary-extension#chrome)).
+或者尝试下载最新体验包 ([https://github.com/ishandutta2007/bard-everywhere/tree/main/packages](https://github.com/ishandutta2007/bard-everywhere/tree/main/packages)) 然后手动安装 ([https://github.com/ishandutta2007/bard-everywhere#chrome](https://github.com/ishandutta2007/bard-everywhere#chrome)).
 
 ## 支持网站
 

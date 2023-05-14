@@ -37498,7 +37498,7 @@ and ensure you are accounting for this risk.
         /* @__PURE__ */ o3(
           "a",
           {
-            href: "https://github.com/sparticleinc/chatgpt-google-summary-extension/issues",
+            href: "https://github.com/ishandutta2007/bard-everywhere/issues",
             target: "_blank",
             rel: "noreferrer",
             children: "Feedback"
@@ -37508,7 +37508,7 @@ and ensure you are accounting for this risk.
         /* @__PURE__ */ o3(
           "a",
           {
-            href: "https://github.com/sparticleinc/chatgpt-google-summary-extension",
+            href: "https://github.com/ishandutta2007/bard-everywhere",
             target: "_blank",
             rel: "noreferrer",
             children: "Source code"

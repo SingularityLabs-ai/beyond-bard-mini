@@ -23,7 +23,7 @@ function Header() {
             Discord
           </a>
           <a
-            href="https://github.com/sparticleinc/chatgpt-google-summary-extension/issues"
+            href="https://github.com/ishandutta2007/bard-everywhere/issues"
             target="_blank"
             rel="noreferrer"
           >
@@ -33,7 +33,7 @@ function Header() {
             Twitter
           </a>
           <a
-            href="https://github.com/sparticleinc/chatgpt-google-summary-extension"
+            href="https://github.com/ishandutta2007/bard-everywhere"
             target="_blank"
             rel="noreferrer"
           >
