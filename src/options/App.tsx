@@ -26,7 +26,7 @@ import { isIOS } from '@/utils/utils'
 import Header from './components/Header'
 import CustomizePrompt from './components/CustomizePrompt'
 import PageSummaryComponent from './components/PageSummary'
-import EnableBardEverywhere from './components/EnableBardEverywhere'
+import EnableBeyondBard from './components/EnableBeyondBard'
 import { detectSystemColorScheme } from '@/utils/utils'
 import {
   videoSummaryPromptHightligt,
@@ -196,8 +196,8 @@ function OptionsPage(
           setPromptComment={setPromptComment}
         />
 
-        {/* Enable/Disable BardEverywhere */}
-        <EnableBardEverywhere
+        {/* Enable/Disable BeyondBard */}
+        <EnableBeyondBard
           enableSites={enableSites}
           setEnableSites={setEnableSites}
           allSites={allSites}

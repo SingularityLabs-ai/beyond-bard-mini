@@ -29,7 +29,7 @@ function Header() {
           >
             Feedback
           </a>
-          <a href="https://twitter.com/BardEverywhere_summary" target="_blank" rel="noreferrer">
+          <a href="https://twitter.com/BeyondBard_summary" target="_blank" rel="noreferrer">
             Twitter
           </a>
           <a

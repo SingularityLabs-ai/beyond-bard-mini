@@ -150,14 +150,14 @@ function ChatGPTContainer(props: Props) {
         <>
           <div className="glarity--chatgpt">
             <div className="glarity--header">
-              <div>
+              <div className="glarity--title-container">
                 <a
                   href="https://glarity.app"
                   rel="noreferrer"
                   target="_blank"
                   className="glarity--header__logo"
                 >
-                  <img src={logo} alt={APP_TITLE} />
+                  <img src={logo} alt={APP_TITLE}/>
                   {APP_TITLE}
                 </a>
                 <a href="javascript:;" className="glarity--header__logo" onClick={openOptionsPage}>

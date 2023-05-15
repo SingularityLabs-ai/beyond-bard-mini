@@ -90,10 +90,10 @@ function PageSummaryComponent(props: PageSummaryProps) {
               checked={pageSummaryEnable}
               onChange={onPageSummaryEnableChange}
             />{' '}
-            Show BardEverywhere Icon
+            Show BeyondBard Icon
           </Text>
           <Text className="glarity--mt-0" font="12px">
-            Once hidden, the BardEverywhere icon will no longer appear on the page. However, you can open
+            Once hidden, the BeyondBard icon will no longer appear on the page. However, you can open
             the page summary by clicking on the browser extension icon.
           </Text>
         </Card.Content>
@@ -103,7 +103,7 @@ function PageSummaryComponent(props: PageSummaryProps) {
             Whitelist Sites
           </Text>
           <Text className="glarity--mt-0" font="12px">
-            Only display the BardEverywhere icon on these sites (one URL per line).
+            Only display the BeyondBard icon on these sites (one URL per line).
           </Text>
           <Spacer h={0.5} />
           <Textarea
@@ -121,7 +121,7 @@ https://reddit.com"
             Blacklist Sites
           </Text>
           <Text className="glarity--mt-0" font="12px">
-            Do not display BardEverywhere icon on these sites (one URL per line).
+            Do not display BeyondBard icon on these sites (one URL per line).
           </Text>
           <Spacer h={0.5} />
           <Textarea

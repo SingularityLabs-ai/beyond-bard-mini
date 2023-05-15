@@ -32028,7 +32028,7 @@ https://www.viki.com
   var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
   var isFirefox = navigator.userAgent.indexOf("Firefox") != -1;
   var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-  var AppName = "Bard Everywhere - AI  chat for any website";
+  var AppName = "Beyond Bard - AI  chat for any website";
   function detectSystemColorScheme() {
     if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       return "dark" /* Dark */;
@@ -37504,7 +37504,7 @@ and ensure you are accounting for this risk.
             children: "Feedback"
           }
         ),
-        /* @__PURE__ */ o3("a", { href: "https://twitter.com/BardEverywhere_summary", target: "_blank", rel: "noreferrer", children: "Twitter" }),
+        /* @__PURE__ */ o3("a", { href: "https://twitter.com/BeyondBard_summary", target: "_blank", rel: "noreferrer", children: "Twitter" }),
         /* @__PURE__ */ o3(
           "a",
           {
@@ -37992,16 +37992,16 @@ The title is a bit exaggerated.
                   }
                 ),
                 " ",
-                "Show BardEverywhere Icon"
+                "Show BeyondBard Icon"
               ]
             }
           ),
-          /* @__PURE__ */ o3(text_default2, { className: "glarity--mt-0", font: "12px", children: "Once hidden, the BardEverywhere icon will no longer appear on the page. However, you can open the page summary by clicking on the browser extension icon." })
+          /* @__PURE__ */ o3(text_default2, { className: "glarity--mt-0", font: "12px", children: "Once hidden, the BeyondBard icon will no longer appear on the page. However, you can open the page summary by clicking on the browser extension icon." })
         ] }),
         /* @__PURE__ */ o3(divider_default2, {}),
         /* @__PURE__ */ o3(card_default2.Content, { children: [
           /* @__PURE__ */ o3(text_default2, { h4: true, className: "glarity--mb-0", children: "Whitelist Sites" }),
-          /* @__PURE__ */ o3(text_default2, { className: "glarity--mt-0", font: "12px", children: "Only display the BardEverywhere icon on these sites (one URL per line)." }),
+          /* @__PURE__ */ o3(text_default2, { className: "glarity--mt-0", font: "12px", children: "Only display the BeyondBard icon on these sites (one URL per line)." }),
           /* @__PURE__ */ o3(spacer_default2, { h: 0.5 }),
           /* @__PURE__ */ o3(
             textarea_default2,
@@ -38017,7 +38017,7 @@ The title is a bit exaggerated.
         /* @__PURE__ */ o3(divider_default2, {}),
         /* @__PURE__ */ o3(card_default2.Content, { children: [
           /* @__PURE__ */ o3(text_default2, { h4: true, className: "glarity--mb-0", children: "Blacklist Sites" }),
-          /* @__PURE__ */ o3(text_default2, { className: "glarity--mt-0", font: "12px", children: "Do not display BardEverywhere icon on these sites (one URL per line)." }),
+          /* @__PURE__ */ o3(text_default2, { className: "glarity--mt-0", font: "12px", children: "Do not display BeyondBard icon on these sites (one URL per line)." }),
           /* @__PURE__ */ o3(spacer_default2, { h: 0.5 }),
           /* @__PURE__ */ o3(
             textarea_default2,
@@ -38036,9 +38036,9 @@ The title is a bit exaggerated.
   }
   var PageSummary_default = PageSummaryComponent;
 
-  // src/options/components/EnableBardEverywhere.tsx
+  // src/options/components/EnableBeyondBard.tsx
   init_hooks_module();
-  function EnableBardEverywhere(props) {
+  function EnableBeyondBard(props) {
     const { enableSites, setEnableSites, allSites, supportSites } = props;
     const { setToast } = use_toasts_default();
     const [allSelect, setAllSelect] = h2(true);
@@ -38065,8 +38065,8 @@ The title is a bit exaggerated.
     }, [enableSites, allSites]);
     return /* @__PURE__ */ o3(_, { children: !isIOS && /* @__PURE__ */ o3(_, { children: [
       /* @__PURE__ */ o3(text_default2, { h3: true, className: "glarity--mt-5", children: [
-        "Enable/Disable BardEverywhere",
-        /* @__PURE__ */ o3(text_default2, { font: "12px", my: 0, children: "You can enable/disable the BardEverywhere Summary on the following website." })
+        "Enable/Disable BeyondBard",
+        /* @__PURE__ */ o3(text_default2, { font: "12px", my: 0, children: "You can enable/disable the BeyondBard Summary on the following website." })
       ] }),
       /* @__PURE__ */ o3(card_default2, { children: [
         /* @__PURE__ */ o3(card_default2.Content, { children: /* @__PURE__ */ o3(
@@ -38088,7 +38088,7 @@ The title is a bit exaggerated.
       ] })
     ] }) });
   }
-  var EnableBardEverywhere_default = EnableBardEverywhere;
+  var EnableBeyondBard_default = EnableBeyondBard;
 
   // src/options/App.tsx
   function OptionsPage(props) {
@@ -38209,7 +38209,7 @@ The title is a bit exaggerated.
           }
         ),
         /* @__PURE__ */ o3(
-          EnableBardEverywhere_default,
+          EnableBeyondBard_default,
           {
             enableSites,
             setEnableSites,

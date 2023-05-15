@@ -11,7 +11,7 @@ dotenv.config()
 
 const outdir = 'build'
 const packagesDir = 'packages'
-const appName = 'BardEverywhere-'
+const appName = 'BeyondBard-'
 
 const isDev = process.env.NODE_ENV === 'dev'
 

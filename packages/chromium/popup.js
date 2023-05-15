@@ -1980,7 +1980,7 @@
 
   // src/config/index.ts
   var import_webextension_polyfill = __toESM(require_browser_polyfill());
-  var APP_TITLE = `BardEverywhere Summary`;
+  var APP_TITLE = `BeyondBard Summary`;
 
   // src/popup/App.tsx
   init_react();

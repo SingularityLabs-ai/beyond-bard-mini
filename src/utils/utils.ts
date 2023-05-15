@@ -7,7 +7,7 @@ export const isFirefox = navigator.userAgent.indexOf('Firefox') != -1
 
 export const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
 
-export const AppName = 'Bard Everywhere - AI  chat for any website'
+export const AppName = 'Beyond Bard - AI  chat for any website'
 
 export function detectSystemColorScheme() {
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {

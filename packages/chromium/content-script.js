@@ -10854,7 +10854,7 @@
     };
   }
   var BASE_URL = "https://chat.openai.com";
-  var APP_TITLE = `BardEverywhere Summary`;
+  var APP_TITLE = `BeyondBard Summary`;
 
   // node_modules/preact/hooks/dist/hooks.module.js
   var t2;
@@ -13978,7 +13978,7 @@
             /* @__PURE__ */ o3(button_default2, { auto: true, type: "success", onClick: onBack, scale: 0.5, children: "Back" })
           ] }) : /* @__PURE__ */ o3(_, { children: [
             /* @__PURE__ */ o3(divider_default2, {}),
-            "Login to the ChatGPT web application to use the BardEverywhere Summary."
+            "Login to the ChatGPT web application to use the BeyondBard Summary."
           ] }) })
         }
       ) }),
@@ -92441,7 +92441,7 @@ ${replylanguagePrompt(language2)}`;
     };
     return /* @__PURE__ */ o3(_, { children: /* @__PURE__ */ o3(geist_provider_default2, { themeType, children: /* @__PURE__ */ o3(_, { children: /* @__PURE__ */ o3("div", { className: "glarity--chatgpt", children: [
       /* @__PURE__ */ o3("div", { className: "glarity--header", children: [
-        /* @__PURE__ */ o3("div", { children: [
+        /* @__PURE__ */ o3("div", { className: "glarity--title-container", children: [
           /* @__PURE__ */ o3(
             "a",
             {
