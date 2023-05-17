@@ -2,7 +2,7 @@
   "name": "__MSG_appName__",
   "description": "__MSG_appDesc__",
   "default_locale": "en",
-  "version": "1.7.0",
+  "version": "0.0.1",
   "manifest_version": 2,
   "icons": {
     "16": "logo-16.png",
@@ -13,6 +13,7 @@
   "permissions": [
     "storage",
     "https://*.openai.com/",
+    "https://*.google.com/",
     "activeTab",
     "tabs"
   ],
