@@ -152,7 +152,7 @@ function ChatGPTContainer(props: Props) {
             <div className="glarity--header">
               <div className="glarity--title-container">
                 <a
-                  href="https://glarity.app"
+                  href="https://ishandutta2007.github.io/BeyondBard"
                   rel="noreferrer"
                   target="_blank"
                   className="glarity--header__logo"

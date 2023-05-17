@@ -6,7 +6,7 @@ function Header() {
     <>
       <nav className="glarity--flex glarity--flex-row glarity--justify-between glarity--items-center glarity--mt-5 glarity--px-2">
         <div className="glarity--flex glarity--flex-row glarity--items-center glarity--gap-2">
-          <a href="https://glarity.app/" target="_blank" rel="noreferrer">
+          <a href="https://ishandutta2007.github.io/BeyondBard/" target="_blank" rel="noreferrer">
             <img
               src={logo}
               className="glarity--w-10 glarity--h-10 glarity--rounded-lg"

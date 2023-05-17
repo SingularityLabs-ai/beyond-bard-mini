@@ -91908,7 +91908,7 @@ ${replylanguagePrompt(language2)}`;
     return /* @__PURE__ */ o3(_, { children: showCard ? /* @__PURE__ */ o3("div", { className: "glarity--card", children: [
       /* @__PURE__ */ o3("div", { className: "glarity--card__head ", children: [
         /* @__PURE__ */ o3("div", { className: "glarity--card__head--title", children: [
-          /* @__PURE__ */ o3("a", { href: "https://glarity.app", rel: "noreferrer", target: "_blank", children: [
+          /* @__PURE__ */ o3("a", { href: "https://ishandutta2007.github.io/BeyondBard", rel: "noreferrer", target: "_blank", children: [
             /* @__PURE__ */ o3("img", { src: logo_default, alt: APP_TITLE }),
             " ",
             APP_TITLE
@@ -92418,7 +92418,7 @@ ${replylanguagePrompt(language2)}`;
           /* @__PURE__ */ o3(
             "a",
             {
-              href: "https://glarity.app",
+              href: "https://ishandutta2007.github.io/BeyondBard",
               rel: "noreferrer",
               target: "_blank",
               className: "glarity--header__logo",

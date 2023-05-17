@@ -131,7 +131,7 @@ function PageSummary(props: Props) {
         <div className="glarity--card">
           <div className="glarity--card__head ">
             <div className="glarity--card__head--title">
-              <a href="https://glarity.app" rel="noreferrer" target="_blank">
+              <a href="https://ishandutta2007.github.io/BeyondBard" rel="noreferrer" target="_blank">
                 <img src={logo} alt={APP_TITLE} /> {APP_TITLE}
               </a>{' '}
               <button

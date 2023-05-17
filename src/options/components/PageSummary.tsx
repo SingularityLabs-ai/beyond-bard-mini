@@ -107,7 +107,7 @@ function PageSummaryComponent(props: PageSummaryProps) {
           </Text>
           <Spacer h={0.5} />
           <Textarea
-            placeholder="https://glarity.app
+            placeholder="https://ishandutta2007.github.io/BeyondBard
 https://reddit.com"
             resize={'vertical'}
             value={pageSummaryWhitelist}
@@ -125,7 +125,7 @@ https://reddit.com"
           </Text>
           <Spacer h={0.5} />
           <Textarea
-            placeholder="https://glarity.app
+            placeholder="https://ishandutta2007.github.io/BeyondBard
 https://reddit.com"
             resize={'vertical'}
             value={pageSummaryBlacklist}

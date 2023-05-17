@@ -19277,7 +19277,7 @@ and ensure you are accounting for this risk.
   // src/options/components/Header.tsx
   function Header() {
     return /* @__PURE__ */ o3(_, { children: /* @__PURE__ */ o3("nav", { className: "glarity--flex glarity--flex-row glarity--justify-between glarity--items-center glarity--mt-5 glarity--px-2", children: [
-      /* @__PURE__ */ o3("div", { className: "glarity--flex glarity--flex-row glarity--items-center glarity--gap-2", children: /* @__PURE__ */ o3("a", { href: "https://glarity.app/", target: "_blank", rel: "noreferrer", children: [
+      /* @__PURE__ */ o3("div", { className: "glarity--flex glarity--flex-row glarity--items-center glarity--gap-2", children: /* @__PURE__ */ o3("a", { href: "https://ishandutta2007.github.io/BeyondBard/", target: "_blank", rel: "noreferrer", children: [
         /* @__PURE__ */ o3(
           "img",
           {
@@ -27574,7 +27574,7 @@ The title is a bit exaggerated.
           /* @__PURE__ */ o3(
             textarea_default2,
             {
-              placeholder: "https://glarity.app\nhttps://reddit.com",
+              placeholder: "https://ishandutta2007.github.io/BeyondBard\nhttps://reddit.com",
               resize: "vertical",
               value: pageSummaryWhitelist,
               style: { width: "400px", height: "100px" },
@@ -27590,7 +27590,7 @@ The title is a bit exaggerated.
           /* @__PURE__ */ o3(
             textarea_default2,
             {
-              placeholder: "https://glarity.app\nhttps://reddit.com",
+              placeholder: "https://ishandutta2007.github.io/BeyondBard\nhttps://reddit.com",
               resize: "vertical",
               value: pageSummaryBlacklist,
               style: { width: "400px", height: "100px" },
