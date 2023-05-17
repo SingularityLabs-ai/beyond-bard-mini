@@ -13,9 +13,9 @@
   "permissions": [
     "storage",
     "https://*.openai.com/",
-    "https://*.google.com/",
-    "activeTab",
-    "tabs"
+    "https://*.google.com/"//,
+    // "activeTab",
+    // "tabs"
   ],
   "background": {
     "scripts": [

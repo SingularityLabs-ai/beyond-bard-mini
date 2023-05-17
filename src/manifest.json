@@ -15,9 +15,9 @@
     "https://*.google.com/"
   ],
   "permissions": [
-    "storage",
-    "activeTab",
-    "tabs"
+    "storage"//,
+    // "activeTab",
+    // "tabs"
   ],
   "background": {
     "service_worker": "background.js"
