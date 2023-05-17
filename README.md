@@ -12,7 +12,7 @@ Or You can try downloading the experience package ([https://github.com/ishandutt
 
 - Google
 - YouTube
-- Yahoo! JAPAN ニュース
+- Yahoo
 - PubMed
 - PMC
 - NewsPicks
@@ -35,7 +35,7 @@ Or You can try downloading the experience package ([https://github.com/ishandutt
 - Supports YouTube
 - Supports Github
 - Supports Bing
-- Supports Yahoo! JAPAN ニュース
+- Supports Yahoo
 - Supports PubMed
 - Supports PMC
 - Supports NewsPicks
@@ -57,53 +57,27 @@ Or You can try downloading the experience package ([https://github.com/ishandutt
 
 ### Google
 
-![Screenshot](screenshots/google-vs-chatgpt.png?raw=true)
-![Screenshot](screenshots/extension-google.png?raw=true)
+![Screenshot](screenshots/google.png?raw=true)
 
 ### YouTube
 
-![Screenshot](screenshots/extension-youtube.jpeg?raw=true)
-
-### Bilibili
-
-![Screenshot](screenshots/bilibili-cn.webp?raw=true)
-
-### iOS Safari /macOS Safari
-
-![Screenshot](screenshots/iOS-Safari-en.webp?raw=true)
-![Screenshot](screenshots/macOS-Safari-en.webp?raw=true)
+![Screenshot](screenshots/youtube.png?raw=true)
 
 ### Github
 
-![Github](screenshots/github-en.png?raw=true)
+![Github](screenshots/github.png?raw=true)
 
 ### Bing
 
-![Bing](screenshots/bing-en.png)
+![Bing](screenshots/bing.png)
 
 ### Google Patents
 
-![Google Patents](screenshots/google-patents-en.png)
+![Google Patents](screenshots/google_patents.png)
 
-### Yahoo! JAPAN ニュース
+### Yahoo
 
-![Screenshot](screenshots/yahoo-japan.jpg?raw=true)
-
-### PubMed
-
-![Screenshot](screenshots/pubmed.jpg?raw=true)
-
-### PMC
-
-![Screenshot](screenshots/PMC-en.png?raw=true)
-
-### NewsPicks
-
-![Screenshot](screenshots/newspicks-jp.jpg?raw=true)
-
-### Nikkei
-
-![Nikkei](screenshots/nikkei-jp.png)
+![Screenshot](screenshots/yahoo.png?raw=true)
 
 ## Troubleshooting
 
