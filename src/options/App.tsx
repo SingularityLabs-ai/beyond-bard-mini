@@ -164,7 +164,7 @@ function OptionsPage(
           Language
         </Text>
         <Text className="glarity--my-1">
-          The language used in ChatGPT response. <span className="glarity--italic">Auto</span> is
+          The language used in Bard response. <span className="glarity--italic">Auto</span> is
           recommended.
         </Text>
         <Select
@@ -178,12 +178,6 @@ function OptionsPage(
             </Select.Option>
           ))}
         </Select>
-
-        {/* AI Provider */}
-        <Text h3 className="glarity--mt-5 glarity--mb-0">
-          AI Provider
-        </Text>
-        <ProviderSelect />
 
         <CustomizePrompt
           prompt={prompt}

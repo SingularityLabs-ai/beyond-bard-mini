@@ -10853,7 +10853,7 @@
       }
     };
   }
-  var BASE_URL = "https://chat.openai.com";
+  var BASE_URL = "https://bard.google.com";
   var APP_TITLE = `BeyondBard Summary`;
 
   // node_modules/preact/hooks/dist/hooks.module.js
@@ -41386,7 +41386,7 @@ ${reviewText}
     if (error === "UNAUTHORIZED" || error === "CLOUDFLARE") {
       return /* @__PURE__ */ o3("p", { children: [
         isSafari ? /* @__PURE__ */ o3(_, { children: [
-          "Please set OpenAI API Key in the",
+          "Please set Bard API Key in the",
           " ",
           /* @__PURE__ */ o3(
             "button",
@@ -41406,7 +41406,7 @@ ${reviewText}
             {
               className: (0, import_classnames.default)("glarity--btn", "glarity--btn__primary", "glarity--btn__small"),
               onClick: newTab,
-              children: "chat.openai.com"
+              children: "bard.google.com"
             }
           ),
           "."
@@ -41419,23 +41419,7 @@ ${reviewText}
               /* @__PURE__ */ o3("a", { href: "https://github.com/ishandutta2007/bard-everywhere#troubleshooting", children: "Brave Troubleshooting" })
             ] });
           } else {
-            return /* @__PURE__ */ o3("span", { className: "glarity--italic glarity--block glarity--mt-2 glarity--text-xs", children: [
-              "OpenAI requires passing a security check every once in a while. If this keeps happening, change AI provider to OpenAI API in the",
-              " ",
-              /* @__PURE__ */ o3(
-                "button",
-                {
-                  className: (0, import_classnames.default)(
-                    "glarity--btn",
-                    "glarity--btn__primary",
-                    "glarity--btn__small"
-                  ),
-                  onClick: openOptionsPage,
-                  children: "extension options"
-                }
-              ),
-              "."
-            ] });
+            return /* @__PURE__ */ o3("span", { className: "glarity--italic glarity--block glarity--mt-2 glarity--text-xs", children: "Bard requires passing a security check every once in a while." });
           }
         })()
       ] });
@@ -41455,18 +41439,7 @@ ${reviewText}
             children: "Retry"
           }
         ),
-        /* @__PURE__ */ o3("br", {}),
-        "If this keeps happening, change AI provider to OpenAI API in the",
-        " ",
-        /* @__PURE__ */ o3(
-          "button",
-          {
-            className: (0, import_classnames.default)("glarity--btn", "glarity--btn__primary", "glarity--btn__small"),
-            onClick: openOptionsPage,
-            children: "extension options"
-          }
-        ),
-        "."
+        /* @__PURE__ */ o3("br", {})
       ] });
     }
     return /* @__PURE__ */ o3(loading_default2, {});

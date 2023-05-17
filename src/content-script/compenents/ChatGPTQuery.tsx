@@ -263,7 +263,7 @@ function ChatGPTQuery(props: Props) {
         </div>
         {(continueConversation && answer.conversationContext.contextIds && done) && (
           <div>
-            {/* <a href={`https://chat.openai.com/c/${answer.conversationId}`} target="_blank">
+            {/* <a href={`https://bard.google.com/c/${answer.conversationId}`} target="_blank">
             //   Continue conversation
              </a>*/}
             <form
@@ -309,7 +309,7 @@ function ChatGPTQuery(props: Props) {
       <p>
         {isSafari ? (
           <>
-            Please set OpenAI API Key in the{' '}
+            Please set Bard API Key in the{' '}
             <button
               className={classNames('glarity--btn', 'glarity--btn__primary', 'glarity--btn__small')}
               onClick={openOptionsPage}
@@ -326,7 +326,7 @@ function ChatGPTQuery(props: Props) {
               className={classNames('glarity--btn', 'glarity--btn__primary', 'glarity--btn__small')}
               onClick={newTab}
             >
-              chat.openai.com
+              bard.google.com
             </button>
             .
           </>
@@ -347,19 +347,7 @@ function ChatGPTQuery(props: Props) {
             } else {
               return (
                 <span className="glarity--italic glarity--block glarity--mt-2 glarity--text-xs">
-                  OpenAI requires passing a security check every once in a while. If this keeps
-                  happening, change AI provider to OpenAI API in the{' '}
-                  <button
-                    className={classNames(
-                      'glarity--btn',
-                      'glarity--btn__primary',
-                      'glarity--btn__small',
-                    )}
-                    onClick={openOptionsPage}
-                  >
-                    extension options
-                  </button>
-                  .
+                  Bard requires passing a security check every once in a while. 
                 </span>
               )
             }
@@ -382,14 +370,6 @@ function ChatGPTQuery(props: Props) {
           Retry
         </a>
         <br />
-        If this keeps happening, change AI provider to OpenAI API in the{' '}
-        <button
-          className={classNames('glarity--btn', 'glarity--btn__primary', 'glarity--btn__small')}
-          onClick={openOptionsPage}
-        >
-          extension options
-        </button>
-        .
       </p>
     )
   }

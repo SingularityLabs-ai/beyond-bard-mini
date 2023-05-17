@@ -1573,7 +1573,7 @@
       }
     };
   }
-  var BASE_URL = "https://chat.openai.com";
+  var BASE_URL = "https://bard.google.com";
   var DEFAULT_MODEL = "gpt-3.5-turbo";
   var DEFAULT_API_HOST = "api.openai.com";
 

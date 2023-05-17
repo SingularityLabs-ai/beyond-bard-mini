@@ -60,7 +60,7 @@ const ConfigPanel: FC<ConfigProps> = ({ config, models }) => {
                   ChatGPT webapp
                   <Radio.Desc>
                     {' '}
-                    The API that powers ChatGPT webapp, free, but sometimes unstable
+                    The API that powers Bard webapp, free, but sometimes unstable
                   </Radio.Desc>
                 </Radio>
               </>

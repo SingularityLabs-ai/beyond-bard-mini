@@ -4,7 +4,7 @@ import { ofetch } from 'ofetch'
 import { ConversationContext, GenerateAnswerParams, Provider } from '../types'
 
 async function request(token: string, method: string, path: string, data?: unknown) {
-  return fetch(`https://chat.openai.com/backend-api${path}`, {
+  return fetch(`https://bard.google.com/backend-api${path}`, {
     method,
     headers: {
       'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ export async function getBardAccessToken(): Promise<string> {
   if (cache.get(KEY_ACCESS_TOKEN)) {
     return cache.get(KEY_ACCESS_TOKEN)
   }
-  const resp = await fetch('https://chat.openai.com/api/auth/session')
+  const resp = await fetch('https://bard.google.com/api/auth/session')
   if (resp.status === 403) {
     throw new Error('CLOUDFLARE')
   }
