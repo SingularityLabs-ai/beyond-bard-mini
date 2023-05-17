@@ -57,7 +57,7 @@ const ConfigPanel: FC<ConfigProps> = ({ config, models }) => {
             {!isSafari && (
               <>
                 <Radio value={ProviderType.ChatGPT}>
-                  ChatGPT webapp
+                  Bard webapp
                   <Radio.Desc>
                     {' '}
                     The API that powers Bard webapp, free, but sometimes unstable

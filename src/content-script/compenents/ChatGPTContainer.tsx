@@ -190,7 +190,7 @@ function ChatGPTContainer(props: Props) {
                         }}
                       >
                         <a>
-                          <SearchIcon size="small" /> Ask ChatGPT to summarize
+                          <SearchIcon size="small" /> Ask Bard to summarize
                         </a>
                       </span>
                     ) : (

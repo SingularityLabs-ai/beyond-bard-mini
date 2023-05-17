@@ -1,6 +1,6 @@
-# BeyondBard - Summary for Google/YouTube with ChatGPT
+# BeyondBard - Summary for Google/YouTube with Google Bard
 
-Chrome extension to view ChatGPT summaries alongside Google search results and YouTube videos, also supports Yahoo! ニュース、PubMed、PMC、NewsPicks、Github、Nikkei、 Bing、Google Patents,and any page summary.
+Chrome extension to view Google Bard summaries alongside Google search results and YouTube videos, also supports Yahoo! ニュース、PubMed、PMC、NewsPicks、Github、Nikkei、 Bing、Google Patents,and any page summary.
 
 ## ⚠️ Tips:
 
@@ -45,11 +45,11 @@ Or You can try downloading the experience package ([https://github.com/ishandutt
 - Support summary of any web page
 - Support for iOS Safari/ macOS Safari
 - Supports the official OpenAI API (GPT-3.5-turbo/text-davinci-003)
-- Supports ChatGPT Plus
+- Supports Google Plus
 - Markdown rendering
 - Code highlights
 - Dark mode
-- Provide feedback to improve ChatGPT
+- Provide feedback to improve Google
 - Copy to clipboard
 - Switch languages
 

@@ -358,7 +358,7 @@ function ChatGPTQuery(props: Props) {
   if (error) {
     return (
       <p>
-        Failed to load response from ChatGPT:
+        Failed to load response from Bard:
         <span className="glarity--break-all glarity--block">{error}</span>
         <a
           href="javascript:void(0)"

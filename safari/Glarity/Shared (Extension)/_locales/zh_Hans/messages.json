@@ -1,8 +1,8 @@
 {
   "appName": {
-    "message": "BeyondBard - 使用ChatGPT为谷歌搜索结果及YouTube视频生成摘要"
+    "message": "BeyondBard - 使用Bard为谷歌搜索结果及YouTube视频生成摘要"
   },
   "appDesc": {
-    "message": "Google 搜索结果和 YouTube 视频旁边展示 ChatGPT 摘要（支持自动翻译成中文）"
+    "message": "Google 搜索结果和 YouTube 视频旁边展示 Google Bard 摘要（支持自动翻译成中文）"
   }
 }

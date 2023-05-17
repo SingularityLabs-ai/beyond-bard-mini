@@ -13973,12 +13973,12 @@
             /* @__PURE__ */ o3(divider_default2, {}),
             "I am Ready! ",
             /* @__PURE__ */ o3("br", {}),
-            "Keep this tab to make ChatGPT more stable.",
+            "Keep this tab to make Bard more stable.",
             /* @__PURE__ */ o3(divider_default2, {}),
             /* @__PURE__ */ o3(button_default2, { auto: true, type: "success", onClick: onBack, scale: 0.5, children: "Back" })
           ] }) : /* @__PURE__ */ o3(_, { children: [
             /* @__PURE__ */ o3(divider_default2, {}),
-            "Login to the ChatGPT web application to use the BeyondBard Summary."
+            "Login to the Bard web application to use the BeyondBard Summary."
           ] }) })
         }
       ) }),
@@ -41426,7 +41426,7 @@ ${reviewText}
     }
     if (error) {
       return /* @__PURE__ */ o3("p", { children: [
-        "Failed to load response from ChatGPT:",
+        "Failed to load response from Bard:",
         /* @__PURE__ */ o3("span", { className: "glarity--break-all glarity--block", children: error }),
         /* @__PURE__ */ o3(
           "a",
@@ -91987,7 +91987,7 @@ ${replylanguagePrompt(language2)}`;
       }
       return /* @__PURE__ */ o3("p", { className: "icon-and-text", children: [
         /* @__PURE__ */ o3(LightBulbIcon, { size: "small" }),
-        " Trigger ChatGPT by appending a question mark after your query"
+        " Trigger Bard by appending a question mark after your query"
       ] });
     }
     if (triggered) {
@@ -92009,7 +92009,7 @@ ${replylanguagePrompt(language2)}`;
         },
         children: [
           /* @__PURE__ */ o3(SearchIcon, { size: "small" }),
-          " Ask ChatGPT to summarize"
+          " Ask Bard to summarize"
         ]
       }
     );
@@ -92442,7 +92442,7 @@ ${replylanguagePrompt(language2)}`;
           },
           children: /* @__PURE__ */ o3("a", { children: [
             /* @__PURE__ */ o3(SearchIcon, { size: "small" }),
-            " Ask ChatGPT to summarize"
+            " Ask Bard to summarize"
           ] })
         }
       ) : /* @__PURE__ */ o3(_, { children: [

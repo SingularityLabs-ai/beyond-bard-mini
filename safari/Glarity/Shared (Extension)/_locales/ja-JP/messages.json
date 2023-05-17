@@ -1,8 +1,8 @@
 {
   "appName": {
-    "message": "BeyondBard - ChatGPT for YouTube/Google"
+    "message": "BeyondBard - Google Bard for YouTube/Google"
   },
   "appDesc": {
-    "message": "Google検索結果やYouTube動画と一緒にChatGPTの要約を表示"
+    "message": "Google検索結果やYouTube動画と一緒にBardの要約を表示"
   }
 }

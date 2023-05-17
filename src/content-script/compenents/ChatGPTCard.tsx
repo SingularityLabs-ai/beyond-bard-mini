@@ -31,7 +31,7 @@ function ChatGPTCard(props: Props) {
     }
     return (
       <p className="icon-and-text">
-        <LightBulbIcon size="small" /> Trigger ChatGPT by appending a question mark after your query
+        <LightBulbIcon size="small" /> Trigger Bard by appending a question mark after your query
       </p>
     )
   }
@@ -53,7 +53,7 @@ function ChatGPTCard(props: Props) {
         setTriggered(true)
       }}
     >
-      <SearchIcon size="small" /> Ask ChatGPT to summarize
+      <SearchIcon size="small" /> Ask Bard to summarize
     </a>
   )
 }

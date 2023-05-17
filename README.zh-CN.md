@@ -1,10 +1,10 @@
-# # BeyondBard - Summary for Google/YouTube with ChatGPT
+# # BeyondBard - Summary for Google/YouTube with Google Bard
 
 Chrome 浏览器扩展实现在 Google 搜索结果和 YouTube 视频旁边展示 ChatGPT 摘要，同时支持 Yahoo! JAPAN ニュース、PubMed、PMC、NewsPicks、Github、Nikkei、Bing、Google Patents, 以及任意网页的总结。
 
 ## ⚠️ Tips:
 
-如果遇到不能选择 OpenAI API 模型, 麻烦删除并重新安装。
+如果遇到不能选择 Google API 模型, 麻烦删除并重新安装。
 
 或者尝试下载最新体验包 ([https://github.com/ishandutta2007/bard-everywhere/tree/main/packages](https://github.com/ishandutta2007/bard-everywhere/tree/main/packages)) 然后手动安装 ([https://github.com/ishandutta2007/bard-everywhere#chrome](https://github.com/ishandutta2007/bard-everywhere#chrome)).
 
@@ -45,11 +45,11 @@ Chrome 浏览器扩展实现在 Google 搜索结果和 YouTube 视频旁边展�
 - 支持任意网页的总结
 - 支持 iOS Safari/ macOS Safari
 - 支持 OpenAI 官方 API（GPT-3.5-turbo/text-davinci-003）
-- 支持 ChatGPT Plus
+- 支持 Bard Plus
 - Markdown 格式渲染
 - 代码高亮
 - 暗色模式
-- 支持 ChatGPT 反馈
+- 支持 Bard 反馈
 - 复制结果
 - 切换语言
 

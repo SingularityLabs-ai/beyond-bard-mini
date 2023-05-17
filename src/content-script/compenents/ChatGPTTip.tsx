@@ -35,7 +35,7 @@ function ChatGPTTip(props: Props) {
                     <>
                       <Divider />
                       I am Ready! <br />
-                      Keep this tab to make ChatGPT more stable.
+                      Keep this tab to make Bard more stable.
                       <Divider />
                       <Button auto type="success" onClick={onBack} scale={0.5}>
                         Back
@@ -44,7 +44,7 @@ function ChatGPTTip(props: Props) {
                   ) : (
                     <>
                       <Divider />
-                      Login to the ChatGPT web application to use the BeyondBard Summary.
+                      Login to the Bard web application to use the BeyondBard Summary.
                     </>
                   )}
                 </>
