@@ -25,7 +25,7 @@ Or You can try downloading the experience package ([https://github.com/ishandutt
 
 ## Installation
 
-[Add from Chrome Web Store](https://chrome.google.com/webstore/detail/summary-for-google-with-c/cmnlolelipjlhfkhpohphpedmkfbobjc)
+[Add from Chrome Web Store](https://chrome.google.com/webstore/detail/summary-for-google-with-c/ceknbkmhppjloheidfdpmaijdcgofoif)
 
 [Add from Mozilla Add-on Store](https://addons.mozilla.org/zh-CN/firefox/addon/glarity/)
 
