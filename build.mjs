@@ -25,8 +25,8 @@ let buildConfig = {
   bundle: true,
   outdir: outdir,
   treeShaking: true,
-  minify: false,
-  drop: [],//'console', 'debugger'],
+  minify: true,
+  drop: ['console', 'debugger'],
   legalComments: 'none',
   define: {
     'process.env.NODE_ENV': '"production"',
