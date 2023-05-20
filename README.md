@@ -6,7 +6,7 @@ Chrome extension to view Google Bard summaries alongside Google search results a
 
 If you cannot choose the OpenAI API model, please delete the plugin and reinstall it.
 
-Or You can try downloading the experience package ([https://github.com/ishandutta2007/bard-everywhere/tree/main/packages](https://github.com/ishandutta2007/bard-everywhere/tree/main/packages)) and adding it manually ([https://github.com/ishandutta2007/bard-everywhere#chrome](https://github.com/ishandutta2007/bard-everywhere#chrome)).
+Or You can try downloading the experience package ([https://github.com/ishandutta2007/beyond-bard/tree/main/packages](https://github.com/ishandutta2007/beyond-bard/tree/main/packages)) and adding it manually ([https://github.com/ishandutta2007/beyond-bard#chrome](https://github.com/ishandutta2007/beyond-bard#chrome)).
 
 ## Supported Websites
 

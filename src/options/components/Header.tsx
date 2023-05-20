@@ -23,7 +23,7 @@ function Header() {
             Discord
           </a>
           <a
-            href="https://github.com/ishandutta2007/bard-everywhere/issues"
+            href="https://github.com/ishandutta2007/beyond-bard/issues"
             target="_blank"
             rel="noreferrer"
           >
@@ -33,7 +33,7 @@ function Header() {
             Twitter
           </a>
           <a
-            href="https://github.com/ishandutta2007/bard-everywhere"
+            href="https://github.com/ishandutta2007/beyond-bard"
             target="_blank"
             rel="noreferrer"
           >

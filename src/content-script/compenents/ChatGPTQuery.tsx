@@ -339,7 +339,7 @@ function ChatGPTQuery(props: Props) {
               return (
                 <span className="glarity--block glarity--mt-2">
                   Still not working? Follow{' '}
-                  <a href="https://github.com/ishandutta2007/bard-everywhere#troubleshooting">
+                  <a href="https://github.com/ishandutta2007/beyond-bard#troubleshooting">
                     Brave Troubleshooting
                   </a>
                 </span>
