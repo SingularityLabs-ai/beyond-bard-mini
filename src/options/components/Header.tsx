@@ -19,7 +19,7 @@ function Header() {
           </a>
         </div>
         <div className="glarity--flex glarity--flex-row glarity--gap-3">
-          <a href="https://discord.gg/JEJExVuWVM" target="_blank" rel="noreferrer">
+          <a href="https://discord.gg/sXdRc6ZH" target="_blank" rel="noreferrer">
             Discord
           </a>
           <a
@@ -29,7 +29,7 @@ function Header() {
           >
             Feedback
           </a>
-          <a href="https://twitter.com/BeyondBard_summary" target="_blank" rel="noreferrer">
+          <a href="https://twitter.com/ishandutta2007" target="_blank" rel="noreferrer">
             Twitter
           </a>
           <a
