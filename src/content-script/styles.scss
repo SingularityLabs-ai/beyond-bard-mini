@@ -1,7 +1,7 @@
 @import 'light.scss';
 @import 'dark.scss';
 
-.glarity--container {
+.beyondbard--container {
   position: relative;
   z-index: 1;
   margin-bottom: 30px;
@@ -14,22 +14,22 @@
   max-width: 100%;
   pointer-events: all;
 
-  &.glarity--chatgpt--youtube {
+  &.beyondbard--chatgpt--youtube {
     width: var(--ytd-watch-flexy-sidebar-width);
     min-width: var(--ytd-watch-flexy-sidebar-min-width);
   }
 
-  &.glarity--full-container {
+  &.beyondbard--full-container {
     min-width: calc(100% - var(--rhs-margin));
     margin-right: var(--rhs-margin);
     margin-bottom: 10px;
   }
-  &.glarity--chatgpt--pubmed {
+  &.beyondbard--chatgpt--pubmed {
     width: calc(100% + 80px);
     max-width: calc(100% + 80px);
   }
 
-  .glarity--link {
+  .beyondbard--link {
     cursor: pointer;
     color: #065fd4;
 
@@ -38,7 +38,7 @@
     }
   }
 
-  .glarity--chatgpt {
+  .beyondbard--chatgpt {
     border: 1px solid;
     border-radius: 8px;
     padding: 6px 10px 0;
@@ -108,12 +108,12 @@
       }
     }
 
-    .glarity--chatgpt--header {
+    .beyondbard--chatgpt--header {
       margin-top: -42px !important;
     }
   }
 
-  .glarity--chatgpt--header {
+  .beyondbard--chatgpt--header {
     margin-top: -42px !important;
     margin-left: calc(100% - 58px);
     margin-bottom: 10px;
@@ -138,10 +138,10 @@
   }
 }
 
-.glarity--summary--highlight {
+.beyondbard--summary--highlight {
   color: red;
 }
-.glarity--header {
+.beyondbard--header {
   // position: relative;
   // z-index: 10;
   display: flex;
@@ -153,8 +153,8 @@
   cursor: pointer;
 }
 
-a.glarity--header__logo,
-span.glarity--header__logo {
+a.beyondbard--header__logo,
+span.beyondbard--header__logo {
   margin-right: 6px;
   height: 20px;
   color: #000;
@@ -173,18 +173,18 @@ span.glarity--header__logo {
   }
 }
 
-span.glarity--header__logo {
+span.beyondbard--header__logo {
   cursor: default;
 }
 
-.glarity--main {
+.beyondbard--main {
   position: relative;
   margin-left: -10px;
   margin-right: -10px;
   padding: 0 12px;
   border-top: 1px solid rgb(221, 221, 221);
 }
-.glarity--main__header {
+.beyondbard--main__header {
   position: relative;
   z-index: 20;
   display: flex;
@@ -199,30 +199,30 @@ span.glarity--header__logo {
     color: #333;
   }
 }
-.glarity--main__header--title {
+.beyondbard--main__header--title {
   font-weight: bold;
   cursor: pointer;
 }
 
-.glarity--main__header--icon {
+.beyondbard--main__header--icon {
   cursor: pointer;
 }
 
-.glarity--main__header--action {
+.beyondbard--main__header--action {
   a {
     display: inline-block;
     margin-left: 5px;
   }
 }
 
-.glarity--main__container {
+.beyondbard--main__container {
   position: relative;
   z-index: 30;
   padding: 10px 0 10px;
   font-size: 14px;
   color: #444;
 
-  &.glarity--main__container--subtitle {
+  &.beyondbard--main__container--subtitle {
     margin-right: -10px;
     padding-right: 10px;
     height: 200px;
@@ -231,7 +231,7 @@ span.glarity--header__logo {
     overflow-y: auto;
   }
 
-  .glarity--chatgpt--content {
+  .beyondbard--chatgpt--content {
     margin-right: -10px;
     padding-right: 10px;
     max-height: 260px;
@@ -240,7 +240,7 @@ span.glarity--header__logo {
     overflow-y: auto;
   }
 }
-.glarity--main__loading {
+.beyondbard--main__loading {
   position: absolute;
   z-index: 99;
   width: 100%;
@@ -248,7 +248,7 @@ span.glarity--header__logo {
   background-color: rgb(249, 249, 249);
 }
 
-.glarity--subtitle {
+.beyondbard--subtitle {
   display: flex;
   justify-content: left;
   align-items: baseline;
@@ -272,35 +272,35 @@ span.glarity--header__logo {
   }
 }
 
-.glarity--select {
+.beyondbard--select {
   width: 70px;
   border: 1px solid #bbb;
   border-radius: 4px;
 }
 
-.glarity--icon--loading {
+.beyondbard--icon--loading {
   display: inline-block !important;
   vertical-align: middle;
   transform: scale(0.7);
 }
 
-.glarity--text-xs {
+.beyondbard--text-xs {
   font-size: 12px;
   line-height: 1.6;
 }
-.glarity--mt-2 {
+.beyondbard--mt-2 {
   margin-top: 10px;
 }
 
-// glarity--chatgpt--tips
-.glarity--chatgpt--tips {
+// beyondbard--chatgpt--tips
+.beyondbard--chatgpt--tips {
   position: fixed;
   z-index: 100;
   right: 20px;
   top: 20px;
   width: 300px;
 
-  button.btn.glarity--chatgpt--tips--close {
+  button.btn.beyondbard--chatgpt--tips--close {
     position: absolute !important;
     z-index: 100;
     right: 5px;
@@ -313,19 +313,19 @@ span.glarity--header__logo {
 }
 
 // newspicks
-.glarity--chatgpt--newspicks {
+.beyondbard--chatgpt--newspicks {
   margin-bottom: 32px;
   background-color: #fff;
   border: none;
   border-radius: 0;
   box-shadow: 0 1px 4px #ddd;
 
-  .glarity--chatgpt {
+  .beyondbard--chatgpt {
     border: none;
     background: #fff;
     border-radius: 0;
 
-    .glarity--main__container {
+    .beyondbard--main__container {
       a {
         color: #337ab7;
 
@@ -337,62 +337,62 @@ span.glarity--header__logo {
   }
 }
 
-.glarity--geist--select {
+.beyondbard--geist--select {
   position: relative;
 }
 
 // nikkei
-.glarity--chatgpt--nikkei {
+.beyondbard--chatgpt--nikkei {
   flex-grow: inherit;
 }
 
 // google partents
-.glarity--chatgpt--googlePatents {
+.beyondbard--chatgpt--googlePatents {
   margin-bottom: 0;
 
-  .glarity--chatgpt {
+  .beyondbard--chatgpt {
     border: none;
     border-radius: 0;
   }
 }
 
 // bing
-.glarity--chatgpt--bing {
+.beyondbard--chatgpt--bing {
   margin-left: -20px;
   margin-right: -20px;
 }
 
 // Web Summary
-.glarity--summary {
+.beyondbard--summary {
   position: fixed;
   top: 160px;
   right: 15px;
   width: auto;
   z-index: 99999999999999;
 
-  .glarity--card {
+  .beyondbard--card {
     width: 360px;
   }
 }
 
 // Bilibili
-.glarity--chatgpt--bilibili {
+.beyondbard--chatgpt--bilibili {
   margin-top: 20px;
   margin-bottom: 20px;
 
-  .glarity--chatgpt {
+  .beyondbard--chatgpt {
     border-radius: 6px;
     border: none;
 
-    .glarity--main {
+    .beyondbard--main {
       border-top-color: var(--line_regular);
     }
   }
 }
 
 @media screen and (max-width: 600px) {
-  .glarity--summary {
-    .glarity--card {
+  .beyondbard--summary {
+    .beyondbard--card {
       width: calc(100vw - 30px);
     }
   }

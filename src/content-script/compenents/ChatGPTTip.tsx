@@ -53,7 +53,7 @@ function ChatGPTTip(props: Props) {
           </Note>
 
           <Button
-            className="glarity--chatgpt--tips--close"
+            className="beyondbard--chatgpt--tips--close"
             iconRight={<XCircleFillIcon />}
             auto
             onClick={onClose}

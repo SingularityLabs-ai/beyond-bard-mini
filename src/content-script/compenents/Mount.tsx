@@ -49,14 +49,14 @@ export default async function mount(props: MountProps) {
     return
   }
 
-  if (document.querySelector('section.glarity--container')) {
-    document.querySelector('section.glarity--container')?.remove()
+  if (document.querySelector('section.beyondbard--container')) {
+    document.querySelector('section.beyondbard--container')?.remove()
   }
 
   const container = document.createElement('section')
-  container.className = 'b_glarity'
-  container.classList.add('glarity--container')
-  container.id = 'glarity--container'
+  container.className = 'b_beyondbard'
+  container.classList.add('beyondbard--container')
+  container.id = 'beyondbard--container'
 
   let theme: Theme
   if (userConfig.theme === Theme.Auto) {
@@ -72,7 +72,7 @@ export default async function mount(props: MountProps) {
 
   switch (siteName) {
     case 'pubmed': {
-      container.classList.add('glarity--chatgpt--pubmed')
+      container.classList.add('beyondbard--chatgpt--pubmed')
       const appendContainer = getPossibleElementByQuerySelector(
         siteConfig.extabarContainerQuery || [],
       )
@@ -80,7 +80,7 @@ export default async function mount(props: MountProps) {
       break
     }
     case 'newspicks': {
-      container.classList.add('glarity--chatgpt--newspicks')
+      container.classList.add('beyondbard--chatgpt--newspicks')
       const appendContainer = getPossibleElementByQuerySelector(
         siteConfig.extabarContainerQuery || [],
       )
@@ -89,7 +89,7 @@ export default async function mount(props: MountProps) {
     }
 
     case 'yahooJpNews': {
-      container.classList.add('glarity--chatgpt--yahoonews')
+      container.classList.add('beyondbard--chatgpt--yahoonews')
 
       const appendContainer = getPossibleElementByQuerySelector(
         siteConfig.extabarContainerQuery || [],
@@ -98,7 +98,7 @@ export default async function mount(props: MountProps) {
       break
     }
     case 'nikkei': {
-      container.classList.add('glarity--chatgpt--nikkei')
+      container.classList.add('beyondbard--chatgpt--nikkei')
       const appendContainer = getPossibleElementByQuerySelector(
         siteConfig.extabarContainerQuery || [],
       )
@@ -106,7 +106,7 @@ export default async function mount(props: MountProps) {
       break
     }
     case 'github': {
-      container.classList.add('glarity--chatgpt--github')
+      container.classList.add('beyondbard--chatgpt--github')
       const appendContainer = getPossibleElementByQuerySelector(
         siteConfig.extabarContainerQuery || [],
       )
@@ -123,7 +123,7 @@ export default async function mount(props: MountProps) {
       }
 
       waitForElm(extabarContainerQuery).then(() => {
-        container.classList.add('glarity--chatgpt--googlePatents')
+        container.classList.add('beyondbard--chatgpt--googlePatents')
         const appendContainer = getPossibleElementByQuerySelector(
           siteConfig.extabarContainerQuery || [],
         )
@@ -133,17 +133,17 @@ export default async function mount(props: MountProps) {
       break
     }
     case 'youtube': {
-      container.classList.add('glarity--chatgpt--youtube')
+      container.classList.add('beyondbard--chatgpt--youtube')
       waitForElm('#secondary.style-scope.ytd-watch-flexy').then(() => {
         document.querySelector('#secondary.style-scope.ytd-watch-flexy')?.prepend(container)
       })
       break
     }
     case 'bilibili': {
-      container.classList.add('glarity--chatgpt--bilibili')
+      container.classList.add('beyondbard--chatgpt--bilibili')
 
       waitForElm(siteConfig.extabarContainerQuery?.[0]).then(() => {
-        container.classList.add('glarity--chatgpt--bilibili')
+        container.classList.add('beyondbard--chatgpt--bilibili')
         const appendContainer = getPossibleElementByQuerySelector(
           siteConfig.extabarContainerQuery || [],
         )
@@ -156,7 +156,7 @@ export default async function mount(props: MountProps) {
         if (!/bing.com\/search\?/g.test(location.href)) {
           return
         }
-        container.classList.add('glarity--chatgpt--bing')
+        container.classList.add('beyondbard--chatgpt--bing')
       }
 
       const siderbarContainer = getPossibleElementByQuerySelector(siteConfig.sidebarContainerQuery)
@@ -168,7 +168,7 @@ export default async function mount(props: MountProps) {
           siteConfig.extabarContainerQuery &&
           document.querySelector('#center_col')?.nextSibling
         ) {
-          container.classList.add('glarity--full-container')
+          container.classList.add('beyondbard--full-container')
           const appendContainer = getPossibleElementByQuerySelector(
             siteConfig.extabarContainerQuery,
           )

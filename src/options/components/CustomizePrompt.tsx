@@ -151,20 +151,20 @@ function CustomizePrompt(props: Props) {
     <>
       {!isIOS && (
         <>
-          <Text h3 className="glarity--mt-5 glarity--mb-0">
+          <Text h3 className="beyondbard--mt-5 beyondbard--mb-0">
             Customize Prompt for Summary
           </Text>
           <Collapse.Group>
             {/* YouTube */}
             <Collapse
               title={
-                <Text h4 className="glarity--mt-5 glarity--mb-0">
+                <Text h4 className="beyondbard--mt-5 beyondbard--mb-0">
                   YouTube / Bilibili{' '}
                 </Text>
               }
             >
-              <Card className="glarity--card">
-                <Text className="glarity--my-1">
+              <Card className="beyondbard--card">
+                <Text className="beyondbard--my-1">
                   <Code block my={0}>
                     {customizePrompt}
                   </Code>
@@ -190,8 +190,8 @@ function CustomizePrompt(props: Props) {
                   </Space>
                 </Card.Footer>
               </Card>
-              <Text className="glarity--my-1">Example Prompts: </Text>
-              <ul className="glarity--prompt__list">
+              <Text className="beyondbard--my-1">Example Prompts: </Text>
+              <ul className="beyondbard--prompt__list">
                 <li>
                   <Snippet symbol="" type="secondary">
                     Summarize the above content highlights.
@@ -230,13 +230,13 @@ function CustomizePrompt(props: Props) {
             {/* Google */}
             <Collapse
               title={
-                <Text h4 className="glarity--mt-5 glarity--mb-0">
+                <Text h4 className="beyondbard--mt-5 beyondbard--mb-0">
                   Google / Bing
                 </Text>
               }
             >
-              <Card className="glarity--card">
-                <Text className="glarity--my-1">
+              <Card className="beyondbard--card">
+                <Text className="beyondbard--my-1">
                   <Code block my={0}>
                     {customizePromptSearch}
                   </Code>
@@ -277,8 +277,8 @@ function CustomizePrompt(props: Props) {
                   </Space>
                 </Card.Footer>
               </Card>
-              <Text className="glarity--my-1">Example Prompts: </Text>
-              <ul className="glarity--prompt__list">
+              <Text className="beyondbard--my-1">Example Prompts: </Text>
+              <ul className="beyondbard--prompt__list">
                 <li>
                   <Snippet symbol="" type="secondary">
                     Summarize the above content highlights.{' '}
@@ -307,13 +307,13 @@ function CustomizePrompt(props: Props) {
             {/* Page Summary */}
             <Collapse
               title={
-                <Text h4 className="glarity--mt-5 glarity--mb-0">
+                <Text h4 className="beyondbard--mt-5 beyondbard--mb-0">
                   Page Summary{' '}
                 </Text>
               }
             >
-              <Card className="glarity--card">
-                <Text className="glarity--my-1">
+              <Card className="beyondbard--card">
+                <Text className="beyondbard--my-1">
                   <Code block my={0}>
                     {customizePromptPage}
                   </Code>
@@ -354,8 +354,8 @@ function CustomizePrompt(props: Props) {
                   </Space>
                 </Card.Footer>
               </Card>
-              <Text className="glarity--my-1">Example Prompts: </Text>
-              <ul className="glarity--prompt__list">
+              <Text className="beyondbard--my-1">Example Prompts: </Text>
+              <ul className="beyondbard--prompt__list">
                 <li>
                   <Snippet symbol="" type="secondary">
                     Summarize the above content highlights.{' '}
@@ -384,16 +384,16 @@ function CustomizePrompt(props: Props) {
             {/* Comment Summary */}
             <Collapse
               title={
-                <Text h4 className="glarity--mt-5 glarity--mb-0">
+                <Text h4 className="beyondbard--mt-5 beyondbard--mb-0">
                   Comment Summary{' '}
-                  <Text span font="12px" className="glarity--subtitle">
+                  <Text span font="12px" className="beyondbard--subtitle">
                     Summary of support for Amazon products and YouTube video comments.
                   </Text>
                 </Text>
               }
             >
-              <Card className="glarity--card">
-                <Text className="glarity--my-1">
+              <Card className="beyondbard--card">
+                <Text className="beyondbard--my-1">
                   <Code block my={0}>
                     {customizePromptComment}
                   </Code>
@@ -434,8 +434,8 @@ function CustomizePrompt(props: Props) {
                   </Space>
                 </Card.Footer>
               </Card>
-              <Text className="glarity--my-1">Example Prompts: </Text>
-              <ul className="glarity--prompt__list">
+              <Text className="beyondbard--my-1">Example Prompts: </Text>
+              <ul className="beyondbard--prompt__list">
                 <li>
                   <Snippet symbol="" type="secondary">
                     {customizePromptCommentAmazon}

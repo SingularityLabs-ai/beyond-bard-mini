@@ -4,12 +4,12 @@ import logo from '@/assets/img/logo.png'
 function Header() {
   return (
     <>
-      <nav className="glarity--flex glarity--flex-row glarity--justify-between glarity--items-center glarity--mt-5 glarity--px-2">
-        <div className="glarity--flex glarity--flex-row glarity--items-center glarity--gap-2">
+      <nav className="beyondbard--flex beyondbard--flex-row beyondbard--justify-between beyondbard--items-center beyondbard--mt-5 beyondbard--px-2">
+        <div className="beyondbard--flex beyondbard--flex-row beyondbard--items-center beyondbard--gap-2">
           <a href="https://ishandutta2007.github.io/BeyondBard/" target="_blank" rel="noreferrer">
             <img
               src={logo}
-              className="glarity--w-10 glarity--h-10 glarity--rounded-lg"
+              className="beyondbard--w-10 beyondbard--h-10 beyondbard--rounded-lg"
               style={{ 'vertical-align': 'middle' }}
             />
             <span className="font-semibold">
@@ -18,8 +18,8 @@ function Header() {
             </span>{' '}
           </a>
         </div>
-        <div className="glarity--flex glarity--flex-row glarity--gap-3">
-          <a href="https://discord.gg/sXdRc6ZH" target="_blank" rel="noreferrer">
+        <div className="beyondbard--flex beyondbard--flex-row beyondbard--gap-3">
+          <a href="https://discord.gg/jc4xtF58Ve" target="_blank" rel="noreferrer">
             Discord
           </a>
           <a

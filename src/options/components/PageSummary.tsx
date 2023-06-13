@@ -75,7 +75,7 @@ function PageSummaryComponent(props: PageSummaryProps) {
 
   return (
     <>
-      <Text h3 className="glarity--mt-5">
+      <Text h3 className="beyondbard--mt-5">
         Page Summary
       </Text>
 
@@ -83,7 +83,7 @@ function PageSummaryComponent(props: PageSummaryProps) {
         <Card.Content>
           <Text
             h5
-            className="glarity--mb-0 glarity--flex glarity--flex-row glarity--items-center glarity--gap-1"
+            className="beyondbard--mb-0 beyondbard--flex beyondbard--flex-row beyondbard--items-center beyondbard--gap-1"
           >
             <Toggle
               initialChecked
@@ -92,17 +92,17 @@ function PageSummaryComponent(props: PageSummaryProps) {
             />{' '}
             Show BeyondBard Icon
           </Text>
-          <Text className="glarity--mt-0" font="12px">
+          <Text className="beyondbard--mt-0" font="12px">
             Once hidden, the BeyondBard icon will no longer appear on the page. However, you can open
             the page summary by clicking on the browser extension icon.
           </Text>
         </Card.Content>
         <Divider />
         <Card.Content>
-          <Text h4 className="glarity--mb-0">
+          <Text h4 className="beyondbard--mb-0">
             Whitelist Sites
           </Text>
-          <Text className="glarity--mt-0" font="12px">
+          <Text className="beyondbard--mt-0" font="12px">
             Only display the BeyondBard icon on these sites (one URL per line).
           </Text>
           <Spacer h={0.5} />
@@ -117,10 +117,10 @@ https://reddit.com"
         </Card.Content>
         <Divider />
         <Card.Content>
-          <Text h4 className="glarity--mb-0">
+          <Text h4 className="beyondbard--mb-0">
             Blacklist Sites
           </Text>
-          <Text className="glarity--mt-0" font="12px">
+          <Text className="beyondbard--mt-0" font="12px">
             Do not display BeyondBard icon on these sites (one URL per line).
           </Text>
           <Spacer h={0.5} />

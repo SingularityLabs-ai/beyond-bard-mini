@@ -31,17 +31,17 @@ function App() {
   }, [])
 
   return (
-    <div className="glarity--flex glarity--flex-col glarity--h-full glarity--popup">
-      <div className="glarity--mb-1 glarity--flex glarity--flex-row glarity--items-center glarity--px-1">
-        <img src={logo} className="glarity--w-5 glarity--h-5 glarity--rounded-sm" />
-        <p className="glarity--text-sm glarity--font-semibold glarity--m-0 glarity--ml-1">
+    <div className="beyondbard--flex beyondbard--flex-col beyondbard--h-full beyondbard--popup">
+      <div className="beyondbard--mb-1 beyondbard--flex beyondbard--flex-row beyondbard--items-center beyondbard--px-1">
+        <img src={logo} className="beyondbard--w-5 beyondbard--h-5 beyondbard--rounded-sm" />
+        <p className="beyondbard--text-sm beyondbard--font-semibold beyondbard--m-0 beyondbard--ml-1">
           {APP_TITLE}
         </p>
       </div>
       {isChrome && !hideShortcutsTipQuery.isLoading && !hideShortcutsTipQuery.data && (
-        <p className="glarity--m-0 glarity--mb-1">
+        <p className="beyondbard--m-0 beyondbard--mb-1">
           Tip:{' '}
-          <a onClick={openShortcutsPage} className="glarity--underline glarity--cursor-pointer">
+          <a onClick={openShortcutsPage} className="beyondbard--underline beyondbard--cursor-pointer">
             setup shortcuts
           </a>{' '}
           for faster access.

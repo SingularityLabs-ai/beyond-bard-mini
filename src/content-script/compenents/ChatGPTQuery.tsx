@@ -229,14 +229,14 @@ function ChatGPTQuery(props: Props) {
     // console.debug("ChatGPTQuery latestAnswerText=", latestAnswerText);
     return (
       <div className="markdown-body gpt-markdown" id="gpt-answer" dir="auto">
-        <div className="glarity--chatgpt--header">
+        <div className="beyondbard--chatgpt--header">
           <ChatGPTFeedback
             messageId={answer.messageId}
             conversationId={answer.conversationId}
             answerText={answer.text}
           />
         </div>
-        <div className="glarity--chatgpt--content" ref={wrapRef}>
+        <div className="beyondbard--chatgpt--content" ref={wrapRef}>
           <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>
             {answer.text}
           </ReactMarkdown>
@@ -289,7 +289,7 @@ function ChatGPTQuery(props: Props) {
         )}
 
         {/* {done && showTip && (
-          <p className="glarity--italic glarity--mt-2">
+          <p className="beyondbard--italic beyondbard--mt-2">
             Enjoy this extension? Give us a 5-star rating at{' '}
             <a
               href="https://chatgpt4google.com/chrome?utm_source=rating_tip"
@@ -311,7 +311,7 @@ function ChatGPTQuery(props: Props) {
           <>
             Please set Bard API Key in the{' '}
             <button
-              className={classNames('glarity--btn', 'glarity--btn__primary', 'glarity--btn__small')}
+              className={classNames('beyondbard--btn', 'beyondbard--btn__primary', 'beyondbard--btn__small')}
               onClick={openOptionsPage}
             >
               extension options
@@ -323,7 +323,7 @@ function ChatGPTQuery(props: Props) {
             {' '}
             Please login and pass Cloudflare check at{' '}
             <button
-              className={classNames('glarity--btn', 'glarity--btn__primary', 'glarity--btn__small')}
+              className={classNames('beyondbard--btn', 'beyondbard--btn__primary', 'beyondbard--btn__small')}
               onClick={newTab}
             >
               bard.google.com
@@ -337,7 +337,7 @@ function ChatGPTQuery(props: Props) {
           (() => {
             if (isBraveBrowser()) {
               return (
-                <span className="glarity--block glarity--mt-2">
+                <span className="beyondbard--block beyondbard--mt-2">
                   Still not working? Follow{' '}
                   <a href="https://github.com/ishandutta2007/beyond-bard#troubleshooting">
                     Brave Troubleshooting
@@ -346,7 +346,7 @@ function ChatGPTQuery(props: Props) {
               )
             } else {
               return (
-                <span className="glarity--italic glarity--block glarity--mt-2 glarity--text-xs">
+                <span className="beyondbard--italic beyondbard--block beyondbard--mt-2 beyondbard--text-xs">
                   Bard requires passing a security check every once in a while. 
                 </span>
               )
@@ -359,7 +359,7 @@ function ChatGPTQuery(props: Props) {
     return (
       <p>
         Failed to load response from Bard:
-        <span className="glarity--break-all glarity--block">{error}</span>
+        <span className="beyondbard--break-all beyondbard--block">{error}</span>
         <a
           href="javascript:void(0)"
           onClick={() => {

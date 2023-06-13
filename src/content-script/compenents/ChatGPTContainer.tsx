@@ -148,43 +148,43 @@ function ChatGPTContainer(props: Props) {
     <>
       <GeistProvider themeType={themeType}>
         <>
-          <div className="glarity--chatgpt">
-            <div className="glarity--header">
-              <div className="glarity--title-container">
+          <div className="beyondbard--chatgpt">
+            <div className="beyondbard--header">
+              <div className="beyondbard--title-container">
                 <a
                   href="https://ishandutta2007.github.io/BeyondBard"
                   rel="noreferrer"
                   target="_blank"
-                  className="glarity--header__logo"
+                  className="beyondbard--header__logo"
                 >
                   <img src={logo} alt={APP_TITLE}/>
                   {APP_TITLE}
                 </a>
-                <a href="javascript:;" className="glarity--header__logo" onClick={openOptionsPage}>
+                <a href="javascript:;" className="beyondbard--header__logo" onClick={openOptionsPage}>
                   <GearIcon size={14} />
                 </a>
 
                 {loading ? (
-                  <span className="glarity--header__logo">
-                    <Spinner className="glarity--icon--loading" />
+                  <span className="beyondbard--header__logo">
+                    <Spinner className="beyondbard--icon--loading" />
                   </span>
                 ) : (
-                  <a href="javascript:;" className="glarity--header__logo" onClick={onRefresh}>
+                  <a href="javascript:;" className="beyondbard--header__logo" onClick={onRefresh}>
                     <SyncIcon size={14} />
                   </a>
                 )}
               </div>
 
-              <div className="glarity--chatgpt__action"></div>
+              <div className="beyondbard--chatgpt__action"></div>
             </div>
 
-            <div className="glarity--main">
-              <div className="glarity--main__container">
+            <div className="beyondbard--main">
+              <div className="beyondbard--main__container">
                 {questionProps.question ? (
                   <>
                     {triggerMode === TriggerMode.Manually && !questionProps.currentTime ? (
                       <span
-                        className="glarity--link"
+                        className="beyondbard--link"
                         onClick={() => {
                           onRefresh()
                         }}
@@ -196,7 +196,7 @@ function ChatGPTContainer(props: Props) {
                     ) : (
                       <>
                         {loading && (
-                          <div className="glarity--main__loading">
+                          <div className="beyondbard--main__loading">
                             <Loading />
                           </div>
                         )}
@@ -233,15 +233,15 @@ function ChatGPTContainer(props: Props) {
             </div>
 
             {questionProps.question && currentTranscript && (
-              <div className="glarity--main">
-                <div className="glarity--main__header">
-                  <div className="glarity--main__header--title">
+              <div className="beyondbard--main">
+                <div className="beyondbard--main__header">
+                  <div className="beyondbard--main__header--title">
                     Transcript
                     {questionProps.langOptionsWithLink.length > 1 && (
                       <>
                         {' '}
                         <select
-                          className="glarity--select"
+                          className="beyondbard--select"
                           value={selectedOption}
                           onChange={handleChange}
                         >
@@ -257,7 +257,7 @@ function ChatGPTContainer(props: Props) {
                       </>
                     )}
                   </div>
-                  <div className="glarity--main__header--action">
+                  <div className="beyondbard--main__header--action">
                     <a href="javascript:;" onClick={copytSubtitle}>
                       {copied ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
                     </a>
@@ -269,7 +269,7 @@ function ChatGPTContainer(props: Props) {
                 </div>
 
                 <div
-                  className="glarity--main__container glarity--main__container--subtitle"
+                  className="beyondbard--main__container beyondbard--main__container--subtitle"
                   style={{
                     display: transcriptShow ? 'block' : 'none',
                   }}
@@ -278,7 +278,7 @@ function ChatGPTContainer(props: Props) {
                     const { time, text } = v
 
                     return (
-                      <div className="glarity--subtitle" key={i}>
+                      <div className="beyondbard--subtitle" key={i}>
                         <div
                           className="subtitle--time"
                           onClick={() => {

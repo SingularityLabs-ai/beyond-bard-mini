@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  prefix: 'glarity--',
+  prefix: 'beyondbard--',
   corePlugins: {
     preflight: false,
   },

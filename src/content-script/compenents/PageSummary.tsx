@@ -128,23 +128,23 @@ function PageSummary(props: Props) {
   return (
     <>
       {showCard ? (
-        <div className="glarity--card">
-          <div className="glarity--card__head ">
-            <div className="glarity--card__head--title">
+        <div className="beyondbard--card">
+          <div className="beyondbard--card__head ">
+            <div className="beyondbard--card__head--title">
               <a href="https://ishandutta2007.github.io/BeyondBard" rel="noreferrer" target="_blank">
                 <img src={logo} alt={APP_TITLE} /> {APP_TITLE}
               </a>{' '}
               <button
-                className={classNames('glarity--btn', 'glarity--btn__icon')}
+                className={classNames('beyondbard--btn', 'beyondbard--btn__icon')}
                 onClick={openOptionsPage}
               >
                 <GearIcon size={14} />
               </button>
             </div>
 
-            <div className="glarity--card__head--action">
+            <div className="beyondbard--card__head--action">
               <button
-                className={classNames('glarity--btn', 'glarity--btn__icon')}
+                className={classNames('beyondbard--btn', 'beyondbard--btn__icon')}
                 onClick={onSwitch}
               >
                 <XCircleFillIcon />
@@ -152,24 +152,24 @@ function PageSummary(props: Props) {
             </div>
           </div>
 
-          <div className="glarity--card__content">
+          <div className="beyondbard--card__content">
             {question ? (
-              <div className="glarity--container">
-                <div className="glarity--chatgpt">
+              <div className="beyondbard--container">
+                <div className="beyondbard--chatgpt">
                   <ChatGPTQuery question={question} />
                 </div>
               </div>
             ) : (
-              <div className="glarity--card__empty ">
+              <div className="beyondbard--card__empty ">
                 {!supportSummary ? (
                   'Sorry, the summary of this page is not supported.'
                 ) : (
                   <button
                     className={classNames(
-                      'glarity--btn',
-                      'glarity--btn__primary',
-                      // 'glarity--btn__large',
-                      'glarity--btn__block',
+                      'beyondbard--btn',
+                      'beyondbard--btn__primary',
+                      // 'beyondbard--btn__large',
+                      'beyondbard--btn__block',
                     )}
                     onClick={onSummary}
                     disabled={loading}
@@ -185,12 +185,12 @@ function PageSummary(props: Props) {
         show && (
           <button
             onClick={onSwitch}
-            className={classNames('glarity--btn', 'glarity--btn__launch', 'glarity--btn__primary')}
+            className={classNames('beyondbard--btn', 'beyondbard--btn__launch', 'beyondbard--btn__primary')}
           >
             <img
               src={logoWhite}
               alt={APP_TITLE}
-              className="glarity--w-5 glarity--h-5 glarity--rounded-sm"
+              className="beyondbard--w-5 beyondbard--h-5 beyondbard--rounded-sm"
             />
           </button>
         )

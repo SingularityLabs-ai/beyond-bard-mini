@@ -10,14 +10,14 @@ $font-size-normal: 14px;
 $font-size-small: 12px;
 
 // card
-.glarity--card {
+.beyondbard--card {
   font-size: $font-size-normal;
   border: 1px solid #ddd;
   box-shadow: 0 3px 8px rgb(0 0 0 / 35%);
   border-radius: 6px !important;
   background: #fff;
 
-  .glarity--card__head {
+  .beyondbard--card__head {
     display: flex;
     justify-content: space-between;
     justify-items: center;
@@ -25,12 +25,12 @@ $font-size-small: 12px;
     border-bottom: 1px solid #eee;
     font-size: $font-size-large;
 
-    .glarity--card__head--title {
+    .beyondbard--card__head--title {
       display: inline-flex;
       align-items: center;
       font-weight: bold;
 
-      .glarity--btn {
+      .beyondbard--btn {
         margin-left: 4px;
       }
 
@@ -50,7 +50,7 @@ $font-size-small: 12px;
     }
   }
 
-  .glarity--card__content {
+  .beyondbard--card__content {
     position: relative;
     padding: 15px;
     color: #333;
@@ -60,15 +60,15 @@ $font-size-small: 12px;
     overflow-wrap: break-word;
     min-height: 110px;
 
-    .glarity--container {
+    .beyondbard--container {
       margin-bottom: 0;
 
-      .glarity--chatgpt {
+      .beyondbard--chatgpt {
         border: none;
       }
     }
 
-    .glarity--card__empty {
+    .beyondbard--card__empty {
       position: absolute;
       left: 50%;
       top: 50%;
@@ -82,14 +82,14 @@ $font-size-small: 12px;
       min-height: 70px;
     }
 
-    .glarity--container #gpt-answer.markdown-body.gpt-markdown .glarity--chatgpt--header {
+    .beyondbard--container #gpt-answer.markdown-body.gpt-markdown .beyondbard--chatgpt--header {
       margin: -13px -12px 0 0 !important;
     }
   }
 }
 
 // button
-.glarity--btn {
+.beyondbard--btn {
   margin: 0;
   padding: 8px 10px;
   line-height: 1;
@@ -112,7 +112,7 @@ $font-size-small: 12px;
     opacity: 0.9;
   }
 
-  &.glarity--btn__icon {
+  &.beyondbard--btn__icon {
     color: $secondary-color;
     padding: 0;
     border: none;
@@ -125,7 +125,7 @@ $font-size-small: 12px;
     // }
   }
 
-  &.glarity--btn__launch {
+  &.beyondbard--btn__launch {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,34 +146,34 @@ $font-size-small: 12px;
     }
   }
 
-  &.glarity--btn__primary {
+  &.beyondbard--btn__primary {
     color: #fff;
     background: $primary-color;
   }
 
-  &.glarity--btn__primary--ghost {
+  &.beyondbard--btn__primary--ghost {
     color: $primary-color;
     background: #fff;
     border: 1px solid $primary-color;
   }
 
-  &.glarity--btn__block {
+  &.beyondbard--btn__block {
     width: 100%;
   }
 
-  &.glarity--btn__large {
+  &.beyondbard--btn__large {
     font-size: $font-size-large;
     padding: 8px 16px;
   }
 
-  &.glarity--btn__small {
+  &.beyondbard--btn__small {
     font-size: $font-size-small;
     padding: 4px 8px;
   }
 }
 
 // text
-.glarity--subtitle {
+.beyondbard--subtitle {
   font-size: $font-size-small;
   color: #999 !important;
   font-weight: normal;
@@ -181,20 +181,20 @@ $font-size-small: 12px;
 
 // Dark
 @media (prefers-color-scheme: dark) {
-  .glarity--card {
+  .beyondbard--card {
     background: rgb(35, 36, 40);
     border-color: #444950;
     box-shadow: 0 3px 9px rgb(255 255 255 / 30%);
 
-    .glarity--card__head {
+    .beyondbard--card__head {
       border-bottom-color: #444950;
     }
 
-    .glarity--card__content,
-    .glarity--card__head {
+    .beyondbard--card__content,
+    .beyondbard--card__head {
       color: #ccc;
 
-      .glarity--card__head--title {
+      .beyondbard--card__head--title {
         a {
           color: #ccc;
         }
@@ -202,14 +202,14 @@ $font-size-small: 12px;
     }
   }
 
-  .glarity--btn {
+  .beyondbard--btn {
     border-color: #444950;
 
-    &.glarity--btn__primary {
+    &.beyondbard--btn__primary {
       border-color: #999;
     }
 
-    &.glarity--btn__icon {
+    &.beyondbard--btn__icon {
       color: #999;
     }
   }

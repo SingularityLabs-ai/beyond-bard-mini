@@ -46,7 +46,7 @@ function EnableBeyondBard(props: Props) {
     <>
       {!isIOS && (
         <>
-          <Text h3 className="glarity--mt-5">
+          <Text h3 className="beyondbard--mt-5">
             Enable/Disable BeyondBard
             <Text font="12px" my={0}>
               You can enable/disable the BeyondBard Summary on the following website.
@@ -58,11 +58,11 @@ function EnableBeyondBard(props: Props) {
               <Checkbox.Group
                 value={enableSites}
                 onChange={onChangeSites}
-                className="glarity--support__sites"
+                className="beyondbard--support__sites"
               >
                 {Object.entries(supportSites).map(([k, v]) => {
                   return (
-                    <Checkbox key={k} value={v.siteValue} className="glarity--support__sites--item">
+                    <Checkbox key={k} value={v.siteValue} className="beyondbard--support__sites--item">
                       {v.siteName}
                     </Checkbox>
                   )

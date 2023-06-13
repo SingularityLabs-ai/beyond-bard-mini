@@ -1,17 +1,17 @@
-.glarity--container.gpt--dark {
-  .glarity--chatgpt {
+.beyondbard--container.gpt--dark {
+  .beyondbard--chatgpt {
     color: white;
     border-color: #3c4043;
     background-color: #0d1117;
 
-    .glarity--main__loading {
+    .beyondbard--main__loading {
       background-color: #0d1117;
     }
   }
 
-  .glarity--header,
-  .glarity--main__header a,
-  a.glarity--header__logo {
+  .beyondbard--header,
+  .beyondbard--main__header a,
+  a.beyondbard--header__logo {
     color: #fff;
 
     &:visited {
@@ -19,15 +19,15 @@
     }
   }
 
-  .glarity--main {
+  .beyondbard--main {
     border-top-color: #3c4043;
   }
 
-  .glarity--main__header {
+  .beyondbard--main__header {
     border-bottom-color: #3c4043;
   }
 
-  .glarity--main__container {
+  .beyondbard--main__container {
     color: #eee;
 
     a {
