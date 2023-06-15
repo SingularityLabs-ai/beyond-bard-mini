@@ -243,7 +243,7 @@ function ChatGPTQuery(props: Props) {
             />
           </div>
 
-          <div ref={wrapRef}>
+          <div style="margin-left:10px;margin-right: -10px;padding-right: 10px;" ref={wrapRef}>
             <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>
               {answer.text}
             </ReactMarkdown>
