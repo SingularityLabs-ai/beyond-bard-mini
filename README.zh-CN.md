@@ -4,8 +4,6 @@ Chrome 浏览器扩展实现在 Google 搜索结果和 YouTube 视频旁边展�
 
 ## ⚠️ Tips:
 
-如果遇到不能选择 Google API 模型, 麻烦删除并重新安装。
-
 或者尝试下载最新体验包 ([https://github.com/ishandutta2007/beyond-bard/tree/main/packages](https://github.com/ishandutta2007/beyond-bard/tree/main/packages)) 然后手动安装 ([https://github.com/ishandutta2007/beyond-bard#chrome](https://github.com/ishandutta2007/beyond-bard#chrome)).
 
 ## 支持网站
