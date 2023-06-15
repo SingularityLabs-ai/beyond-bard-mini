@@ -2084,6 +2084,12 @@
   var ofetch = createFetch({ fetch: fetch2, Headers });
 
   // src/background/providers/bard.ts
+  var ChatError = class extends Error {
+    constructor(message, code) {
+      super(message);
+      this.code = code;
+    }
+  };
   async function sendMessageFeedbackBard(data) {
     console.log("TODO: Currently it is dummy, no feedback is actually sent");
     console.log("data:", data);
@@ -2111,7 +2117,7 @@
       const data = JSON.parse(resp.split("\n")[3]);
       const payload = JSON.parse(data[0][2]);
       if (!payload) {
-        throw new ChatError("Failed to access Bard", ErrorCode.BARD_EMPTY_RESPONSE);
+        throw new ChatError("Failed to access Bard", "BARD_EMPTY_RESPONSE" /* BARD_EMPTY_RESPONSE */);
       }
       const text = payload[0][0];
       return {

@@ -41498,7 +41498,7 @@ ${reviewText}
               answerText: answer.text
             }
           ) }),
-          /* @__PURE__ */ o3("div", { ref: wrapRef, children: [
+          /* @__PURE__ */ o3("div", { style: "margin-left:10px;margin-right: -10px;padding-right: 10px;", ref: wrapRef, children: [
             /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: answer.text }),
             /* @__PURE__ */ o3("div", { className: "question-container", children: requestionList.map((requestion) => {
               var _a;
