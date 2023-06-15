@@ -204,10 +204,10 @@ function ChatGPTQuery(props: Props) {
     }
   }, [requestionList, questionIndex])
 
-  const ReQuestionAnswerFixed = ({ text }: { text: string | undefined }) => {
-    if (!text) return <p className="text-[#b6b8ba] animate-pulse">Answering...</p>
+  const ReQuestionAnswerFixed = ({ answer }: { answer: string | undefined }) => {
+    if (!answer.text) return <p className="text-[#b6b8ba] animate-pulse">Answering...</p>
     return (
-      <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>{text}</ReactMarkdown>
+      <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>{answer.text}</ReactMarkdown>
     )
   }
 
@@ -239,21 +239,24 @@ function ChatGPTQuery(props: Props) {
           //   />
           // </div >
 
+              // <div style="margin-top: 0px !important;margin-left: calc(100% - 58px);">
+              //   <ChatGPTFeedback
+              //     messageId={answer.messageId}
+              //     conversationId={answer.conversationId}
+              //     answerText={answer.text}
+              //   />
+              // </div>
+
     try {
       return (
         <div id="gpt-answer" dir="auto">
-          <div style="margin-top: 0px !important;margin-left: calc(100% - 58px);">
-            <ChatGPTFeedback
-              messageId={answer.messageId}
-              conversationId={answer.conversationId}
-              answerText={answer.text}
-            />
-          </div>
 
           <div style="margin-left:10px;margin-right: -10px;padding-right: 10px;" ref={wrapRef}>
-            <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>
-              {answer.text}
-            </ReactMarkdown>
+            <div class="primary-answer-container">
+              <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>
+                {answer.text}
+              </ReactMarkdown>
+            </div>
             <div className="question-container">
               {requestionList.map((requestion) => (
                 <div key={requestion.index}>
@@ -266,7 +269,7 @@ function ChatGPTQuery(props: Props) {
                       <span className="break-all block">{reError}</span>
                     </p>
                   ) : requestion.index < requestionList.length - 1 ? (
-                    <ReQuestionAnswerFixed text={requestion.answer?.text} />
+                    <ReQuestionAnswerFixed answer={requestion.answer} />
                   ) : (
                     <ReQuestionAnswer latestAnswerText={reQuestionLatestAnswerText} />
                   )}
