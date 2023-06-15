@@ -41352,7 +41352,44 @@ ${reviewText}
       console.debug("ChatGPTQuery answer.conversationContext.contextIds=", answer.conversationContext.contextIds);
       console.debug("ChatGPTQuery done=", done);
       try {
-        return /* @__PURE__ */ o3("div", { ref: wrapRef, children: /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: answer.text }) });
+        return /* @__PURE__ */ o3("div", { id: "gpt-answer", dir: "auto", children: [
+          /* @__PURE__ */ o3("div", { ref: wrapRef, children: [
+            /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: answer.text }),
+            /* @__PURE__ */ o3("div", { className: "question-container", children: requestionList.map((requestion) => {
+              var _a;
+              return /* @__PURE__ */ o3("div", { children: [
+                /* @__PURE__ */ o3("div", { className: "font-bold", children: `Q${requestion.index + 1} : ${requestion.requestion}` }),
+                reError ? /* @__PURE__ */ o3("p", { children: [
+                  "Failed to load response from BARD:",
+                  /* @__PURE__ */ o3("span", { className: "break-all block", children: reError })
+                ] }) : requestion.index < requestionList.length - 1 ? /* @__PURE__ */ o3(ReQuestionAnswerFixed, { text: (_a = requestion.answer) == null ? void 0 : _a.text }) : /* @__PURE__ */ o3(ReQuestionAnswer, { latestAnswerText: reQuestionLatestAnswerText })
+              ] }, requestion.index);
+            }) })
+          ] }),
+          continueConversation && answer.conversationContext.contextIds && done && /* @__PURE__ */ o3("div", { children: /* @__PURE__ */ o3(
+            "form",
+            {
+              id: "requestion",
+              style: { display: "flex" },
+              onSubmit: (e3) => {
+                e3.preventDefault();
+              },
+              children: [
+                /* @__PURE__ */ o3(
+                  "input",
+                  {
+                    disabled: !reQuestionDone,
+                    type: "text",
+                    ref: inputRef,
+                    placeholder: "Tell Me More",
+                    id: "question"
+                  }
+                ),
+                /* @__PURE__ */ o3("button", { id: "submit", onClick: requeryHandler, children: "ASK" })
+              ]
+            }
+          ) })
+        ] });
       } catch (e3) {
         console.log("DOM Rendering error", e3);
       }

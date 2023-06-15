@@ -229,13 +229,63 @@ function ChatGPTQuery(props: Props) {
     console.debug("ChatGPTQuery answer.conversationContext.contextIds=", answer.conversationContext.contextIds);
     console.debug("ChatGPTQuery done=", done);
     // console.debug("ChatGPTQuery latestAnswerText=", latestAnswerText);
+    // className="markdown-body gpt-markdown" another culprit
            // <!-- className="beyondbard--chatgpt--content" is the culprit >
     try {
       return (
-        <div ref={wrapRef}>         
-          <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>
-            {answer.text}
-          </ReactMarkdown>
+        <div id="gpt-answer" dir="auto">
+          <div ref={wrapRef}>
+            <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>
+              {answer.text}
+            </ReactMarkdown>
+            <div className="question-container">
+              {requestionList.map((requestion) => (
+                <div key={requestion.index}>
+                  <div className="font-bold">{`Q${requestion.index + 1} : ${
+                    requestion.requestion
+                  }`}</div>
+                  {reError ? (
+                    <p>
+                      Failed to load response from BARD:
+                      <span className="break-all block">{reError}</span>
+                    </p>
+                  ) : requestion.index < requestionList.length - 1 ? (
+                    <ReQuestionAnswerFixed text={requestion.answer?.text} />
+                  ) : (
+                    <ReQuestionAnswer latestAnswerText={reQuestionLatestAnswerText} />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {(continueConversation && answer.conversationContext.contextIds && done) && (
+            <div>
+              {/* <a href={`https://bard.google.com/c/${answer.conversationId}`} target="_blank">
+              //   Continue conversation
+               </a>*/}
+              <form
+                id="requestion"
+                style={{ display: 'flex' }}
+                onSubmit={(e) => {
+                  // submit when press enter key
+                  e.preventDefault()
+                }}
+              >
+                <input
+                  disabled={!reQuestionDone}
+                  type="text"
+                  ref={inputRef}
+                  placeholder="Tell Me More"
+                  id="question"
+                />
+                <button id="submit" onClick={requeryHandler}>
+                  ASK
+                </button>
+              </form>
+            </div>
+          )}
+
         </div>
       )
     } catch (e) {
