@@ -1,4 +1,4 @@
-# BeyondBard - Summary for Google/YouTube with Google Bard
+# BeyondBard - Summary or Insights for Google/YouTube with Google Bard
 
 Chrome extension to view Google Bard summaries alongside Google search results and YouTube videos, also supports Yahoo! ニュース、PubMed、PMC、NewsPicks、Github、Nikkei、 Bing、Google Patents,and any page summary.
 

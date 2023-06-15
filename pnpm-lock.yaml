@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 overrides:
   '@types/react': 17.0.44
 
@@ -8,7 +12,7 @@ dependencies:
     specifier: ^2.3.8
     version: 2.3.8(@preact/compat@17.1.2)(@preact/compat@17.1.2)
   '@primer/octicons-react':
-    specifier: ^17.9.0
+    specifier: ^17.11.1
     version: 17.11.1(@preact/compat@17.1.2)
   antd:
     specifier: ^5.3.0
@@ -43,6 +47,9 @@ dependencies:
   lodash-es:
     specifier: ^4.17.21
     version: 4.17.21
+  ofetch:
+    specifier: ^1.1.0
+    version: 1.1.0
   preact:
     specifier: ^10.13.1
     version: 10.13.1
@@ -50,7 +57,7 @@ dependencies:
     specifier: ^15.8.1
     version: 15.8.1
   punycode:
-    specifier: ^2.1.1
+    specifier: ^2.3.0
     version: 2.3.0
   react:
     specifier: npm:@preact/compat@^17.1.2
@@ -59,13 +66,13 @@ dependencies:
     specifier: npm:@preact/compat@^17.1.2
     version: /@preact/compat@17.1.2(preact@10.13.1)
   react-markdown:
-    specifier: ^8.0.4
+    specifier: ^8.0.5
     version: 8.0.5(@preact/compat@17.1.2)(@types/react@17.0.44)
   rehype-highlight:
     specifier: ^6.0.0
     version: 6.0.0
   swr:
-    specifier: ^2.0.0
+    specifier: ^2.0.3
     version: 2.0.3(@preact/compat@17.1.2)
   uuid:
     specifier: ^9.0.0
@@ -91,10 +98,10 @@ devDependencies:
     specifier: ^0.9.2
     version: 0.9.2
   '@typescript-eslint/eslint-plugin':
-    specifier: ^5.47.0
+    specifier: ^5.50.0
     version: 5.50.0(@typescript-eslint/parser@5.50.0)(eslint@8.33.0)(typescript@4.9.5)
   '@typescript-eslint/parser':
-    specifier: ^5.47.0
+    specifier: ^5.50.0
     version: 5.50.0(eslint@8.33.0)(typescript@4.9.5)
   archiver:
     specifier: ^5.3.1
@@ -112,19 +119,19 @@ devDependencies:
     specifier: ^16.0.3
     version: 16.0.3
   esbuild:
-    specifier: ^0.17.4
+    specifier: ^0.17.5
     version: 0.17.5
   esbuild-style-plugin:
     specifier: ^1.6.1
     version: 1.6.1
   eslint:
-    specifier: ^8.30.0
+    specifier: ^8.33.0
     version: 8.33.0
   eslint-config-prettier:
-    specifier: ^8.5.0
+    specifier: ^8.6.0
     version: 8.6.0(eslint@8.33.0)
   eslint-plugin-react:
-    specifier: ^7.31.11
+    specifier: ^7.32.2
     version: 7.32.2(eslint@8.33.0)
   eslint-plugin-react-hooks:
     specifier: ^4.6.0
@@ -133,7 +140,7 @@ devDependencies:
     specifier: ^11.1.0
     version: 11.1.0
   husky:
-    specifier: ^8.0.0
+    specifier: ^8.0.3
     version: 8.0.3
   lint-staged:
     specifier: ^13.1.0
@@ -142,25 +149,25 @@ devDependencies:
     specifier: ^0.0.10
     version: 0.0.10
   postcss:
-    specifier: ^8.4.20
+    specifier: ^8.4.21
     version: 8.4.21
   postcss-scss:
     specifier: ^4.0.6
     version: 4.0.6(postcss@8.4.21)
   prettier:
-    specifier: ^2.8.0
+    specifier: ^2.8.3
     version: 2.8.3
   prettier-plugin-organize-imports:
-    specifier: ^3.2.1
+    specifier: ^3.2.2
     version: 3.2.2(prettier@2.8.3)(typescript@4.9.5)
   sass:
-    specifier: ^1.57.1
+    specifier: ^1.58.0
     version: 1.58.0
   tailwindcss:
     specifier: ^3.2.4
     version: 3.2.4(postcss@8.4.21)
   typescript:
-    specifier: ^4.9.4
+    specifier: ^4.9.5
     version: 4.9.5
   webextension-polyfill:
     specifier: ^0.10.0
@@ -1099,7 +1106,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001450
+      caniuse-lite: 1.0.30001503
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1162,7 +1169,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001450
+      caniuse-lite: 1.0.30001503
       electron-to-chromium: 1.4.286
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10(browserslist@4.21.5)
@@ -1205,8 +1212,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite@1.0.30001450:
-    resolution: {integrity: sha512-qMBmvmQmFXaSxexkjjfMvD5rnDL0+m+dUMZKoDYsGG8iZN29RuYh9eRoMvKsT6uMAWlyUUGDEQGJJYjzCIO9ew==}
+  /caniuse-lite@1.0.30001503:
+    resolution: {integrity: sha512-Sf9NiF+wZxPfzv8Z3iS0rXM1Do+iOy2Lxvib38glFX+08TCYYYGR5fRJXk4d77C4AYwhUjgYgMsMudbh2TqCKw==}
     dev: true
 
   /chalk@4.1.2:
@@ -1442,6 +1449,10 @@ packages:
   /dequal@2.0.3:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
     engines: {node: '>=6'}
+    dev: false
+
+  /destr@1.2.2:
+    resolution: {integrity: sha512-lrbCJwD9saUQrqUfXvl6qoM+QN3W7tLV5pAOs+OqOmopCCz/JkE05MHedJR1xfk4IAnZuJXPVuN5+7jNA2ZCiA==}
     dev: false
 
   /detective@5.2.1:
@@ -2905,6 +2916,10 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
+  /node-fetch-native@1.2.0:
+    resolution: {integrity: sha512-5IAMBTl9p6PaAjYCnMv5FmqIF6GcZnawAVnzaCG0rX2aYZJ4CxEkZNtVPuTRug7fL7wyM5BQYTlAzcyMPi6oTQ==}
+    dev: false
+
   /node-releases@2.0.10:
     resolution: {integrity: sha512-5GFldHPXVG/YZmFzJvKK2zDSzPKhEp0+ZR5SVaoSag9fsL5YgHbUHDfnG5494ISANDcK4KwPXAx2xqVEydmd7w==}
     dev: true
@@ -2996,6 +3011,14 @@ packages:
       define-properties: 1.1.4
       es-abstract: 1.21.1
     dev: true
+
+  /ofetch@1.1.0:
+    resolution: {integrity: sha512-yjq2ZUUMto1ITpge2J5vNlUfteLzxfHn9aJC55WtVGD3okKwSfPoLaKpcHXmmKd2kZZUGo+jdkFuuj09Blyeig==}
+    dependencies:
+      destr: 1.2.2
+      node-fetch-native: 1.2.0
+      ufo: 1.1.2
+    dev: false
 
   /once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
@@ -4467,6 +4490,10 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
+
+  /ufo@1.1.2:
+    resolution: {integrity: sha512-TrY6DsjTQQgyS3E3dBaOXf0TpPD8u9FVrVYmKVegJuFw51n/YB9XPt+U6ydzFG5ZIN7+DIjPbNmXoBj9esYhgQ==}
+    dev: false
 
   /unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}

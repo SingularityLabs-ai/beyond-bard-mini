@@ -18,6 +18,7 @@ import '@/content-script/styles.scss'
 export type QueryStatus = 'success' | 'error' | 'done' | undefined
 
 interface Props {
+  triggerMode: any
   question: string
   onStatusChange?: (status: QueryStatus) => void
   currentTime?: number
@@ -163,7 +164,8 @@ function ChatGPTQuery(props: Props) {
           setReQuestionDone(true)
           setQuestionIndex(questionIndex + 1)
         }
-      } catch {
+      } catch(e){
+        console.log(e);
         setReError(msg.error)
       }
     }
@@ -227,81 +229,18 @@ function ChatGPTQuery(props: Props) {
     console.debug("ChatGPTQuery answer.conversationContext.contextIds=", answer.conversationContext.contextIds);
     console.debug("ChatGPTQuery done=", done);
     // console.debug("ChatGPTQuery latestAnswerText=", latestAnswerText);
-    return (
-      <div className="markdown-body gpt-markdown" id="gpt-answer" dir="auto">
-        <div className="beyondbard--chatgpt--header">
-          <ChatGPTFeedback
-            messageId={answer.messageId}
-            conversationId={answer.conversationId}
-            answerText={answer.text}
-          />
-        </div>
-        <div className="beyondbard--chatgpt--content" ref={wrapRef}>
+           // <!-- className="beyondbard--chatgpt--content" is the culprit >
+    try {
+      return (
+        <div ref={wrapRef}>         
           <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>
             {answer.text}
           </ReactMarkdown>
-          <div className="question-container">
-            {requestionList.map((requestion) => (
-              <div key={requestion.index}>
-                <div className="font-bold">{`Q${requestion.index + 1} : ${
-                  requestion.requestion
-                }`}</div>
-                {reError ? (
-                  <p>
-                    Failed to load response from BARD:
-                    <span className="break-all block">{reError}</span>
-                  </p>
-                ) : requestion.index < requestionList.length - 1 ? (
-                  <ReQuestionAnswerFixed text={requestion.answer?.text} />
-                ) : (
-                  <ReQuestionAnswer latestAnswerText={reQuestionLatestAnswerText} />
-                )}
-              </div>
-            ))}
-          </div>
-
         </div>
-        {(continueConversation && answer.conversationContext.contextIds && done) && (
-          <div>
-            {/* <a href={`https://bard.google.com/c/${answer.conversationId}`} target="_blank">
-            //   Continue conversation
-             </a>*/}
-            <form
-              id="requestion"
-              style={{ display: 'flex' }}
-              onSubmit={(e) => {
-                // submit when press enter key
-                e.preventDefault()
-              }}
-            >
-              <input
-                disabled={!reQuestionDone}
-                type="text"
-                ref={inputRef}
-                placeholder="Tell Me More"
-                id="question"
-              />
-              <button id="submit" onClick={requeryHandler}>
-                ASK
-              </button>
-            </form>
-          </div>
-        )}
-
-        {/* {done && showTip && (
-          <p className="beyondbard--italic beyondbard--mt-2">
-            Enjoy this extension? Give us a 5-star rating at{' '}
-            <a
-              href="https://chatgpt4google.com/chrome?utm_source=rating_tip"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Chrome Web Store
-            </a>
-          </p>
-        )} */}
-      </div>
-    )
+      )
+    } catch (e) {
+      console.log("DOM Rendering error", e)
+    }
   }
 
   if (error === 'UNAUTHORIZED' || error === 'CLOUDFLARE') {

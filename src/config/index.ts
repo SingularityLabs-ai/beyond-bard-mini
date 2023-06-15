@@ -139,7 +139,7 @@ https://www.crunchyroll.com
 https://www.funimation.com
 https://www.viki.com
 `
-export const APP_TITLE = `BeyondBard Summary`
+export const APP_TITLE = `BeyondBard`
 
 export const DEFAULT_MODEL = 'gpt-3.5-turbo'
 export const DEFAULT_API_HOST = 'api.openai.com'

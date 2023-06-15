@@ -1,4 +1,4 @@
-# # BeyondBard - Summary for Google/YouTube with Google Bard
+# # BeyondBard - Summary or Insights for Google/YouTube with Google Bard
 
 Chrome 浏览器扩展实现在 Google 搜索结果和 YouTube 视频旁边展示 ChatGPT 摘要，同时支持 Yahoo! JAPAN ニュース、PubMed、PMC、NewsPicks、Github、Nikkei、Bing、Google Patents, 以及任意网页的总结。
 
