@@ -13810,6 +13810,42 @@
       return naturalHeight <= height ? naturalHeight : acc;
     }, naturalHeights[0]);
   }
+  var CheckIcon = /* @__PURE__ */ createIconComponent("CheckIcon", "octicon octicon-check", function() {
+    return {
+      "16": {
+        "width": 16,
+        "path": /* @__PURE__ */ Cn.createElement("path", {
+          d: "M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"
+        })
+      },
+      "24": {
+        "width": 24,
+        "path": /* @__PURE__ */ Cn.createElement("path", {
+          d: "M21.03 5.72a.75.75 0 0 1 0 1.06l-11.5 11.5a.747.747 0 0 1-1.072-.012l-5.5-5.75a.75.75 0 1 1 1.084-1.036l4.97 5.195L19.97 5.72a.75.75 0 0 1 1.06 0Z"
+        })
+      }
+    };
+  });
+  var CopyIcon = /* @__PURE__ */ createIconComponent("CopyIcon", "octicon octicon-copy", function() {
+    return {
+      "16": {
+        "width": 16,
+        "path": /* @__PURE__ */ Cn.createElement(Cn.Fragment, null, /* @__PURE__ */ Cn.createElement("path", {
+          d: "M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"
+        }), /* @__PURE__ */ Cn.createElement("path", {
+          d: "M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+        }))
+      },
+      "24": {
+        "width": 24,
+        "path": /* @__PURE__ */ Cn.createElement(Cn.Fragment, null, /* @__PURE__ */ Cn.createElement("path", {
+          d: "M7.024 3.75c0-.966.784-1.75 1.75-1.75H20.25c.966 0 1.75.784 1.75 1.75v11.498a1.75 1.75 0 0 1-1.75 1.75H8.774a1.75 1.75 0 0 1-1.75-1.75Zm1.75-.25a.25.25 0 0 0-.25.25v11.498c0 .139.112.25.25.25H20.25a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25Z"
+        }), /* @__PURE__ */ Cn.createElement("path", {
+          d: "M1.995 10.749a1.75 1.75 0 0 1 1.75-1.751H5.25a.75.75 0 1 1 0 1.5H3.745a.25.25 0 0 0-.25.25L3.5 20.25c0 .138.111.25.25.25h9.5a.25.25 0 0 0 .25-.25v-1.51a.75.75 0 1 1 1.5 0v1.51A1.75 1.75 0 0 1 13.25 22h-9.5A1.75 1.75 0 0 1 2 20.25l-.005-9.501Z"
+        }))
+      }
+    };
+  });
   var GearIcon = /* @__PURE__ */ createIconComponent("GearIcon", "octicon octicon-gear", function() {
     return {
       "16": {
@@ -41199,6 +41235,7 @@ ${reviewText}
     const [error, setError] = h2("");
     const [retry, setRetry] = h2(0);
     const [done, setDone] = h2(false);
+    const [copied, setCopied] = h2(false);
     const [showTip, setShowTip] = h2(false);
     const [continueConversation, setContinueConversation] = h2(false);
     const [status, setStatus] = h2();
@@ -41225,6 +41262,7 @@ ${reviewText}
             setStatus("error");
           } else if (msg.event === "DONE") {
             setDone(true);
+            setCopied(false);
             setReQuestionDone(true);
             setStatus("done");
           }
@@ -41301,6 +41339,7 @@ ${reviewText}
             setReQuestionLatestAnswerText(latestAnswerText);
           } else if (msg.event === "DONE") {
             setReQuestionDone(true);
+            setCopied(false);
             setQuestionIndex(questionIndex + 1);
           }
         } catch (e3) {
@@ -41335,17 +41374,62 @@ ${reviewText}
       }
     }, [requestionList, questionIndex]);
     const ReQuestionAnswerFixed = ({ answer: answer2 }) => {
+      const [copyIconClicked2, setCopyIconClicked2] = h2(false);
+      const clickCopyToClipboard2 = T2(async () => {
+        await navigator.clipboard.writeText(answer2 == null ? void 0 : answer2.text);
+        setCopyIconClicked2(true);
+      }, [answer2]);
+      p2(() => {
+        if (copyIconClicked2) {
+          const timer = setTimeout(() => {
+            setCopyIconClicked2(false);
+          }, 500);
+          return () => clearTimeout(timer);
+        }
+      }, [copyIconClicked2]);
       if (!answer2.text)
         return /* @__PURE__ */ o3("p", { className: "text-[#b6b8ba] animate-pulse", children: "Answering..." });
-      return /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: answer2.text });
+      return /* @__PURE__ */ o3("div", { children: [
+        /* @__PURE__ */ o3("div", { className: "gpt--feedback", style: "margin-top: 0px !important;margin-left: calc(100% - 58px);", children: /* @__PURE__ */ o3("span", { onClick: clickCopyToClipboard2, children: copyIconClicked2 ? /* @__PURE__ */ o3(CheckIcon, { size: 14 }) : /* @__PURE__ */ o3(CopyIcon, { size: 14 }) }) }),
+        /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: answer2.text })
+      ] });
     };
     const ReQuestionAnswer = ({ latestAnswerText }) => {
       var _a, _b;
+      const [copyIconClicked2, setCopyIconClicked2] = h2(false);
+      const clickCopyToClipboard2 = T2(async () => {
+        await navigator.clipboard.writeText(latestAnswerText);
+        setCopyIconClicked2(true);
+      }, [latestAnswerText]);
+      p2(() => {
+        if (copyIconClicked2) {
+          const timer = setTimeout(() => {
+            setCopyIconClicked2(false);
+          }, 500);
+          return () => clearTimeout(timer);
+        }
+      }, [copyIconClicked2]);
       if (!latestAnswerText || ((_b = (_a = requestionList[requestionList.length - 1]) == null ? void 0 : _a.answer) == null ? void 0 : _b.text) == void 0) {
         return /* @__PURE__ */ o3("p", { className: "text-[#b6b8ba] animate-pulse", children: "Answering..." });
       }
-      return /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: latestAnswerText });
+      return /* @__PURE__ */ o3("div", { children: [
+        /* @__PURE__ */ o3("div", { className: "gpt--feedback", style: "margin-top: 0px !important;margin-left: calc(100% - 58px);", children: /* @__PURE__ */ o3("span", { onClick: clickCopyToClipboard2, children: copyIconClicked2 ? /* @__PURE__ */ o3(CheckIcon, { size: 14 }) : /* @__PURE__ */ o3(CopyIcon, { size: 14 }) }) }),
+        /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: latestAnswerText })
+      ] });
     };
+    const [copyIconClicked, setCopyIconClicked] = h2(false);
+    const clickCopyToClipboard = T2(async () => {
+      await navigator.clipboard.writeText(answer == null ? void 0 : answer.text);
+      setCopyIconClicked(true);
+    }, [answer]);
+    p2(() => {
+      if (copyIconClicked) {
+        const timer = setTimeout(() => {
+          setCopyIconClicked(false);
+        }, 500);
+        return () => clearTimeout(timer);
+      }
+    }, [copyIconClicked]);
     if (answer) {
       console.debug("ChatGPTQuery answer2=", answer);
       console.debug("ChatGPTQuery continueConversation=", continueConversation);
@@ -41354,7 +41438,10 @@ ${reviewText}
       try {
         return /* @__PURE__ */ o3("div", { id: "gpt-answer", dir: "auto", children: [
           /* @__PURE__ */ o3("div", { style: "margin-left:10px;margin-right: -10px;padding-right: 10px;", ref: wrapRef, children: [
-            /* @__PURE__ */ o3("div", { class: "primary-answer-container", children: /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: answer.text }) }),
+            /* @__PURE__ */ o3("div", { class: "primary-answer-container", children: [
+              /* @__PURE__ */ o3("div", { className: "gpt--feedback", style: "margin-top: 0px !important;margin-left: calc(100% - 58px);", children: /* @__PURE__ */ o3("span", { onClick: clickCopyToClipboard, children: copyIconClicked ? /* @__PURE__ */ o3(CheckIcon, { size: 14 }) : /* @__PURE__ */ o3(CopyIcon, { size: 14 }) }) }),
+              /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: answer.text })
+            ] }),
             /* @__PURE__ */ o3("div", { className: "question-container", children: requestionList.map((requestion) => /* @__PURE__ */ o3("div", { children: [
               /* @__PURE__ */ o3("div", { className: "font-bold", children: `Q${requestion.index + 1} : ${requestion.requestion}` }),
               reError ? /* @__PURE__ */ o3("p", { children: [

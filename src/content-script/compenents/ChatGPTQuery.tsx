@@ -1,3 +1,4 @@
+import { ThumbsdownIcon, ThumbsupIcon, CopyIcon, CheckIcon } from '@primer/octicons-react'
 import { useEffect, useState, useCallback, useRef } from 'preact/hooks'
 import classNames from 'classnames'
 import { memo, useMemo } from 'react'
@@ -205,23 +206,81 @@ function ChatGPTQuery(props: Props) {
   }, [requestionList, questionIndex])
 
   const ReQuestionAnswerFixed = ({ answer }: { answer: string | undefined }) => {
+    const [copyIconClicked, setCopyIconClicked] = useState(false)
+    const clickCopyToClipboard = useCallback(async () => {
+      await navigator.clipboard.writeText(answer?.text)
+      setCopyIconClicked(true)
+    }, [answer])
+
+    useEffect(() => {
+      if (copyIconClicked) {
+        const timer = setTimeout(() => {
+          setCopyIconClicked(false)
+        }, 500)
+        return () => clearTimeout(timer)
+      }
+    }, [copyIconClicked])
+
     if (!answer.text) return <p className="text-[#b6b8ba] animate-pulse">Answering...</p>
     return (
-      <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>{answer.text}</ReactMarkdown>
+      <div>
+        <div className="gpt--feedback" style="margin-top: 0px !important;margin-left: calc(100% - 58px);">
+          <span onClick={clickCopyToClipboard}>
+            {copyIconClicked ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
+          </span>
+        </div>
+        <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>{answer.text}</ReactMarkdown>
+      </div>
     )
   }
 
   const ReQuestionAnswer = ({ latestAnswerText }: ReQuestionAnswerProps) => {
+    const [copyIconClicked, setCopyIconClicked] = useState(false)
+    const clickCopyToClipboard = useCallback(async () => {
+      await navigator.clipboard.writeText(latestAnswerText)
+      setCopyIconClicked(true)
+    }, [latestAnswerText])
+
+    useEffect(() => {
+      if (copyIconClicked) {
+        const timer = setTimeout(() => {
+          setCopyIconClicked(false)
+        }, 500)
+        return () => clearTimeout(timer)
+      }
+    }, [copyIconClicked])
+
     if (!latestAnswerText || requestionList[requestionList.length - 1]?.answer?.text == undefined) {
       return <p className="text-[#b6b8ba] animate-pulse">Answering...</p>
     }
     return (
-      <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>
-        {latestAnswerText}
-      </ReactMarkdown>
+      <div>
+        <div className="gpt--feedback" style="margin-top: 0px !important;margin-left: calc(100% - 58px);">
+          <span onClick={clickCopyToClipboard}>
+            {copyIconClicked ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
+          </span>
+        </div>
+        <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>
+          {latestAnswerText}
+        </ReactMarkdown>
+      </div>
     )
   }
 
+  const [copyIconClicked, setCopyIconClicked] = useState(false)
+  const clickCopyToClipboard = useCallback(async () => {
+    await navigator.clipboard.writeText(answer?.text)
+    setCopyIconClicked(true)
+  }, [answer])
+
+  useEffect(() => {
+    if (copyIconClicked) {
+      const timer = setTimeout(() => {
+        setCopyIconClicked(false)
+      }, 500)
+      return () => clearTimeout(timer)
+    }
+  }, [copyIconClicked])
 
   if (answer) {
     console.debug("ChatGPTQuery answer2=", answer);
@@ -232,20 +291,7 @@ function ChatGPTQuery(props: Props) {
     // className="markdown-body gpt-markdown" another culprit
           // < className="beyondbard--chatgpt--content" is the culprit >
           // <div className="beyondbard--chatgpt--header">
-          //   <ChatGPTFeedback
-          //     messageId={answer.messageId}
-          //     conversationId={answer.conversationId}
-          //     answerText={answer.text}
-          //   />
           // </div >
-
-              // <div style="margin-top: 0px !important;margin-left: calc(100% - 58px);">
-              //   <ChatGPTFeedback
-              //     messageId={answer.messageId}
-              //     conversationId={answer.conversationId}
-              //     answerText={answer.text}
-              //   />
-              // </div>
 
     try {
       return (
@@ -253,6 +299,11 @@ function ChatGPTQuery(props: Props) {
 
           <div style="margin-left:10px;margin-right: -10px;padding-right: 10px;" ref={wrapRef}>
             <div class="primary-answer-container">
+              <div className="gpt--feedback" style="margin-top: 0px !important;margin-left: calc(100% - 58px);">
+                <span onClick={clickCopyToClipboard}>
+                  {copyIconClicked ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
+                </span>
+              </div>
               <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>
                 {answer.text}
               </ReactMarkdown>
