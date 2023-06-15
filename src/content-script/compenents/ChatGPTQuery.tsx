@@ -230,12 +230,19 @@ function ChatGPTQuery(props: Props) {
     console.debug("ChatGPTQuery done=", done);
     // console.debug("ChatGPTQuery latestAnswerText=", latestAnswerText);
     // className="markdown-body gpt-markdown" another culprit
-           // <!-- className="beyondbard--chatgpt--content" is the culprit >
+          // < className="beyondbard--chatgpt--content" is the culprit >
+          // <div className="beyondbard--chatgpt--header">
+          //   <ChatGPTFeedback
+          //     messageId={answer.messageId}
+          //     conversationId={answer.conversationId}
+          //     answerText={answer.text}
+          //   />
+          // </div >
+
     try {
       return (
         <div id="gpt-answer" dir="auto">
-
-          <div className="beyondbard--chatgpt--header">
+          <div style="margin-top: 0px !important;margin-left: calc(100% - 58px);">
             <ChatGPTFeedback
               messageId={answer.messageId}
               conversationId={answer.conversationId}
