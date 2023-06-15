@@ -13810,6 +13810,42 @@
       return naturalHeight <= height ? naturalHeight : acc;
     }, naturalHeights[0]);
   }
+  var CheckIcon = /* @__PURE__ */ createIconComponent("CheckIcon", "octicon octicon-check", function() {
+    return {
+      "16": {
+        "width": 16,
+        "path": /* @__PURE__ */ Cn.createElement("path", {
+          d: "M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"
+        })
+      },
+      "24": {
+        "width": 24,
+        "path": /* @__PURE__ */ Cn.createElement("path", {
+          d: "M21.03 5.72a.75.75 0 0 1 0 1.06l-11.5 11.5a.747.747 0 0 1-1.072-.012l-5.5-5.75a.75.75 0 1 1 1.084-1.036l4.97 5.195L19.97 5.72a.75.75 0 0 1 1.06 0Z"
+        })
+      }
+    };
+  });
+  var CopyIcon = /* @__PURE__ */ createIconComponent("CopyIcon", "octicon octicon-copy", function() {
+    return {
+      "16": {
+        "width": 16,
+        "path": /* @__PURE__ */ Cn.createElement(Cn.Fragment, null, /* @__PURE__ */ Cn.createElement("path", {
+          d: "M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"
+        }), /* @__PURE__ */ Cn.createElement("path", {
+          d: "M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+        }))
+      },
+      "24": {
+        "width": 24,
+        "path": /* @__PURE__ */ Cn.createElement(Cn.Fragment, null, /* @__PURE__ */ Cn.createElement("path", {
+          d: "M7.024 3.75c0-.966.784-1.75 1.75-1.75H20.25c.966 0 1.75.784 1.75 1.75v11.498a1.75 1.75 0 0 1-1.75 1.75H8.774a1.75 1.75 0 0 1-1.75-1.75Zm1.75-.25a.25.25 0 0 0-.25.25v11.498c0 .139.112.25.25.25H20.25a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25Z"
+        }), /* @__PURE__ */ Cn.createElement("path", {
+          d: "M1.995 10.749a1.75 1.75 0 0 1 1.75-1.751H5.25a.75.75 0 1 1 0 1.5H3.745a.25.25 0 0 0-.25.25L3.5 20.25c0 .138.111.25.25.25h9.5a.25.25 0 0 0 .25-.25v-1.51a.75.75 0 1 1 1.5 0v1.51A1.75 1.75 0 0 1 13.25 22h-9.5A1.75 1.75 0 0 1 2 20.25l-.005-9.501Z"
+        }))
+      }
+    };
+  });
   var GearIcon = /* @__PURE__ */ createIconComponent("GearIcon", "octicon octicon-gear", function() {
     return {
       "16": {
@@ -13872,6 +13908,38 @@
         "width": 24,
         "path": /* @__PURE__ */ Cn.createElement("path", {
           d: "M3.38 8A9.502 9.502 0 0 1 12 2.5a9.502 9.502 0 0 1 9.215 7.182.75.75 0 1 0 1.456-.364C21.473 4.539 17.15 1 12 1a10.995 10.995 0 0 0-9.5 5.452V4.75a.75.75 0 0 0-1.5 0V8.5a1 1 0 0 0 1 1h3.75a.75.75 0 0 0 0-1.5H3.38Zm-.595 6.318a.75.75 0 0 0-1.455.364C2.527 19.461 6.85 23 12 23c4.052 0 7.592-2.191 9.5-5.451v1.701a.75.75 0 0 0 1.5 0V15.5a1 1 0 0 0-1-1h-3.75a.75.75 0 0 0 0 1.5h2.37A9.502 9.502 0 0 1 12 21.5c-4.446 0-8.181-3.055-9.215-7.182Z"
+        })
+      }
+    };
+  });
+  var ThumbsdownIcon = /* @__PURE__ */ createIconComponent("ThumbsdownIcon", "octicon octicon-thumbsdown", function() {
+    return {
+      "16": {
+        "width": 16,
+        "path": /* @__PURE__ */ Cn.createElement("path", {
+          d: "M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"
+        })
+      },
+      "24": {
+        "width": 24,
+        "path": /* @__PURE__ */ Cn.createElement("path", {
+          d: "M12.596 21.957c-1.301.092-2.303-.986-2.303-2.206v-1.053c0-2.666-1.813-3.785-2.774-4.2a1.884 1.884 0 0 0-.523-.13A1.75 1.75 0 0 1 5.25 16h-1.5A1.75 1.75 0 0 1 2 14.25V3.75C2 2.784 2.784 2 3.75 2h1.5a1.75 1.75 0 0 1 1.742 1.58c.838-.06 1.667-.296 2.69-.586l.602-.17C11.748 2.419 13.497 2 15.828 2c2.188 0 3.693.204 4.583 1.372.422.554.65 1.255.816 2.05.148.708.262 1.57.396 2.58l.051.39c.319 2.386.328 4.18-.223 5.394-.293.644-.743 1.125-1.355 1.431-.59.296-1.284.404-2.036.404h-2.05l.056.429c.025.18.05.372.076.572.06.483.117 1.006.117 1.438 0 1.245-.222 2.253-.92 2.942-.684.674-1.668.879-2.743.955ZM7 5.082v7.779c.383.025.759.113 1.113.26 1.192.514 3.68 2.027 3.68 5.577v1.053c0 .436.347.734.698.71 1.021-.072 1.52-.258 1.795-.528.26-.256.473-.748.473-1.873 0-.328-.045-.768-.105-1.25l-.07-.527c-.04-.297-.079-.59-.105-.834-.082-.758.53-1.328 1.211-1.328h2.37c.625 0 1.06-.092 1.365-.245.285-.142.5-.359.66-.711.355-.78.422-2.176.102-4.574l-.05-.385c-.137-1.027-.243-1.827-.379-2.477-.152-.73-.324-1.165-.54-1.448-.386-.507-1.113-.781-3.39-.781-2.136 0-3.736.379-5.142.771-.191.052-.38.106-.568.16-1.039.296-2.059.587-3.118.651ZM3.75 3.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h1.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25Z"
+        })
+      }
+    };
+  });
+  var ThumbsupIcon = /* @__PURE__ */ createIconComponent("ThumbsupIcon", "octicon octicon-thumbsup", function() {
+    return {
+      "16": {
+        "width": 16,
+        "path": /* @__PURE__ */ Cn.createElement("path", {
+          d: "M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"
+        })
+      },
+      "24": {
+        "width": 24,
+        "path": /* @__PURE__ */ Cn.createElement("path", {
+          d: "M12.596 2.043c1.075.076 2.059.281 2.743.956.698.688.92 1.696.92 2.941 0 .432-.057.955-.117 1.438-.026.2-.051.392-.076.572l-.056.429h2.05c.752 0 1.446.108 2.036.404.612.306 1.062.787 1.355 1.431.551 1.214.542 3.008.223 5.394l-.051.39c-.134 1.01-.248 1.872-.396 2.58-.166.795-.394 1.496-.816 2.05-.89 1.168-2.395 1.372-4.583 1.372-2.331 0-4.08-.418-5.544-.824l-.602-.17c-1.023-.29-1.852-.526-2.69-.586A1.75 1.75 0 0 1 5.25 22h-1.5A1.75 1.75 0 0 1 2 20.25V9.75C2 8.784 2.784 8 3.75 8h1.5a1.75 1.75 0 0 1 1.746 1.633 1.85 1.85 0 0 0 .523-.131c.961-.415 2.774-1.534 2.774-4.2V4.249c0-1.22 1.002-2.298 2.303-2.206ZM7 18.918c1.059.064 2.079.355 3.118.652l.568.16c1.406.39 3.006.77 5.142.77 2.277 0 3.004-.274 3.39-.781.216-.283.388-.718.54-1.448.136-.65.242-1.45.379-2.477l.05-.384c.32-2.4.253-3.795-.102-4.575-.16-.352-.375-.568-.66-.711-.305-.153-.74-.245-1.365-.245h-2.37c-.681 0-1.293-.57-1.211-1.328.026-.243.065-.537.105-.834l.07-.527c.06-.482.105-.921.105-1.25 0-1.125-.213-1.617-.473-1.873-.275-.27-.774-.455-1.795-.528-.351-.024-.698.274-.698.71v1.053c0 3.55-2.488 5.063-3.68 5.577-.372.16-.754.232-1.113.26ZM3.75 20.5h1.5a.25.25 0 0 0 .25-.25V9.75a.25.25 0 0 0-.25-.25h-1.5a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25Z"
         })
       }
     };
@@ -19704,11 +19772,11 @@ ${reviewText}
   };
 
   // src/content-script/index.tsx
-  var import_webextension_polyfill8 = __toESM(require_browser_polyfill());
+  var import_webextension_polyfill9 = __toESM(require_browser_polyfill());
 
   // src/content-script/compenents/PageSummary.tsx
   var import_classnames2 = __toESM(require_classnames());
-  var import_webextension_polyfill6 = __toESM(require_browser_polyfill());
+  var import_webextension_polyfill7 = __toESM(require_browser_polyfill());
 
   // src/content-script/compenents/ChatGPTQuery.tsx
   var import_classnames = __toESM(require_classnames());
@@ -41177,10 +41245,79 @@ ${reviewText}
   }
 
   // src/content-script/compenents/ChatGPTQuery.tsx
-  var import_webextension_polyfill5 = __toESM(require_browser_polyfill());
+  var import_webextension_polyfill6 = __toESM(require_browser_polyfill());
+
+  // src/content-script/compenents/ChatGPTFeedback.tsx
+  var import_webextension_polyfill4 = __toESM(require_browser_polyfill());
+  function ChatGPTFeedback(props) {
+    const [copied, setCopied] = h2(false);
+    const [action, setAction] = h2(null);
+    const clickThumbsUp = T2(async () => {
+      if (action) {
+        return;
+      }
+      setAction("thumbsUp");
+      await import_webextension_polyfill4.default.runtime.sendMessage({
+        type: "FEEDBACK",
+        data: {
+          conversation_id: props.conversationId,
+          message_id: props.messageId,
+          rating: "thumbsUp"
+        }
+      });
+    }, [action, props.conversationId, props.messageId]);
+    const clickThumbsDown = T2(async () => {
+      if (action) {
+        return;
+      }
+      setAction("thumbsDown");
+      await import_webextension_polyfill4.default.runtime.sendMessage({
+        type: "FEEDBACK",
+        data: {
+          conversation_id: props.conversationId,
+          message_id: props.messageId,
+          rating: "thumbsDown",
+          text: "",
+          tags: []
+        }
+      });
+    }, [action, props.conversationId, props.messageId]);
+    const clickCopyToClipboard = T2(async () => {
+      await navigator.clipboard.writeText(props.answerText);
+      setCopied(true);
+    }, [props.answerText]);
+    p2(() => {
+      if (copied) {
+        const timer = setTimeout(() => {
+          setCopied(false);
+        }, 500);
+        return () => clearTimeout(timer);
+      }
+    }, [copied]);
+    return /* @__PURE__ */ o3("div", { className: "gpt--feedback", children: [
+      /* @__PURE__ */ o3(
+        "span",
+        {
+          onClick: clickThumbsUp,
+          className: action === "thumbsUp" ? "gpt--feedback--selected" : void 0,
+          children: /* @__PURE__ */ o3(ThumbsupIcon, { size: 14 })
+        }
+      ),
+      /* @__PURE__ */ o3(
+        "span",
+        {
+          onClick: clickThumbsDown,
+          className: action === "thumbsDown" ? "gpt--feedback--selected" : void 0,
+          children: /* @__PURE__ */ o3(ThumbsdownIcon, { size: 14 })
+        }
+      ),
+      /* @__PURE__ */ o3("span", { onClick: clickCopyToClipboard, children: copied ? /* @__PURE__ */ o3(CheckIcon, { size: 14 }) : /* @__PURE__ */ o3(CopyIcon, { size: 14 }) })
+    ] });
+  }
+  var ChatGPTFeedback_default = x3(ChatGPTFeedback);
 
   // src/utils/utils.ts
-  var import_webextension_polyfill4 = __toESM(require_browser_polyfill());
+  var import_webextension_polyfill5 = __toESM(require_browser_polyfill());
   var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
   var isFirefox = navigator.userAgent.indexOf("Firefox") != -1;
   var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -41212,7 +41349,7 @@ ${reviewText}
       console.debug("question", question);
       return debounce_default(() => {
         setStatus(void 0);
-        const port = import_webextension_polyfill5.default.runtime.connect();
+        const port = import_webextension_polyfill6.default.runtime.connect();
         const listener = (msg) => {
           console.debug("ChatGPTQuery msg=", msg);
           if (msg.text) {
@@ -41238,7 +41375,7 @@ ${reviewText}
       }, 1e3);
     }, [question]);
     const newTab = T2(() => {
-      import_webextension_polyfill5.default.runtime.sendMessage({
+      import_webextension_polyfill6.default.runtime.sendMessage({
         type: "NEW_TAB",
         data: {
           url: `${BASE_URL}/chat`
@@ -41246,7 +41383,7 @@ ${reviewText}
       });
     }, []);
     const openOptionsPage = T2(() => {
-      import_webextension_polyfill5.default.runtime.sendMessage({ type: "OPEN_OPTIONS_PAGE" });
+      import_webextension_polyfill6.default.runtime.sendMessage({ type: "OPEN_OPTIONS_PAGE" });
     }, []);
     p2(() => {
       onStatusChange == null ? void 0 : onStatusChange(status);
@@ -41289,7 +41426,7 @@ ${reviewText}
       var _a, _b;
       if (!requestionList[questionIndex])
         return;
-      const port = import_webextension_polyfill5.default.runtime.connect();
+      const port = import_webextension_polyfill6.default.runtime.connect();
       const listener = (msg) => {
         var _a2, _b2;
         try {
@@ -41353,6 +41490,14 @@ ${reviewText}
       console.debug("ChatGPTQuery done=", done);
       try {
         return /* @__PURE__ */ o3("div", { id: "gpt-answer", dir: "auto", children: [
+          /* @__PURE__ */ o3("div", { className: "beyondbard--chatgpt--header", children: /* @__PURE__ */ o3(
+            ChatGPTFeedback_default,
+            {
+              messageId: answer.messageId,
+              conversationId: answer.conversationId,
+              answerText: answer.text
+            }
+          ) }),
           /* @__PURE__ */ o3("div", { ref: wrapRef, children: [
             /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: answer.text }),
             /* @__PURE__ */ o3("div", { className: "question-container", children: requestionList.map((requestion) => {
@@ -91857,7 +92002,7 @@ ${replylanguagePrompt(language2)}`;
       });
     }, []);
     const openOptionsPage = T2(() => {
-      import_webextension_polyfill6.default.runtime.sendMessage({ type: "OPEN_OPTIONS_PAGE" });
+      import_webextension_polyfill7.default.runtime.sendMessage({ type: "OPEN_OPTIONS_PAGE" });
     }, []);
     const onSummary = T2(async () => {
       var _a;
@@ -91895,7 +92040,7 @@ ${replylanguagePrompt(language2)}`;
       setSupportSummary(false);
     }, []);
     p2(() => {
-      import_webextension_polyfill6.default.runtime.onMessage.addListener((message) => {
+      import_webextension_polyfill7.default.runtime.onMessage.addListener((message) => {
         console.debug("PageSummary onMessage", message);
         const { type } = message;
         if (type === "OPEN_WEB_SUMMARY") {
@@ -91976,7 +92121,7 @@ ${replylanguagePrompt(language2)}`;
   var PageSummary_default = PageSummary;
 
   // src/content-script/compenents/ChatGPTContainer.tsx
-  var import_webextension_polyfill7 = __toESM(require_browser_polyfill());
+  var import_webextension_polyfill8 = __toESM(require_browser_polyfill());
 
   // src/content-script/compenents/ChatGPTCard.tsx
   function ChatGPTCard(props) {
@@ -92371,7 +92516,7 @@ ${replylanguagePrompt(language2)}`;
       setCopied(true);
     };
     const openOptionsPage = T2(() => {
-      import_webextension_polyfill7.default.runtime.sendMessage({ type: "OPEN_OPTIONS_PAGE" });
+      import_webextension_polyfill8.default.runtime.sendMessage({ type: "OPEN_OPTIONS_PAGE" });
     }, []);
     const onRefresh = T2(async () => {
       if (loading) {
@@ -92653,7 +92798,7 @@ ${replylanguagePrompt(language2)}`;
     if (questionData) {
       mount(questionData);
     }
-    import_webextension_polyfill8.default.runtime.onMessage.addListener((message, _4, sendResponse) => {
+    import_webextension_polyfill9.default.runtime.onMessage.addListener((message, _4, sendResponse) => {
       var _a;
       console.debug("index onMessage", message);
       const { type, data } = message;
