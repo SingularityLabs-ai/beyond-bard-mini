@@ -234,6 +234,15 @@ function ChatGPTQuery(props: Props) {
     try {
       return (
         <div id="gpt-answer" dir="auto">
+
+          <div className="beyondbard--chatgpt--header">
+            <ChatGPTFeedback
+              messageId={answer.messageId}
+              conversationId={answer.conversationId}
+              answerText={answer.text}
+            />
+          </div>
+
           <div ref={wrapRef}>
             <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>
               {answer.text}
