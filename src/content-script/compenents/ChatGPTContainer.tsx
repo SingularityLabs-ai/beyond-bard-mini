@@ -143,165 +143,195 @@ function ChatGPTContainer(props: Props) {
   const switchtranscriptShow = () => {
     setTranscriptShow((state) => !state)
   }
+  // try {
+  //   return (
+  //     <>
+  //       <GeistProvider themeType={themeType}>
+  //         <>
+  //           <div className="beyondbard--chatgpt">
+
+  //             <div className="beyondbard--main">
+  //               <div className="beyondbard--main__container">
+  //                 {questionProps.question ? (
+  //                   <>
+  //                     {triggerMode === TriggerMode.Manually && !questionProps.currentTime ? (
+  //                       <span
+  //                         className="beyondbard--link"
+  //                         onClick={() => {
+  //                           onRefresh()
+  //                         }}
+  //                       >
+  //                         <a>
+  //                           <SearchIcon size="small" /> Ask Bard to summarize
+  //                         </a>
+  //                       </span>
+  //                     ) : (
+  //                       <>
+  //                         {loading && (
+  //                           <div className="beyondbard--main__loading">
+  //                             <Loading />
+  //                           </div>
+  //                         )}
+  //                         <ChatGPTCard
+  //                           question={questionProps.question}
+  //                           triggerMode={questionProps.triggerMode}
+  //                           onStatusChange={setQueryStatus}
+  //                           currentTime={questionProps.currentTime}
+  //                         />
+  //                       </>
+  //                     )}
+  //                   </>
+  //                 ) : questionProps.siteConfig?.name === 'youtube' ? (
+  //                   <>
+  //                     <p>No Transcription Available... </p>
+  //                     <p>
+  //                       Try{' '}
+  //                       <a
+  //                         href="https://huggingface.co/spaces/jeffistyping/Youtube-Whisperer"
+  //                         rel="noreferrer"
+  //                         target="_blank"
+  //                       >
+  //                         Youtube Whisperer
+  //                       </a>{' '}
+  //                       to transcribe!
+  //                     </p>
+  //                   </>
+  //                 ) : (
+  //                   <p>
+  //                     <AlertIcon size={14} /> No results.
+  //                   </p>
+  //                 )}
+  //               </div>
+  //             </div>
+
+  //             {questionProps.question && currentTranscript && (
+  //               <div className="beyondbard--main">
+  //                 <div className="beyondbard--main__header">
+  //                   <div className="beyondbard--main__header--title">
+  //                     Transcript
+  //                     {questionProps.langOptionsWithLink.length > 1 && (
+  //                       <>
+  //                         {' '}
+  //                         <select
+  //                           className="beyondbard--select"
+  //                           value={selectedOption}
+  //                           onChange={handleChange}
+  //                         >
+  //                           {questionProps.langOptionsWithLink &&
+  //                             Array.from(questionProps.langOptionsWithLink).map((v, i) => {
+  //                               return (
+  //                                 <option key={i} value={i}>
+  //                                   {v.language}
+  //                                 </option>
+  //                               )
+  //                             })}
+  //                         </select>
+  //                       </>
+  //                     )}
+  //                   </div>
+  //                   <div className="beyondbard--main__header--action">
+  //                     <a href="javascript:;" onClick={copytSubtitle}>
+  //                       {copied ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
+  //                     </a>
+
+  //                     <a href="javascript:;" onClick={switchtranscriptShow}>
+  //                       {transcriptShow ? <ChevronUpIcon size={16} /> : <ChevronDownIcon size={16} />}
+  //                     </a>
+  //                   </div>
+  //                 </div>
+
+  //                 <div
+  //                   className="beyondbard--main__container beyondbard--main__container--subtitle"
+  //                   style={{
+  //                     display: transcriptShow ? 'block' : 'none',
+  //                   }}
+  //                 >
+  //                   {currentTranscript.map((v, i) => {
+  //                     const { time, text } = v
+
+  //                     return (
+  //                       <div className="beyondbard--subtitle" key={i}>
+  //                         <div
+  //                           className="subtitle--time"
+  //                           onClick={() => {
+  //                             onPlay(v.start || 0)
+  //                           }}
+  //                         >
+  //                           {time}
+  //                         </div>
+  //                         <div
+  //                           className="subtitle--text"
+  //                           dangerouslySetInnerHTML={{ __html: text }}
+  //                         ></div>
+  //                       </div>
+  //                     )
+  //                   })}
+  //                 </div>
+  //               </div>
+  //             )}
+  //           </div>
+  //         </>
+  //       </GeistProvider>
+  //     </>
+  //   )
+  // } catch (e) {
+  //   console.log(e)
+  // }
 
   return (
     <>
       <GeistProvider themeType={themeType}>
         <>
           <div className="beyondbard--chatgpt">
-            <div className="beyondbard--header">
-              <div className="beyondbard--title-container">
-                <a
-                  href="https://ishandutta2007.github.io/BeyondBard"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="beyondbard--header__logo"
-                >
-                  <img src={logo} alt={APP_TITLE}/>
-                  {APP_TITLE}
-                </a>
-                <a href="javascript:;" className="beyondbard--header__logo" onClick={openOptionsPage}>
-                  <GearIcon size={14} />
-                </a>
-
-                {loading ? (
-                  <span className="beyondbard--header__logo">
-                    <Spinner className="beyondbard--icon--loading" />
-                  </span>
-                ) : (
-                  <a href="javascript:;" className="beyondbard--header__logo" onClick={onRefresh}>
-                    <SyncIcon size={14} />
+            <>
+              <div className="beyondbard--header">
+                <div className="beyondbard--title-container">
+                  <a
+                   href="https://ishandutta2007.github.io/BeyondBard"
+                     rel="noreferrer"
+                     target="_blank"
+                     className="beyondbard--header__logo"
+                   >
+                     <img src={logo} alt={APP_TITLE}/>
+                     {APP_TITLE}
                   </a>
-                )}
+                  <a href="javascript:;" className="beyondbard--header__logo" onClick={openOptionsPage}>
+                     <GearIcon size={14} />
+                  </a>
+                   {loading ? (
+                     <span className="beyondbard--header__logo">
+                       <Spinner className="beyondbard--icon--loading" />
+                     </span>
+                   ) : (
+                     <a href="javascript:;" className="beyondbard--header__logo" onClick={onRefresh}>
+                       <SyncIcon size={14} />
+                     </a>
+                   )}
+                </div>
+                <div className="beyondbard--chatgpt__action"></div>
               </div>
-
-              <div className="beyondbard--chatgpt__action"></div>
-            </div>
-
+            </>
             <div className="beyondbard--main">
               <div className="beyondbard--main__container">
-                {questionProps.question ? (
-                  <>
-                    {triggerMode === TriggerMode.Manually && !questionProps.currentTime ? (
-                      <span
-                        className="beyondbard--link"
-                        onClick={() => {
-                          onRefresh()
-                        }}
-                      >
-                        <a>
-                          <SearchIcon size="small" /> Ask Bard to summarize
-                        </a>
-                      </span>
-                    ) : (
-                      <>
-                        {loading && (
-                          <div className="beyondbard--main__loading">
-                            <Loading />
-                          </div>
-                        )}
-                        <ChatGPTCard
-                          question={questionProps.question}
-                          triggerMode={questionProps.triggerMode}
-                          onStatusChange={setQueryStatus}
-                          currentTime={questionProps.currentTime}
-                        />
-                      </>
-                    )}
-                  </>
-                ) : questionProps.siteConfig?.name === 'youtube' ? (
-                  <>
-                    <p>No Transcription Available... </p>
-                    <p>
-                      Try{' '}
-                      <a
-                        href="https://huggingface.co/spaces/jeffistyping/Youtube-Whisperer"
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        Youtube Whisperer
-                      </a>{' '}
-                      to transcribe!
-                    </p>
-                  </>
-                ) : (
-                  <p>
-                    <AlertIcon size={14} /> No results.
-                  </p>
-                )}
+                <>
+                  {loading && (<div className="beyondbard--main__loading">
+                    <Loading />
+                  </div>)}
+                  <ChatGPTCard
+                    question={questionProps.question}
+                    triggerMode={questionProps.triggerMode}
+                    onStatusChange={setQueryStatus}
+                    currentTime={questionProps.currentTime}
+                  />
+                </>
               </div>
             </div>
-
-            {questionProps.question && currentTranscript && (
-              <div className="beyondbard--main">
-                <div className="beyondbard--main__header">
-                  <div className="beyondbard--main__header--title">
-                    Transcript
-                    {questionProps.langOptionsWithLink.length > 1 && (
-                      <>
-                        {' '}
-                        <select
-                          className="beyondbard--select"
-                          value={selectedOption}
-                          onChange={handleChange}
-                        >
-                          {questionProps.langOptionsWithLink &&
-                            Array.from(questionProps.langOptionsWithLink).map((v, i) => {
-                              return (
-                                <option key={i} value={i}>
-                                  {v.language}
-                                </option>
-                              )
-                            })}
-                        </select>
-                      </>
-                    )}
-                  </div>
-                  <div className="beyondbard--main__header--action">
-                    <a href="javascript:;" onClick={copytSubtitle}>
-                      {copied ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
-                    </a>
-
-                    <a href="javascript:;" onClick={switchtranscriptShow}>
-                      {transcriptShow ? <ChevronUpIcon size={16} /> : <ChevronDownIcon size={16} />}
-                    </a>
-                  </div>
-                </div>
-
-                <div
-                  className="beyondbard--main__container beyondbard--main__container--subtitle"
-                  style={{
-                    display: transcriptShow ? 'block' : 'none',
-                  }}
-                >
-                  {currentTranscript.map((v, i) => {
-                    const { time, text } = v
-
-                    return (
-                      <div className="beyondbard--subtitle" key={i}>
-                        <div
-                          className="subtitle--time"
-                          onClick={() => {
-                            onPlay(v.start || 0)
-                          }}
-                        >
-                          {time}
-                        </div>
-                        <div
-                          className="subtitle--text"
-                          dangerouslySetInnerHTML={{ __html: text }}
-                        ></div>
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-            )}
           </div>
         </>
       </GeistProvider>
     </>
   )
+
 }
 
 export default ChatGPTContainer
