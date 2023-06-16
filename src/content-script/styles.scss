@@ -398,7 +398,7 @@ span.beyondbard--header__logo {
   }
 }
 
-.question-container .font-bold {
+.all-questions-container .font-bold {
   font-weight: bold;
 }
 
@@ -432,4 +432,34 @@ form#requestion {
   }
 }
 
-
+#gpt-answer {
+  div.beyondbard--chatgpt--content2 {
+    margin-left:10px;
+    margin-right: -10px;
+    padding-right: 10px;
+    div.primary-answer-container, div.all-questions-container > div > div.requestion-answer-container {
+      div.gpt--feedback {
+        gap: 6px;
+        cursor: pointer;
+        margin-top: 0px !important;
+        margin-left: calc(100% - 58px);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgba(145,158,171,.12);
+        border-radius: 5px;
+      }
+    }
+    div.all-questions-container > div.ith-question-container {
+      margin-top: 5px;
+      border-top: 1px solid rgba(145,158,171,.12);
+      border-right:  0px;
+      margin-bottom: 5px;
+      border-left:   0px;
+      div.requestion-answer-container {
+        margin: 5px;
+      }
+    }
+  }
+}

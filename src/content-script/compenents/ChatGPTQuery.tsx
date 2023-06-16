@@ -223,8 +223,8 @@ function ChatGPTQuery(props: Props) {
 
     if (!answer.text) return <p className="text-[#b6b8ba] animate-pulse">Answering...</p>
     return (
-      <div>
-        <div className="gpt--feedback" style="margin-top: 0px !important;margin-left: calc(100% - 58px);">
+      <div class="requestion-answer-container">
+        <div className="gpt--feedback">
           <span onClick={clickCopyToClipboard}>
             {copyIconClicked ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
           </span>
@@ -254,8 +254,8 @@ function ChatGPTQuery(props: Props) {
       return <p className="text-[#b6b8ba] animate-pulse">Answering...</p>
     }
     return (
-      <div>
-        <div className="gpt--feedback" style="margin-top: 0px !important;margin-left: calc(100% - 58px);">
+      <div class="requestion-answer-container">
+        <div className="gpt--feedback">
           <span onClick={clickCopyToClipboard}>
             {copyIconClicked ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
           </span>
@@ -288,7 +288,7 @@ function ChatGPTQuery(props: Props) {
     console.debug("ChatGPTQuery answer.conversationContext.contextIds=", answer.conversationContext.contextIds);
     console.debug("ChatGPTQuery done=", done);
     // console.debug("ChatGPTQuery latestAnswerText=", latestAnswerText);
-    // className="markdown-body gpt-markdown" another culprit
+    // className="markdown-body gpt-markdown" another culprit( wasat #gpt-answer)
           // < className="beyondbard--chatgpt--content" is the culprit >
           // <div className="beyondbard--chatgpt--header">
           // </div >
@@ -296,10 +296,9 @@ function ChatGPTQuery(props: Props) {
     try {
       return (
         <div id="gpt-answer" dir="auto">
-
-          <div style="margin-left:10px;margin-right: -10px;padding-right: 10px;" ref={wrapRef}>
+          <div className="beyondbard--chatgpt--content2" ref={wrapRef}>
             <div class="primary-answer-container">
-              <div className="gpt--feedback" style="margin-top: 0px !important;margin-left: calc(100% - 58px);">
+              <div className="gpt--feedback">
                 <span onClick={clickCopyToClipboard}>
                   {copyIconClicked ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
                 </span>
@@ -308,9 +307,9 @@ function ChatGPTQuery(props: Props) {
                 {answer.text}
               </ReactMarkdown>
             </div>
-            <div className="question-container">
+            <div className="all-questions-container">
               {requestionList.map((requestion) => (
-                <div key={requestion.index}>
+                <div className="ith-question-container" key={requestion.index}>
                   <div className="font-bold">{`Q${requestion.index + 1} : ${
                     requestion.requestion
                   }`}</div>
