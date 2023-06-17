@@ -19436,7 +19436,7 @@ ${reviewText}
     },
     kagi: {
       inputQuery: ["input[name='q']"],
-      sidebarContainerQuery: [".right-content-box._0_right_sidebar"],
+      sidebarContainerQuery: [".right-content-box ._0_right_sidebar"],
       appendContainerQuery: ["#_0_app_content"],
       contentContainerQuery: [],
       siteName: "kagi",
@@ -91998,7 +91998,7 @@ Use up to 3 brief bullet points to summarize the content below, Choose an approp
     return `Please write in ${language2} language.`;
   };
   var followupQuestionsPrompt = () => {
-    return `Next suggest 3-4 follow-up questions as bullet points output(You should use the following template: ### Follow-up Questions:).`;
+    return `Next suggest 3-4 follow-up questions as bullet points output(You must use the following template: ### Follow-up Questions:).`;
   };
   var articlePrompt = ({
     title,
@@ -92511,43 +92511,57 @@ ${replylanguagePrompt(language2)}`;
     if (searchInput && searchInput.value) {
       const searchValueWithLanguageOption = userConfig.language === "auto" /* Auto */ ? searchInput.value : `${searchInput.value}(in ${userConfig.language})`;
       let searchList = "";
-      const resultList = document.querySelectorAll("div.MjjYud");
-      if (resultList.length > 0) {
-        resultList.forEach((v4, i4) => {
-          var _a2, _b2, _c2, _d2, _e2;
-          let url = "";
-          let text4 = "";
-          const index2 = i4 + 1;
-          let titleWrap = null;
-          let title = null;
-          if (v4.contains(v4.querySelector("block-component"))) {
-            titleWrap = v4.querySelector("div.yuRUbf");
-            title = (titleWrap == null ? void 0 : titleWrap.querySelector("h3.LC20lb")) || null;
-            url = ((_a2 = titleWrap == null ? void 0 : titleWrap.querySelector("a")) == null ? void 0 : _a2.href) || "";
-            text4 = ((_b2 = v4.querySelector("span.ILfuVd")) == null ? void 0 : _b2.textContent) || "";
-          } else if (v4.contains(v4.querySelector("video-voyager"))) {
-            titleWrap = v4.querySelector("div.ct3b9e");
-            title = (titleWrap == null ? void 0 : titleWrap.querySelector("h3.LC20lb")) || null;
-            url = "";
-            text4 = "";
-          } else {
-            titleWrap = v4.querySelector("div.yuRUbf");
-            title = (titleWrap == null ? void 0 : titleWrap.querySelector("h3.LC20lb")) || null;
-            url = ((_c2 = titleWrap == null ? void 0 : titleWrap.querySelector("a")) == null ? void 0 : _c2.href) || "";
-            text4 = ((_d2 = v4.querySelector("div.VwiC3b")) == null ? void 0 : _d2.textContent) || "";
-            const moreText = ((_e2 = v4.querySelector("div.IThcWe")) == null ? void 0 : _e2.textContent) || "";
-            text4 = text4 + moreText;
-          }
-          if (text4 && url && index2 <= 6) {
-            url = url.replace(/https?:/, "");
-            searchList = searchList + `
-[${index2}] ${text4}\r
-
-[${index2}]URL: ${url}\r
+      if (siteName2 == "kagi") {
+        const resultListKagi = document.querySelectorAll("div.search-result");
+        console.log("resultListKagi", resultListKagi);
+        if (resultListKagi.length > 0) {
+          resultListKagi.forEach((v4, i4) => {
+            console.log(i4, v4.outerText);
+            const index2 = i4 + 1;
+            searchList = searchList + `[${index2}]URL: ${v4.outerText}\r
 \r
 `;
-          }
-        });
+          });
+        }
+      } else {
+        const resultList = document.querySelectorAll("div.MjjYud");
+        if (resultList.length > 0) {
+          resultList.forEach((v4, i4) => {
+            var _a2, _b2, _c2, _d2, _e2;
+            let url = "";
+            let text4 = "";
+            const index2 = i4 + 1;
+            let titleWrap = null;
+            let title = null;
+            if (v4.contains(v4.querySelector("block-component"))) {
+              titleWrap = v4.querySelector("div.yuRUbf");
+              title = (titleWrap == null ? void 0 : titleWrap.querySelector("h3.LC20lb")) || null;
+              url = ((_a2 = titleWrap == null ? void 0 : titleWrap.querySelector("a")) == null ? void 0 : _a2.href) || "";
+              text4 = ((_b2 = v4.querySelector("span.ILfuVd")) == null ? void 0 : _b2.textContent) || "";
+            } else if (v4.contains(v4.querySelector("video-voyager"))) {
+              titleWrap = v4.querySelector("div.ct3b9e");
+              title = (titleWrap == null ? void 0 : titleWrap.querySelector("h3.LC20lb")) || null;
+              url = "";
+              text4 = "";
+            } else {
+              titleWrap = v4.querySelector("div.yuRUbf");
+              title = (titleWrap == null ? void 0 : titleWrap.querySelector("h3.LC20lb")) || null;
+              url = ((_c2 = titleWrap == null ? void 0 : titleWrap.querySelector("a")) == null ? void 0 : _c2.href) || "";
+              text4 = ((_d2 = v4.querySelector("div.VwiC3b")) == null ? void 0 : _d2.textContent) || "";
+              const moreText = ((_e2 = v4.querySelector("div.IThcWe")) == null ? void 0 : _e2.textContent) || "";
+              text4 = text4 + moreText;
+            }
+            if (text4 && url && index2 <= 6) {
+              url = url.replace(/https?:/, "");
+              searchList = searchList + `
+  [${index2}] ${text4}\r
+
+  [${index2}]URL: ${url}\r
+\r
+`;
+            }
+          });
+        }
       }
       const Instructions = userConfig.promptSearch ? `${userConfig.promptSearch}` : searchPromptHighlight;
       const queryText = searchPrompt({
@@ -92556,6 +92570,8 @@ ${replylanguagePrompt(language2)}`;
         language: userConfig.language === "auto" /* Auto */ ? language2 : userConfig.language,
         prompt: Instructions
       });
+      console.debug("GetQuestion searchList:", searchList);
+      console.debug("GetQuestion searchValueWithLanguageOption:", searchValueWithLanguageOption);
       console.debug("GetQuestion question:", searchList ? queryText : searchValueWithLanguageOption);
       return {
         question: searchList ? queryText : searchValueWithLanguageOption
@@ -92910,4 +92926,8 @@ ${replylanguagePrompt(language2)}`;
   if (siteConfig2 == null ? void 0 : siteConfig2.watchRouteChange) {
     siteConfig2.watchRouteChange(Run);
   }
+  window.onload = async function() {
+    const userConfig = await getUserConfig();
+    console.log("userConfig", userConfig);
+  };
 })();
