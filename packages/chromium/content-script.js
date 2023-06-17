@@ -13912,40 +13912,6 @@
       }
     };
   });
-  var TrashIcon = /* @__PURE__ */ createIconComponent("TrashIcon", "octicon octicon-trash", function() {
-    return {
-      "16": {
-        "width": 16,
-        "path": /* @__PURE__ */ Cn.createElement("path", {
-          d: "M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75ZM4.496 6.675l.66 6.6a.25.25 0 0 0 .249.225h5.19a.25.25 0 0 0 .249-.225l.66-6.6a.75.75 0 0 1 1.492.149l-.66 6.6A1.748 1.748 0 0 1 10.595 15h-5.19a1.75 1.75 0 0 1-1.741-1.575l-.66-6.6a.75.75 0 1 1 1.492-.15ZM6.5 1.75V3h3V1.75a.25.25 0 0 0-.25-.25h-2.5a.25.25 0 0 0-.25.25Z"
-        })
-      },
-      "24": {
-        "width": 24,
-        "path": /* @__PURE__ */ Cn.createElement(Cn.Fragment, null, /* @__PURE__ */ Cn.createElement("path", {
-          d: "M16 1.75V3h5.25a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1 0-1.5H8V1.75C8 .784 8.784 0 9.75 0h4.5C15.216 0 16 .784 16 1.75Zm-6.5 0V3h5V1.75a.25.25 0 0 0-.25-.25h-4.5a.25.25 0 0 0-.25.25ZM4.997 6.178a.75.75 0 1 0-1.493.144L4.916 20.92a1.75 1.75 0 0 0 1.742 1.58h10.684a1.75 1.75 0 0 0 1.742-1.581l1.413-14.597a.75.75 0 0 0-1.494-.144l-1.412 14.596a.25.25 0 0 1-.249.226H6.658a.25.25 0 0 1-.249-.226L4.997 6.178Z"
-        }), /* @__PURE__ */ Cn.createElement("path", {
-          d: "M9.206 7.501a.75.75 0 0 1 .793.705l.5 8.5A.75.75 0 1 1 9 16.794l-.5-8.5a.75.75 0 0 1 .705-.793Zm6.293.793A.75.75 0 1 0 14 8.206l-.5 8.5a.75.75 0 0 0 1.498.088l.5-8.5Z"
-        }))
-      }
-    };
-  });
-  var XIcon = /* @__PURE__ */ createIconComponent("XIcon", "octicon octicon-x", function() {
-    return {
-      "16": {
-        "width": 16,
-        "path": /* @__PURE__ */ Cn.createElement("path", {
-          d: "M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-3.22 3.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"
-        })
-      },
-      "24": {
-        "width": 24,
-        "path": /* @__PURE__ */ Cn.createElement("path", {
-          d: "M5.72 5.72a.75.75 0 0 1 1.06 0L12 10.94l5.22-5.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L13.06 12l5.22 5.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L12 13.06l-5.22 5.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L10.94 12 5.72 6.78a.75.75 0 0 1 0-1.06Z"
-        })
-      }
-    };
-  });
   var XCircleFillIcon = /* @__PURE__ */ createIconComponent("XCircleFillIcon", "octicon octicon-x-circle-fill", function() {
     return {
       "12": {
@@ -41415,22 +41381,6 @@ ${reviewText}
       return /* @__PURE__ */ o3("div", { class: "followup-question-container", onClick: clickCopyToInput, children: /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: followup_question }) });
     };
     const ReQuestionAnswerFixed = ({ answer: answer2 }) => {
-      const [trashIconClicked, setTrashIconClicked] = h2(false);
-      const trashQuestion = T2(() => {
-        setTrashIconClicked(true);
-        console.log("deleting", answer2.question_index);
-        let requestionListSlicedValue = requestionList.slice();
-        requestionListSlicedValue.splice(answer2.question_index, 1);
-        setRequestionList(requestionListSlicedValue);
-      }, [answer2]);
-      p2(() => {
-        if (trashIconClicked) {
-          const timer = setTimeout(() => {
-            setTrashIconClicked(false);
-          }, 500);
-          return () => clearTimeout(timer);
-        }
-      }, [trashIconClicked]);
       const [copyIconClicked2, setCopyIconClicked2] = h2(false);
       const clickCopyToClipboard2 = T2(async () => {
         await navigator.clipboard.writeText(answer2 == null ? void 0 : answer2.text);
@@ -41447,10 +41397,7 @@ ${reviewText}
       if (!answer2.text)
         return /* @__PURE__ */ o3("p", { className: "text-[#b6b8ba] animate-pulse", children: "Answering..." });
       return /* @__PURE__ */ o3("div", { class: "requestion-answer-container", children: [
-        /* @__PURE__ */ o3("div", { className: "gpt--feedback", children: [
-          /* @__PURE__ */ o3("span", { onClick: trashQuestion, children: trashIconClicked ? /* @__PURE__ */ o3(XIcon, { size: 14 }) : /* @__PURE__ */ o3(TrashIcon, { size: 14 }) }),
-          /* @__PURE__ */ o3("span", { onClick: clickCopyToClipboard2, children: copyIconClicked2 ? /* @__PURE__ */ o3(CheckIcon, { size: 14 }) : /* @__PURE__ */ o3(CopyIcon, { size: 14 }) })
-        ] }),
+        /* @__PURE__ */ o3("div", { className: "gpt--feedback", children: /* @__PURE__ */ o3("span", { onClick: clickCopyToClipboard2, children: copyIconClicked2 ? /* @__PURE__ */ o3(CheckIcon, { size: 14 }) : /* @__PURE__ */ o3(CopyIcon, { size: 14 }) }) }),
         /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: answer2.text })
       ] });
     };
@@ -41524,14 +41471,14 @@ ${reviewText}
               /* @__PURE__ */ o3("div", { className: "gpt--feedback", children: /* @__PURE__ */ o3("span", { onClick: clickCopyToClipboard, children: copyIconClicked ? /* @__PURE__ */ o3(CheckIcon, { size: 14 }) : /* @__PURE__ */ o3(CopyIcon, { size: 14 }) }) }),
               /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: answer.text.replace(followup_section, "") })
             ] }),
-            /* @__PURE__ */ o3("div", { className: "all-questions-container", children: final_followups.map((followup_question) => /* @__PURE__ */ o3("div", { className: "ith-question-container", children: /* @__PURE__ */ o3(FollowupQuestionFixed, { followup_question }) })) }),
             /* @__PURE__ */ o3("div", { className: "all-questions-container", children: requestionList.map((requestion) => /* @__PURE__ */ o3("div", { className: "ith-question-container", children: [
               /* @__PURE__ */ o3("div", { className: "font-bold", children: `Q${requestion.index + 1} : ${requestion.requestion}` }),
               reError ? /* @__PURE__ */ o3("p", { children: [
                 "Failed to load response from BARD:",
                 /* @__PURE__ */ o3("span", { className: "break-all block", children: reError })
               ] }) : requestion.index < requestionList.length - 1 ? /* @__PURE__ */ o3(ReQuestionAnswerFixed, { answer: requestion.answer }) : /* @__PURE__ */ o3(ReQuestionAnswer, { latestAnswerText: reQuestionLatestAnswerText })
-            ] }, requestion.index)) })
+            ] }, requestion.index)) }),
+            /* @__PURE__ */ o3("div", { className: "all-questions-container", children: final_followups.map((followup_question) => /* @__PURE__ */ o3("div", { className: "ith-question-container", children: /* @__PURE__ */ o3(FollowupQuestionFixed, { followup_question }) })) })
           ] }),
           continueConversation && answer.conversationContext.contextIds && done && /* @__PURE__ */ o3("div", { children: /* @__PURE__ */ o3(
             "form",
