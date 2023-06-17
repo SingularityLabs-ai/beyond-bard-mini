@@ -42,6 +42,7 @@ function ChatGPTQuery(props: Props) {
   const [answer, setAnswer] = useState<Answer | null>(null)
   const [error, setError] = useState('')
   const [retry, setRetry] = useState(0)
+  // const [delcnt, setDelcnt] = useState(0)
   const [done, setDone] = useState(false)
   const [showTip, setShowTip] = useState(false)
   const [continueConversation, setContinueConversation] = useState(false)
@@ -222,23 +223,27 @@ function ChatGPTQuery(props: Props) {
   }
 
   const ReQuestionAnswerFixed = ({ answer }: { answer: string | undefined } ) => {
-    const [trashIconClicked, setTrashIconClicked] = useState(false)
-    const trashQuestion = useCallback( () => {
-      setTrashIconClicked(true);
-      console.log("deleting", answer.question_index);
-      let requestionListSplicedValue = requestionList.slice();
-      requestionListSplicedValue.splice(answer.question_index, 1);
-      setRequestionList(requestionListSplicedValue);
-    }, [answer])
+    // const [trashIconClicked, setTrashIconClicked] = useState(false)
+    // const trashQuestion = useCallback( () => {
+    //   setTrashIconClicked(true);
+    //   console.log("deleting", answer.question_index);
+    //   let requestionListSplicedValue = requestionList.slice();
+    //   requestionListSplicedValue.splice(answer.question_index, 1);
+    //   setRequestionList(requestionListSplicedValue);
+    //   setDelcnt((delcnt) => delcnt + 1);
+    // }, [answer])
 
-    useEffect(() => {
-      if (trashIconClicked) {
-        const timer = setTimeout(() => {
-          setTrashIconClicked(false)
-        }, 500)
-        return () => clearTimeout(timer)
-      }
-    }, [trashIconClicked])
+    // useEffect(() => {
+    //   if (trashIconClicked) {
+    //     const timer = setTimeout(() => {
+    //       setTrashIconClicked(false)
+    //     }, 500)
+    //     return () => clearTimeout(timer)
+    //   }
+    // }, [trashIconClicked])
+          // <span onClick={trashQuestion}>
+          //   {trashIconClicked ? <XIcon size={14} /> : <TrashIcon size={14} />}
+          // </span>
 
 
     const [copyIconClicked, setCopyIconClicked] = useState(false)
@@ -260,9 +265,6 @@ function ChatGPTQuery(props: Props) {
     return (
       <div class="requestion-answer-container">
         <div className="gpt--feedback">
-          <span onClick={trashQuestion}>
-            {trashIconClicked ? <XIcon size={14} /> : <TrashIcon size={14} />}
-          </span>
           <span onClick={clickCopyToClipboard}>
             {copyIconClicked ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
           </span>
@@ -369,16 +371,6 @@ function ChatGPTQuery(props: Props) {
             </div>
 
             <div className="all-questions-container">
-              {final_followups.map((followup_question) => (
-                <div className="ith-question-container">
-                  {(
-                    <FollowupQuestionFixed followup_question={followup_question} />
-                  )}
-                </div>
-              ))}
-            </div>
-
-            <div className="all-questions-container">
               {requestionList.map((requestion) => (
                 <div className="ith-question-container" key={requestion.index}>
                   <div className="font-bold">{`Q${requestion.index + 1} : ${
@@ -397,6 +389,17 @@ function ChatGPTQuery(props: Props) {
                 </div>
               ))}
             </div>
+
+            <div className="all-questions-container">
+              {final_followups.map((followup_question) => (
+                <div className="ith-question-container">
+                  {(
+                    <FollowupQuestionFixed followup_question={followup_question} />
+                  )}
+                </div>
+              ))}
+            </div>
+
           </div>
 
           {(continueConversation && answer.conversationContext.contextIds && done) && (
