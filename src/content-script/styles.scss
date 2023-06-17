@@ -437,6 +437,23 @@ form#requestion {
     margin-left:10px;
     margin-right: -10px;
     padding-right: 10px;
+    div > div > div.followup-question-container {
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-drag: none;
+      min-height: 24px;
+      padding: 0 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(56,114,224,.48);
+      border-radius: 1em;
+      font-size: 13px;
+      color: rgb(9, 105, 218);
+      gap: 4px;
+      background: rgb(221, 244, 255);
+    }
     div.primary-answer-container, div.all-questions-container > div > div.requestion-answer-container {
       div.gpt--feedback {
         gap: 6px;
@@ -463,3 +480,4 @@ form#requestion {
     }
   }
 }
+

@@ -60,6 +60,10 @@ export const replylanguagePrompt = (language: string) => {
   return `Please write in ${language} language.`
 }
 
+export const followupQuestionsPrompt = () => {
+  return `Next suggest 3-4 follow-up questions as bullet points output(You should use the following template: ### Follow-up Questions:).`
+}
+
 export const articlePrompt = ({
   title,
   url,
@@ -76,6 +80,7 @@ export const articlePrompt = ({
   return `Title: ${title}
 Content:  ${content}
 Instructions: ${prompt ? prompt : articlePromptHighlight}
+${followupQuestionsPrompt()}
 ${replylanguagePrompt(language)}`
 }
 
