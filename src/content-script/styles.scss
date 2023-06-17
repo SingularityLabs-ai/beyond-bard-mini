@@ -365,7 +365,7 @@ span.beyondbard--header__logo {
 // Web Summary
 .beyondbard--summary {
   position: fixed;
-  top: 160px;
+  bottom: 10px; //top: 160px;
   right: 15px;
   width: auto;
   z-index: 99999999999999;

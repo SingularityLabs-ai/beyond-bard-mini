@@ -407,7 +407,7 @@
   }
 }
 
-/* temp_stylePlugin:ni:sha-256;20C20sPQ6tGAecTFyEyRGh2eKjEpAQ66G_0XjEXfUgg */
+/* temp_stylePlugin:ni:sha-256;HfarZCAuaKxExfNLloZ9XWGwm-G0jPbCeRptfrMdSnA */
 .beyondbard--container.gpt--light {
 }
 .beyondbard--container.gpt--light .beyondbard--chatgpt {
@@ -2562,7 +2562,7 @@ span.beyondbard--header__logo {
 }
 .beyondbard--summary {
   position: fixed;
-  top: 160px;
+  bottom: 10px;
   right: 15px;
   width: auto;
   z-index: 99999999999999;
