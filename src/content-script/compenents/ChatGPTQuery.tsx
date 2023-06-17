@@ -16,6 +16,9 @@ import { getUserConfig } from '@/config'
 
 import '@/content-script/styles.scss'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export type QueryStatus = 'success' | 'error' | 'done' | undefined
 
 interface Props {
@@ -36,13 +39,13 @@ interface ReQuestionAnswerProps {
 }
 
 function ChatGPTQuery(props: Props) {
+  let toasttimer;
   const { onStatusChange, currentTime, question } = props
   const inputRef = useRef<HTMLInputElement>(null)
 
   const [answer, setAnswer] = useState<Answer | null>(null)
   const [error, setError] = useState('')
   const [retry, setRetry] = useState(0)
-  // const [delcnt, setDelcnt] = useState(0)
   const [done, setDone] = useState(false)
   const [showTip, setShowTip] = useState(false)
   const [continueConversation, setContinueConversation] = useState(false)
@@ -80,6 +83,7 @@ function ChatGPTQuery(props: Props) {
         } else if (msg.event === 'DONE') {
           setDone(true)
           setReQuestionDone(true)
+          clearTimeout(toasttimer);
           setStatus('done')
         }
       }
@@ -165,7 +169,23 @@ function ChatGPTQuery(props: Props) {
           setReQuestionLatestAnswerText(latestAnswerText)
         } else if (msg.event === 'DONE') {
           setReQuestionDone(true)
+          clearTimeout(toasttimer);
           setQuestionIndex(questionIndex + 1)
+        } else {
+          console.log("msg", msg);
+          toasttimer = setTimeout(() => {
+            toast.warn('🦄 The free version of BARD can be slow and clunky at times. Try Reloading Page if it continues!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+              });
+            }
+          , 30000);
         }
       } catch(e){
         console.log(e);
@@ -211,11 +231,9 @@ function ChatGPTQuery(props: Props) {
     const clickCopyToInput = useCallback(async () => {
       if (reQuestionDone) {
         inputRef.current.value = followup_question;
-        const timer = setTimeout(() => {
-          requeryHandler()
-        }, 500)
+        setTimeout(() => {requeryHandler()}, 500);
       } else {
-        console.log("Wait untill the earlier prompt completes..")
+        console.log("Wait untill the earlier prompt completes..");
       }
     }, [followup_question])
 
@@ -227,29 +245,6 @@ function ChatGPTQuery(props: Props) {
   }
 
   const ReQuestionAnswerFixed = ({ answer }: { answer: string | undefined } ) => {
-    // const [trashIconClicked, setTrashIconClicked] = useState(false)
-    // const trashQuestion = useCallback( () => {
-    //   setTrashIconClicked(true);
-    //   console.log("deleting", answer.question_index);
-    //   let requestionListSplicedValue = requestionList.slice();
-    //   requestionListSplicedValue.splice(answer.question_index, 1);
-    //   setRequestionList(requestionListSplicedValue);
-    //   setDelcnt((delcnt) => delcnt + 1);
-    // }, [answer])
-
-    // useEffect(() => {
-    //   if (trashIconClicked) {
-    //     const timer = setTimeout(() => {
-    //       setTrashIconClicked(false)
-    //     }, 500)
-    //     return () => clearTimeout(timer)
-    //   }
-    // }, [trashIconClicked])
-          // <span onClick={trashQuestion}>
-          //   {trashIconClicked ? <XIcon size={14} /> : <TrashIcon size={14} />}
-          // </span>
-
-
     const [copyIconClicked, setCopyIconClicked] = useState(false)
     const clickCopyToClipboard = useCallback(async () => {
       await navigator.clipboard.writeText(answer?.text)
@@ -265,7 +260,8 @@ function ChatGPTQuery(props: Props) {
       }
     }, [copyIconClicked])
 
-    if (!answer.text) return <p className="text-[#b6b8ba] animate-pulse">Answering...</p>
+    if (!answer.text) return <Loading />;
+    //<p className="text-[#b6b8ba] animate-pulse">Answering...</p>
     return (
       <div class="requestion-answer-container">
         <div className="gpt--feedback">
@@ -295,12 +291,8 @@ function ChatGPTQuery(props: Props) {
     }, [copyIconClicked])
 
     if (!latestAnswerText || requestionList[requestionList.length - 1]?.answer?.text == undefined) {
-      const clunky = setTimeout(() => {
-        if (!latestAnswerText || requestionList[requestionList.length - 1]?.answer?.text == undefined) {
-          console.log("Please bear with us, the free version of BARD can be slow and clunky at times. Try Reloading Page if it continues")
-        }
-      }, 30000)
-      return <p className="text-[#b6b8ba] animate-pulse">Answering...</p>
+      return <Loading />;
+      //<p className="text-[#b6b8ba] animate-pulse">Answering...</p>
     }
     return (
       <div class="requestion-answer-container">
@@ -367,6 +359,7 @@ function ChatGPTQuery(props: Props) {
     try {
       return (
         <div id="gpt-answer" dir="auto">
+          {reQuestionDone?<></>:<ToastContainer/>}
           <div className="beyondbard--chatgpt--content2" ref={wrapRef}>
             <div class="primary-answer-container">
               <div className="gpt--feedback">
