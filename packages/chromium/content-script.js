@@ -41373,10 +41373,14 @@ ${reviewText}
     }, [requestionList, questionIndex]);
     const FollowupQuestionFixed = ({ followup_question }) => {
       const clickCopyToInput = T2(async () => {
-        inputRef.current.value = followup_question;
-        const timer = setTimeout(() => {
-          requeryHandler();
-        }, 500);
+        if (reQuestionDone) {
+          inputRef.current.value = followup_question;
+          const timer = setTimeout(() => {
+            requeryHandler();
+          }, 500);
+        } else {
+          console.log("Wait untill the earlier prompt completes..");
+        }
       }, [followup_question]);
       return /* @__PURE__ */ o3("div", { class: "followup-question-container", onClick: clickCopyToInput, children: /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: followup_question }) });
     };

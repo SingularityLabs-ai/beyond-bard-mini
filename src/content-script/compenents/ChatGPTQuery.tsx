@@ -209,10 +209,14 @@ function ChatGPTQuery(props: Props) {
 
   const FollowupQuestionFixed = ({ followup_question }: { followup_question: string | undefined }) => {
     const clickCopyToInput = useCallback(async () => {
-      inputRef.current.value = followup_question;
-      const timer = setTimeout(() => {
-        requeryHandler()
-      }, 500)
+      if (reQuestionDone) {
+        inputRef.current.value = followup_question;
+        const timer = setTimeout(() => {
+          requeryHandler()
+        }, 500)
+      } else {
+        console.log("Wait untill the earlier prompt completes..")
+      }
     }, [followup_question])
 
     return (
