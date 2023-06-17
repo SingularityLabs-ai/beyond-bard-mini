@@ -98,6 +98,7 @@ export const videoPrompt = ({
   return `Title: ${title}
 Transcript: ${transcript}
 Instructions: ${prompt}
+${followupQuestionsPrompt()}
 ${replylanguagePrompt(language)}`
 }
 
@@ -121,6 +122,7 @@ export const searchPrompt = ({
 Current date: ${year}/${month}/${day}
 Instructions: ${prompt}
 Query: ${query}
+${followupQuestionsPrompt()}
 ${replylanguagePrompt(language)}`
 }
 
@@ -135,6 +137,7 @@ export const pageSummaryPrompt = ({
 }) => {
   return `Content: ${content}
 Instructions: ${prompt ? prompt : pageSummaryPromptHighlight}
+${followupQuestionsPrompt()}
 ${replylanguagePrompt(language)}`
 }
 

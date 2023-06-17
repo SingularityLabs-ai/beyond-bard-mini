@@ -91920,6 +91920,7 @@ ${replylanguagePrompt(language2)}`;
     return `Title: ${title}
 Transcript: ${transcript}
 Instructions: ${prompt}
+${followupQuestionsPrompt()}
 ${replylanguagePrompt(language2)}`;
   };
   var searchPrompt = ({
@@ -91936,6 +91937,7 @@ ${replylanguagePrompt(language2)}`;
 Current date: ${year}/${month}/${day}
 Instructions: ${prompt}
 Query: ${query}
+${followupQuestionsPrompt()}
 ${replylanguagePrompt(language2)}`;
   };
   var pageSummaryPrompt = ({
@@ -91945,6 +91947,7 @@ ${replylanguagePrompt(language2)}`;
   }) => {
     return `Content: ${content3}
 Instructions: ${prompt ? prompt : pageSummaryPromptHighlight}
+${followupQuestionsPrompt()}
 ${replylanguagePrompt(language2)}`;
   };
   var commentSummaryPrompt = ({
