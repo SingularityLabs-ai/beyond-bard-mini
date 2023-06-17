@@ -61,7 +61,7 @@ export const replylanguagePrompt = (language: string) => {
 }
 
 export const followupQuestionsPrompt = () => {
-  return `Next suggest 3-4 follow-up questions as bullet points output(You should use the following template: ### Follow-up Questions:).`
+  return `Next suggest 3-4 follow-up questions as bullet points output(You must use the following template: ### Follow-up Questions:).`
 }
 
 export const articlePrompt = ({

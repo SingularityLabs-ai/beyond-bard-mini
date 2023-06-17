@@ -382,49 +382,61 @@ export default async function getQuestion() {
 
     let searchList = ''
 
-    //  Result list
-    const resultList = document.querySelectorAll('div.MjjYud')
-    if (resultList.length > 0) {
-      resultList.forEach((v, i) => {
-        let url = ''
-        let text = ''
-        const index = i + 1
-        let titleWrap: Element | null = null
-        let title: Element | null = null
+    //  Result list 
+    if (siteName == "kagi") { //TODO: STill full page reload is necessary for Kagi
+      const resultListKagi = document.querySelectorAll('div.search-result')
+      console.log("resultListKagi", resultListKagi)
+      if (resultListKagi.length > 0) {
+        resultListKagi.forEach((v, i) => {
+          console.log(i, v.outerText);
+          const index = i + 1
+          searchList = searchList + `[${index}]URL: ${v.outerText}\r\n\r\n`
+        })
+      }
+    } else {
+      const resultList = document.querySelectorAll('div.MjjYud')
+      if (resultList.length > 0) {
+        resultList.forEach((v, i) => {
+          let url = ''
+          let text = ''
+          const index = i + 1
+          let titleWrap: Element | null = null
+          let title: Element | null = null
 
-        if (v.contains(v.querySelector('block-component'))) {
-          // featured snippets
-          titleWrap = v.querySelector('div.yuRUbf')
-          title = titleWrap?.querySelector('h3.LC20lb') || null
-          url = titleWrap?.querySelector('a')?.href || ''
-          text = v.querySelector('span.ILfuVd')?.textContent || ''
-        } else if (v.contains(v.querySelector('video-voyager'))) {
-          // video
-          titleWrap = v.querySelector('div.ct3b9e')
-          title = titleWrap?.querySelector('h3.LC20lb') || null
-          // url = titleWrap?.querySelector('a')?.href || ''
-          // text = v.querySelector('div.Uroaid')?.textContent || ''
-          url = ''
-          text = ''
-        } else {
-          // link
-          titleWrap = v.querySelector('div.yuRUbf')
-          title = titleWrap?.querySelector('h3.LC20lb') || null
-          url = titleWrap?.querySelector('a')?.href || ''
-          text = v.querySelector('div.VwiC3b')?.textContent || ''
-          const moreText = v.querySelector('div.IThcWe')?.textContent || ''
-          text = text + moreText
-        }
+          if (v.contains(v.querySelector('block-component'))) {
+            // featured snippets
+            titleWrap = v.querySelector('div.yuRUbf')
+            title = titleWrap?.querySelector('h3.LC20lb') || null
+            url = titleWrap?.querySelector('a')?.href || ''
+            text = v.querySelector('span.ILfuVd')?.textContent || ''
+          } else if (v.contains(v.querySelector('video-voyager'))) {
+            // video
+            titleWrap = v.querySelector('div.ct3b9e')
+            title = titleWrap?.querySelector('h3.LC20lb') || null
+            // url = titleWrap?.querySelector('a')?.href || ''
+            // text = v.querySelector('div.Uroaid')?.textContent || ''
+            url = ''
+            text = ''
+          } else {
+            // link
+            titleWrap = v.querySelector('div.yuRUbf')
+            title = titleWrap?.querySelector('h3.LC20lb') || null
+            url = titleWrap?.querySelector('a')?.href || ''
+            text = v.querySelector('div.VwiC3b')?.textContent || ''
+            const moreText = v.querySelector('div.IThcWe')?.textContent || ''
+            text = text + moreText
+          }
 
-        if (text && url && index <= 6) {
-          url = url.replace(/https?:/, '')
-          searchList =
-            searchList +
-            `
-[${index}] ${text}\r\n
-[${index}]URL: ${url}\r\n\r\n`
-        }
-      })
+          if (text && url && index <= 6) {
+            url = url.replace(/https?:/, '')
+            searchList =
+              searchList +
+              `
+  [${index}] ${text}\r\n
+  [${index}]URL: ${url}\r\n\r\n`
+          }
+        })
+      }
     }
 
     const Instructions = userConfig.promptSearch
@@ -438,6 +450,8 @@ export default async function getQuestion() {
       prompt: Instructions,
     })
 
+    console.debug("GetQuestion searchList:", searchList)
+    console.debug("GetQuestion searchValueWithLanguageOption:", searchValueWithLanguageOption)
     console.debug("GetQuestion question:", searchList ? queryText : searchValueWithLanguageOption)
     return {
       question: searchList ? queryText : searchValueWithLanguageOption,
