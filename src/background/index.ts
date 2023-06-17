@@ -30,8 +30,12 @@ async function generateAnswers(
 
   const controller = new AbortController()
   port.onDisconnect.addListener(() => {
-    controller.abort()
-    cleanup?.()
+    try {
+      controller.abort()
+      cleanup?.()
+    } catch (err) {
+      console.log(err)
+    }
   })
 
   const { cleanup } = await provider.generateAnswer({

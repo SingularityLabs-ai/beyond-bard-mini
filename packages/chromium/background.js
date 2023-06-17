@@ -2626,8 +2626,12 @@ ChatGPT:`;
     }
     const controller = new AbortController();
     port.onDisconnect.addListener(() => {
-      controller.abort();
-      cleanup == null ? void 0 : cleanup();
+      try {
+        controller.abort();
+        cleanup == null ? void 0 : cleanup();
+      } catch (err) {
+        console.log(err);
+      }
     });
     const { cleanup } = await provider.generateAnswer({
       prompt: question,
