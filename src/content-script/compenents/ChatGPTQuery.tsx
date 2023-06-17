@@ -1,4 +1,4 @@
-import { ThumbsdownIcon, ThumbsupIcon, TrashIcon, CopyIcon, CheckIcon } from '@primer/octicons-react'
+import { XIcon, TrashIcon, CopyIcon, CheckIcon } from '@primer/octicons-react'
 import { useEffect, useState, useCallback, useRef } from 'preact/hooks'
 import classNames from 'classnames'
 import { memo, useMemo } from 'react'
@@ -158,6 +158,7 @@ function ChatGPTQuery(props: Props) {
         if (msg.text) {
           const requestionListValue = requestionList
           requestionListValue[questionIndex].answer = msg
+          requestionListValue[questionIndex].answer.question_index = questionIndex
           setRequestionList(requestionListValue)
           const latestAnswerText = requestionList[questionIndex]?.answer?.text
           setReQuestionLatestAnswerText(latestAnswerText)
@@ -220,7 +221,26 @@ function ChatGPTQuery(props: Props) {
     )
   }
 
-  const ReQuestionAnswerFixed = ({ answer }: { answer: string | undefined }) => {
+  const ReQuestionAnswerFixed = ({ answer }: { answer: string | undefined } ) => {
+    const [trashIconClicked, setTrashIconClicked] = useState(false)
+    const trashQuestion = useCallback( () => {
+      setTrashIconClicked(true);
+      console.log("deleting", answer.question_index);
+      let requestionListSplicedValue = requestionList.slice();
+      requestionListSplicedValue.splice(answer.question_index, 1);
+      setRequestionList(requestionListSplicedValue);
+    }, [answer])
+
+    useEffect(() => {
+      if (trashIconClicked) {
+        const timer = setTimeout(() => {
+          setTrashIconClicked(false)
+        }, 500)
+        return () => clearTimeout(timer)
+      }
+    }, [trashIconClicked])
+
+
     const [copyIconClicked, setCopyIconClicked] = useState(false)
     const clickCopyToClipboard = useCallback(async () => {
       await navigator.clipboard.writeText(answer?.text)
@@ -240,6 +260,9 @@ function ChatGPTQuery(props: Props) {
     return (
       <div class="requestion-answer-container">
         <div className="gpt--feedback">
+          <span onClick={trashQuestion}>
+            {trashIconClicked ? <XIcon size={14} /> : <TrashIcon size={14} />}
+          </span>
           <span onClick={clickCopyToClipboard}>
             {copyIconClicked ? <CheckIcon size={14} /> : <CopyIcon size={14} />}
           </span>
