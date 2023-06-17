@@ -41421,6 +41421,12 @@ ${reviewText}
         }
       }, [copyIconClicked2]);
       if (!latestAnswerText || ((_b = (_a = requestionList[requestionList.length - 1]) == null ? void 0 : _a.answer) == null ? void 0 : _b.text) == void 0) {
+        const clunky = setTimeout(() => {
+          var _a2, _b2;
+          if (!latestAnswerText || ((_b2 = (_a2 = requestionList[requestionList.length - 1]) == null ? void 0 : _a2.answer) == null ? void 0 : _b2.text) == void 0) {
+            console.log("Please bear with us, the free version of BARD can be slow and clunky at times. Try Reloading Page if it continues");
+          }
+        }, 3e4);
         return /* @__PURE__ */ o3("p", { className: "text-[#b6b8ba] animate-pulse", children: "Answering..." });
       }
       return /* @__PURE__ */ o3("div", { class: "requestion-answer-container", children: [

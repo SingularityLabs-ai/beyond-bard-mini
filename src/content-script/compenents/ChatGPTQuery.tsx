@@ -295,6 +295,11 @@ function ChatGPTQuery(props: Props) {
     }, [copyIconClicked])
 
     if (!latestAnswerText || requestionList[requestionList.length - 1]?.answer?.text == undefined) {
+      const clunky = setTimeout(() => {
+        if (!latestAnswerText || requestionList[requestionList.length - 1]?.answer?.text == undefined) {
+          console.log("Please bear with us, the free version of BARD can be slow and clunky at times. Try Reloading Page if it continues")
+        }
+      }, 30000)
       return <p className="text-[#b6b8ba] animate-pulse">Answering...</p>
     }
     return (

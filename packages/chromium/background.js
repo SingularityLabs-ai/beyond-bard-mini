@@ -2726,7 +2726,6 @@ ChatGPT:`;
     const oldTabId = await import_webextension_polyfill3.default.storage.local.get("pinnedTabId");
     import_webextension_polyfill3.default.tabs.get(tabId).then((tab) => {
       var _a;
-      console.log("tabId", tabId, tab, changeInfo);
       if (((_a = tab.url) == null ? void 0 : _a.includes(BASE_URL)) && changeInfo.status === "complete" && tab.id && oldTabId.pinnedTabId === tab.id) {
         console.log("onUpdated", oldTabId, tab);
         tabSendMsg(tab);

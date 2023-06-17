@@ -136,7 +136,7 @@ Browser.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
   const oldTabId = await Browser.storage.local.get('pinnedTabId')
 
   Browser.tabs.get(tabId).then((tab) => {
-    console.log('tabId', tabId, tab, changeInfo)
+    // console.log('tabId', tabId, tab, changeInfo)
 
     // Browser.tabs.query({}).then((tabs) => {
     //   tabs.forEach((tab) => {
