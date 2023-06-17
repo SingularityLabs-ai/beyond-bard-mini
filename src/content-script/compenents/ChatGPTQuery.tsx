@@ -1,4 +1,4 @@
-import { ThumbsdownIcon, ThumbsupIcon, CopyIcon, CheckIcon } from '@primer/octicons-react'
+import { ThumbsdownIcon, ThumbsupIcon, TrashIcon, CopyIcon, CheckIcon } from '@primer/octicons-react'
 import { useEffect, useState, useCallback, useRef } from 'preact/hooks'
 import classNames from 'classnames'
 import { memo, useMemo } from 'react'
@@ -205,6 +205,21 @@ function ChatGPTQuery(props: Props) {
     }
   }, [requestionList, questionIndex])
 
+  const FollowupQuestionFixed = ({ followup_question }: { followup_question: string | undefined }) => {
+    const clickCopyToInput = useCallback(async () => {
+      inputRef.current.value = followup_question;
+      const timer = setTimeout(() => {
+        requeryHandler()
+      }, 500)
+    }, [followup_question])
+
+    return (
+      <div class="followup-question-container" onClick={clickCopyToInput}>
+        <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>{followup_question}</ReactMarkdown>
+      </div>
+    )
+  }
+
   const ReQuestionAnswerFixed = ({ answer }: { answer: string | undefined }) => {
     const [copyIconClicked, setCopyIconClicked] = useState(false)
     const clickCopyToClipboard = useCallback(async () => {
@@ -292,6 +307,28 @@ function ChatGPTQuery(props: Props) {
           // < className="beyondbard--chatgpt--content" is the culprit >
           // <div className="beyondbard--chatgpt--header">
           // </div >
+   let final_followups = [];
+   let followup_section = "";
+
+    let splits = answer.text.split("### Follow-up Questions:")
+    if (splits.length == 1) splits = answer.text.split("### Follow-up Questions")
+    if (splits.length == 1) splits = answer.text.split("**Follow-up Questions**")
+    if (splits.length >= 2) {
+      followup_section = splits[splits.length - 1]
+      let rawsplits = followup_section.split("\n");
+      for(var i = 0; i < rawsplits.length; i++) {
+        let regnumexp = /[0-9]..*/gi;
+        let regbulletexp = /\* .*/gi;
+        if (rawsplits[i].match(regnumexp)) {
+          final_followups.push(rawsplits[i].slice(2).trim());
+        } else if (rawsplits[i].match(regbulletexp)) {
+          let finesplits = rawsplits[i].split("* ");
+          if (finesplits[finesplits.length-1].length > 4)
+            final_followups.push(finesplits[finesplits.length-1].trim());
+        }
+      }
+    }
+
 
     try {
       return (
@@ -304,9 +341,20 @@ function ChatGPTQuery(props: Props) {
                 </span>
               </div>
               <ReactMarkdown rehypePlugins={[[rehypeHighlight, { detect: true }]]}>
-                {answer.text}
+                {answer.text.replace(followup_section, "")}
               </ReactMarkdown>
             </div>
+
+            <div className="all-questions-container">
+              {final_followups.map((followup_question) => (
+                <div className="ith-question-container">
+                  {(
+                    <FollowupQuestionFixed followup_question={followup_question} />
+                  )}
+                </div>
+              ))}
+            </div>
+
             <div className="all-questions-container">
               {requestionList.map((requestion) => (
                 <div className="ith-question-container" key={requestion.index}>
@@ -319,7 +367,7 @@ function ChatGPTQuery(props: Props) {
                       <span className="break-all block">{reError}</span>
                     </p>
                   ) : requestion.index < requestionList.length - 1 ? (
-                    <ReQuestionAnswerFixed answer={requestion.answer} />
+                    <ReQuestionAnswerFixed answer={requestion.answer}/>
                   ) : (
                     <ReQuestionAnswer latestAnswerText={reQuestionLatestAnswerText} />
                   )}

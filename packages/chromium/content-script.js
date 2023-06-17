@@ -41370,6 +41370,15 @@ ${reviewText}
         inputRef.current.value = "";
       }
     }, [requestionList, questionIndex]);
+    const FollowupQuestionFixed = ({ followup_question }) => {
+      const clickCopyToInput = T2(async () => {
+        inputRef.current.value = followup_question;
+        const timer = setTimeout(() => {
+          requeryHandler();
+        }, 500);
+      }, [followup_question]);
+      return /* @__PURE__ */ o3("div", { class: "followup-question-container", onClick: clickCopyToInput, children: /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: followup_question }) });
+    };
     const ReQuestionAnswerFixed = ({ answer: answer2 }) => {
       const [copyIconClicked2, setCopyIconClicked2] = h2(false);
       const clickCopyToClipboard2 = T2(async () => {
@@ -41432,13 +41441,36 @@ ${reviewText}
       console.debug("ChatGPTQuery continueConversation=", continueConversation);
       console.debug("ChatGPTQuery answer.conversationContext.contextIds=", answer.conversationContext.contextIds);
       console.debug("ChatGPTQuery done=", done);
+      let final_followups = [];
+      let followup_section = "";
+      let splits = answer.text.split("### Follow-up Questions:");
+      if (splits.length == 1)
+        splits = answer.text.split("### Follow-up Questions");
+      if (splits.length == 1)
+        splits = answer.text.split("**Follow-up Questions**");
+      if (splits.length >= 2) {
+        followup_section = splits[splits.length - 1];
+        let rawsplits = followup_section.split("\n");
+        for (var i4 = 0; i4 < rawsplits.length; i4++) {
+          let regnumexp = /[0-9]..*/gi;
+          let regbulletexp = /\* .*/gi;
+          if (rawsplits[i4].match(regnumexp)) {
+            final_followups.push(rawsplits[i4].slice(2).trim());
+          } else if (rawsplits[i4].match(regbulletexp)) {
+            let finesplits = rawsplits[i4].split("* ");
+            if (finesplits[finesplits.length - 1].length > 4)
+              final_followups.push(finesplits[finesplits.length - 1].trim());
+          }
+        }
+      }
       try {
         return /* @__PURE__ */ o3("div", { id: "gpt-answer", dir: "auto", children: [
           /* @__PURE__ */ o3("div", { className: "beyondbard--chatgpt--content2", ref: wrapRef, children: [
             /* @__PURE__ */ o3("div", { class: "primary-answer-container", children: [
               /* @__PURE__ */ o3("div", { className: "gpt--feedback", children: /* @__PURE__ */ o3("span", { onClick: clickCopyToClipboard, children: copyIconClicked ? /* @__PURE__ */ o3(CheckIcon, { size: 14 }) : /* @__PURE__ */ o3(CopyIcon, { size: 14 }) }) }),
-              /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: answer.text })
+              /* @__PURE__ */ o3(ReactMarkdown, { rehypePlugins: [[rehypeHighlight, { detect: true }]], children: answer.text.replace(followup_section, "") })
             ] }),
+            /* @__PURE__ */ o3("div", { className: "all-questions-container", children: final_followups.map((followup_question) => /* @__PURE__ */ o3("div", { className: "ith-question-container", children: /* @__PURE__ */ o3(FollowupQuestionFixed, { followup_question }) })) }),
             /* @__PURE__ */ o3("div", { className: "all-questions-container", children: requestionList.map((requestion) => /* @__PURE__ */ o3("div", { className: "ith-question-container", children: [
               /* @__PURE__ */ o3("div", { className: "font-bold", children: `Q${requestion.index + 1} : ${requestion.requestion}` }),
               reError ? /* @__PURE__ */ o3("p", { children: [
