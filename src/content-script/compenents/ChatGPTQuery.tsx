@@ -338,7 +338,18 @@ function ChatGPTQuery(props: Props) {
 
     let splits = answer.text.split("### Follow-up Questions:")
     if (splits.length == 1) splits = answer.text.split("### Follow-up Questions")
+    if (splits.length == 1) splits = answer.text.split("## Follow-up Questions:")
+    if (splits.length == 1) splits = answer.text.split("## Follow-up Questions")
+    if (splits.length == 1) splits = answer.text.split("# Follow-up Questions:")
+    if (splits.length == 1) splits = answer.text.split("# Follow-up Questions")
+
+    if (splits.length == 1) splits = answer.text.split("***Follow-up Questions:***")
+    if (splits.length == 1) splits = answer.text.split("***Follow-up Questions***")
+    if (splits.length == 1) splits = answer.text.split("**Follow-up Questions:**")
     if (splits.length == 1) splits = answer.text.split("**Follow-up Questions**")
+    if (splits.length == 1) splits = answer.text.split("*Follow-up Questions:*")
+    if (splits.length == 1) splits = answer.text.split("*Follow-up Questions*")
+
     if (splits.length >= 2) {
       followup_section = splits[splits.length - 1]
       let rawsplits = followup_section.split("\n");
