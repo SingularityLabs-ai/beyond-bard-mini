@@ -11,7 +11,7 @@ import ChatGPTFeedback from './ChatGPTFeedback'
 import { debounce } from 'lodash-es'
 import { isBraveBrowser, shouldShowRatingTip } from '@/content-script/utils'
 import { BASE_URL } from '@/config'
-import { isIOS, isSafari } from '@/utils/utils'
+import { isIOS, isSafari, extract_followups_section, extract_followups } from '@/utils/utils'
 import { getUserConfig } from '@/config'
 
 import '@/content-script/styles.scss'
@@ -333,25 +333,10 @@ function ChatGPTQuery(props: Props) {
           // < className="beyondbard--chatgpt--content" is the culprit >
           // <div className="beyondbard--chatgpt--header">
           // </div >
-   let final_followups = [];
-   let followup_section = "";
+    let followup_section = extract_followups_section(answer.text);
+    let final_followups = extract_followups(followup_section);
 
-    let splits = answer.text.split("### Follow-up Questions:")
-    if (splits.length == 1) splits = answer.text.split("### Follow-up Questions")
-    if (splits.length == 1) splits = answer.text.split("## Follow-up Questions:")
-    if (splits.length == 1) splits = answer.text.split("## Follow-up Questions")
-    if (splits.length == 1) splits = answer.text.split("# Follow-up Questions:")
-    if (splits.length == 1) splits = answer.text.split("# Follow-up Questions")
-
-    if (splits.length == 1) splits = answer.text.split("***Follow-up Questions:***")
-    if (splits.length == 1) splits = answer.text.split("***Follow-up Questions***")
-    if (splits.length == 1) splits = answer.text.split("**Follow-up Questions:**")
-    if (splits.length == 1) splits = answer.text.split("**Follow-up Questions**")
-    if (splits.length == 1) splits = answer.text.split("*Follow-up Questions:*")
-    if (splits.length == 1) splits = answer.text.split("*Follow-up Questions*")
-
-    if (splits.length >= 2) {
-      followup_section = splits[splits.length - 1]
+    if (followup_section.length > 0) {
       let rawsplits = followup_section.split("\n");
       for(var i = 0; i < rawsplits.length; i++) {
         let regnumexp = /[0-9]..*/gi;
@@ -360,7 +345,7 @@ function ChatGPTQuery(props: Props) {
           final_followups.push(rawsplits[i].slice(2).trim());
         } else if (rawsplits[i].match(regbulletexp)) {
           let finesplits = rawsplits[i].split("* ");
-          if (finesplits[finesplits.length-1].length > 4)
+          if (finesplits[finesplits.length-1].length > 4 && finesplits[finesplits.length-1].trim()[finesplits[finesplits.length-1].trim().length-1]=="?")
             final_followups.push(finesplits[finesplits.length-1].trim());
         }
       }
