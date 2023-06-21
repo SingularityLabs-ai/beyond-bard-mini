@@ -81,7 +81,7 @@ export function extract_followups(followup_section:string) {
     let rawsplits = followup_section.split("\n");
     for(var i = 0; i < rawsplits.length; i++) {
       let regnumexp = /[0-9]..*/gi;
-      let regbulletexp = /\* .*/gi;
+      let regbulletexp = /[*+-] .*/gi;
       if (rawsplits[i].match(regnumexp)) {
         final_followups.push(rawsplits[i].slice(2).trim());
       } else if (rawsplits[i].match(regbulletexp)) {
