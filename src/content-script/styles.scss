@@ -434,9 +434,10 @@ form#requestion {
 
 #gpt-answer {
   div.beyondbard--chatgpt--content2 {
-    margin-left:10px;
+    margin-left: 10px;
     margin-right: -10px;
     padding-right: 10px;
+    padding-bottom: 0.7em;
     div > div > div.followup-question-container {
       position: relative;
       cursor: pointer;
@@ -455,6 +456,7 @@ form#requestion {
       background: rgb(230, 245, 255);
     }
     div.primary-answer-container, div.all-questions-container > div > div.requestion-answer-container {
+      padding-bottom: 0.2em;
       div.gpt--feedback {
         gap: 6px;
         cursor: pointer;
