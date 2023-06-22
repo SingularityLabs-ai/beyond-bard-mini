@@ -39,3 +39,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 iOSInjectionProject/
+packages/
