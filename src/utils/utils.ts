@@ -85,9 +85,10 @@ export function extract_followups(followup_section:string) {
       if (rawsplits[i].match(regnumexp)) {
         final_followups.push(rawsplits[i].slice(2).trim());
       } else if (rawsplits[i].match(regbulletexp)) {
-        let finesplits = rawsplits[i].split("* ");
-        if (finesplits[finesplits.length-1].length > 4 && finesplits[finesplits.length-1].trim()[finesplits[finesplits.length-1].trim().length-1]=="?")
-          final_followups.push(finesplits[finesplits.length-1].trim());
+        final_followups.push(rawsplits[i].replace(/[^a-zA-Z ,?]/g, ""));
+        // let finesplits = rawsplits[i].split("* ");
+        // if (finesplits[finesplits.length-1].length > 4 && finesplits[finesplits.length-1].trim()[finesplits[finesplits.length-1].trim().length-1]=="?")
+        //   final_followups.push(finesplits[finesplits.length-1].trim());
       }
     }
   }
