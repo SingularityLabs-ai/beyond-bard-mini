@@ -1,8 +1,0 @@
-{
-  "appName": {
-    "message": "BeyondBard-自动为谷歌搜索结果及YouTube视频生成摘要 (Bard)"
-  },
-  "appDesc": {
-    "message": "在 Google 搜索结果和 YouTube 视频旁边显示 Google Bard 片段（支持自动翻译成中文）"
-  }
-}
