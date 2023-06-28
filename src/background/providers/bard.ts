@@ -95,10 +95,11 @@ export class BARDProvider implements Provider {
   private async parseBartResponse(resp: string) {
     const data = JSON.parse(resp.split('\n')[3])
     const payload = JSON.parse(data[0][2])
+    console.log("payload", payload)
     if (!payload) {
       throw new ChatError('Failed to access Bard', ErrorCode.BARD_EMPTY_RESPONSE)
     }
-    const text = payload[0][0]
+    const text = payload[4][0][1][0] as string
     return {
       text,
       ids: [...payload[1], payload[4][0][0]] as [string, string, string],

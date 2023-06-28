@@ -96,7 +96,7 @@ Browser.runtime.onConnect.addListener(async (port) => {
         msg.parentMessageId,
         msg.conversationContext,)
     } catch (err: any) {
-      // console.error(err)
+      console.log(err)
       port.postMessage({ error: err.message })
     }
   })
