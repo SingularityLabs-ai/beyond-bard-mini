@@ -469,7 +469,7 @@ function ChatGPTQuery(props: Props) {
               return (
                 <span className="beyondbard--block beyondbard--mt-2">
                   Still not working? Follow{' '}
-                  <a href="https://github.com/ishandutta2007/beyond-bard#troubleshooting">
+                  <a href="https://github.com/SingularityLabs-ai/beyond-bard#troubleshooting">
                     Brave Troubleshooting
                   </a>
                 </span>

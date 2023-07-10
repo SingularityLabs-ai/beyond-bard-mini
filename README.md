@@ -4,7 +4,7 @@ Chrome extension to view Google Bard summaries alongside Google search results a
 
 ## ⚠️ Tips:
 
-Or You can try downloading the experience package ([https://github.com/ishandutta2007/beyond-bard/tree/main/packages](https://github.com/ishandutta2007/beyond-bard/tree/main/packages)) and adding it manually ([https://github.com/ishandutta2007/beyond-bard#chrome](https://github.com/ishandutta2007/beyond-bard#chrome)).
+Or You can try downloading the experience package ([https://github.com/SingularityLabs-ai/beyond-bard/tree/main/packages](https://github.com/SingularityLabs-ai/beyond-bard/tree/main/packages)) and adding it manually ([https://github.com/SingularityLabs-ai/beyond-bard#chrome](https://github.com/SingularityLabs-ai/beyond-bard#chrome)).
 
 ## Supported Websites
 
