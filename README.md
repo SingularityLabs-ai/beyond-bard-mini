@@ -1,3 +1,28 @@
+
+<h1 align="center">BeyondBard</h1>
+
+<div align="center">
+
+###  BeyondBard - Summary or Insights for Google/YouTube with Google Bard
+
+[![Join us on Discord](https://invidget.switchblade.xyz/jc4xtF58Ve)](https://discord.gg/jc4xtF58Ve)
+
+##
+English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md) &nbsp;&nbsp;|&nbsp;&nbsp; [简体中文](README_ZH-CN.md) &nbsp;&nbsp;|&nbsp;&nbsp; [繁體中文](README_ZH-TW.md) &nbsp;&nbsp;|&nbsp;&nbsp; [日本語](README_JA.md)
+
+##
+
+### Install
+
+<a href="https://chromewebstore.google.com/detail/beyond-bard-ai-chat-for-a/ceknbkmhppjloheidfdpmaijdcgofoif">
+    <img src="https://user-images.githubusercontent.com/64502893/231991498-8df6dd63-727c-41d0-916f-c90c15127de3.png" width="200" alt="Get MultiGPT for Chromium">
+</a><a href="https://microsoftedge.microsoft.com/addons/detail/beyond-bard-ai-chat-for/kgahbgkbdeipbnjiboihbkinnnobikdm">
+    <img src="https://user-images.githubusercontent.com/64502893/231991158-1b54f831-2fdc-43b6-bf9a-f894000e5aa8.png" width="160" alt="Get MultiGPT for Microsoft Edge">
+</a>
+
+##
+
+
 # BeyondBard - Summary or Insights for Google/YouTube with Google Bard
 
 Chrome extension to view Google Bard summaries alongside Google search results and YouTube videos, also supports Yahoo! ニュース、PubMed、PMC、NewsPicks、Github、Nikkei、 Bing、Google Patents,and any page summary.
